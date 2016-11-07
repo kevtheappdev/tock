@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eLh-qO-Jhm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +26,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="780" y="-99"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yqz-fI-Vgr">
+            <objects>
+                <viewController id="eLh-qO-Jhm" customClass="ViewController" customModule="Tock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIS-Ye-CTA"/>
+                        <viewControllerLayoutGuide type="bottom" id="cgI-cA-6Zz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bWO-6t-N63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITy-hU-MlS">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="zBf-NU-LzP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zBf-NU-LzP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zBf-NU-LzP"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-fN-ORe" customClass="SparkleView" customModule="Tock" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="181" id="Ovv-bx-v4y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3y-YK-5Lw" customClass="TockTimePicker" customModule="Tock" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x3y-YK-5Lw" secondAttribute="height" multiplier="1:1" id="Z4v-iN-SBF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZJ-q6-4H3">
+                                <rect key="frame" x="143" y="400" width="89" height="42"/>
+                                <color key="backgroundColor" red="1" green="0.54582923650000004" blue="0.1769473553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="0GQ-BC-oI5"/>
+                                    <constraint firstAttribute="width" constant="89" id="8QC-Vz-Uko"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ITy-hU-MlS" firstAttribute="leading" secondItem="bWO-6t-N63" secondAttribute="leading" id="GQB-F0-Nkh"/>
+                            <constraint firstItem="mZJ-q6-4H3" firstAttribute="centerX" secondItem="bWO-6t-N63" secondAttribute="centerX" id="XMN-nR-K22"/>
+                            <constraint firstAttribute="trailing" secondItem="kb2-fN-ORe" secondAttribute="trailing" id="bDu-zR-mPf"/>
+                            <constraint firstAttribute="trailing" secondItem="x3y-YK-5Lw" secondAttribute="trailing" id="bTa-En-JEZ"/>
+                            <constraint firstItem="x3y-YK-5Lw" firstAttribute="leading" secondItem="bWO-6t-N63" secondAttribute="leading" id="d5o-8o-VT7"/>
+                            <constraint firstItem="cgI-cA-6Zz" firstAttribute="top" secondItem="ITy-hU-MlS" secondAttribute="bottom" id="nXH-HI-MyD"/>
+                            <constraint firstItem="mZJ-q6-4H3" firstAttribute="top" secondItem="x3y-YK-5Lw" secondAttribute="bottom" constant="25" id="uAF-3g-WQg"/>
+                            <constraint firstAttribute="trailing" secondItem="ITy-hU-MlS" secondAttribute="trailing" id="uHb-PX-uf0"/>
+                            <constraint firstItem="x3y-YK-5Lw" firstAttribute="top" secondItem="bWO-6t-N63" secondAttribute="top" id="vcV-Bi-VCt"/>
+                            <constraint firstItem="kb2-fN-ORe" firstAttribute="top" secondItem="bWO-6t-N63" secondAttribute="top" id="yBS-DK-2CE"/>
+                            <constraint firstItem="kb2-fN-ORe" firstAttribute="leading" secondItem="bWO-6t-N63" secondAttribute="leading" id="z4H-nM-B0Q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ITy-hU-MlS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nXH-HI-MyD"/>
+                                <exclude reference="uHb-PX-uf0"/>
+                                <exclude reference="GQB-F0-Nkh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ITy-hU-MlS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nXH-HI-MyD"/>
+                                <include reference="uHb-PX-uf0"/>
+                                <include reference="GQB-F0-Nkh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="floorView" destination="ITy-hU-MlS" id="vtc-A3-jnE"/>
+                        <outlet property="startButton" destination="mZJ-q6-4H3" id="nYm-jj-MUm"/>
+                        <outlet property="timePicker" destination="x3y-YK-5Lw" id="iZE-1W-xmj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3J-TH-HtV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-732" y="101"/>
         </scene>
     </scenes>
 </document>

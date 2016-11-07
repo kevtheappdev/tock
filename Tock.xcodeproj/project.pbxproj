@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		68934AFF1DD00D26005D109E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934AFE1DD00D26005D109E /* AppDelegate.swift */; };
-		68934B011DD00D26005D109E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B001DD00D26005D109E /* ViewController.swift */; };
 		68934B041DD00D26005D109E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68934B021DD00D26005D109E /* Main.storyboard */; };
 		68934B061DD00D26005D109E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68934B051DD00D26005D109E /* Assets.xcassets */; };
 		68934B091DD00D26005D109E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68934B071DD00D26005D109E /* LaunchScreen.storyboard */; };
 		68934B141DD00D26005D109E /* TockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B131DD00D26005D109E /* TockTests.swift */; };
 		68934B1F1DD00D26005D109E /* TockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B1E1DD00D26005D109E /* TockUITests.swift */; };
+		68934B2D1DD00F4A005D109E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B2C1DD00F4A005D109E /* ViewController.swift */; };
+		68934B2F1DD00F7C005D109E /* TockTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B2E1DD00F7C005D109E /* TockTimePicker.swift */; };
+		68934B321DD00FB8005D109E /* Trig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B311DD00FB8005D109E /* Trig.swift */; };
+		68934B341DD00FEB005D109E /* TimePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B331DD00FEB005D109E /* TimePickerDelegate.swift */; };
+		68934B361DD0101B005D109E /* KTUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B351DD0101B005D109E /* KTUtility.swift */; };
+		68934B381DD01038005D109E /* system_constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B371DD01038005D109E /* system_constants.swift */; };
+		68934B3B1DD010EE005D109E /* OptionsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B391DD010EE005D109E /* OptionsTransition.swift */; };
+		68934B3C1DD010EE005D109E /* OptionsTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B3A1DD010EE005D109E /* OptionsTransitionDelegate.swift */; };
+		68934B401DD01152005D109E /* TockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B3F1DD01152005D109E /* TockButton.swift */; };
+		68934B421DD01174005D109E /* PopTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B411DD01174005D109E /* PopTransitionDelegate.swift */; };
+		68934B441DD011A0005D109E /* PopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B431DD011A0005D109E /* PopTransition.swift */; };
+		68934B461DD011AB005D109E /* UnwindPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B451DD011AB005D109E /* UnwindPopTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,6 @@
 /* Begin PBXFileReference section */
 		68934AFB1DD00D26005D109E /* Tock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68934AFE1DD00D26005D109E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68934B001DD00D26005D109E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68934B031DD00D26005D109E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68934B051DD00D26005D109E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68934B081DD00D26005D109E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,18 @@
 		68934B1A1DD00D26005D109E /* TockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68934B1E1DD00D26005D109E /* TockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TockUITests.swift; sourceTree = "<group>"; };
 		68934B201DD00D26005D109E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68934B2C1DD00F4A005D109E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68934B2E1DD00F7C005D109E /* TockTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockTimePicker.swift; sourceTree = "<group>"; };
+		68934B311DD00FB8005D109E /* Trig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trig.swift; sourceTree = "<group>"; };
+		68934B331DD00FEB005D109E /* TimePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerDelegate.swift; sourceTree = "<group>"; };
+		68934B351DD0101B005D109E /* KTUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTUtility.swift; sourceTree = "<group>"; };
+		68934B371DD01038005D109E /* system_constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = system_constants.swift; sourceTree = "<group>"; };
+		68934B391DD010EE005D109E /* OptionsTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTransition.swift; sourceTree = "<group>"; };
+		68934B3A1DD010EE005D109E /* OptionsTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTransitionDelegate.swift; sourceTree = "<group>"; };
+		68934B3F1DD01152005D109E /* TockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockButton.swift; sourceTree = "<group>"; };
+		68934B411DD01174005D109E /* PopTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTransitionDelegate.swift; sourceTree = "<group>"; };
+		68934B431DD011A0005D109E /* PopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTransition.swift; sourceTree = "<group>"; };
+		68934B451DD011AB005D109E /* UnwindPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindPopTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +120,15 @@
 			isa = PBXGroup;
 			children = (
 				68934AFE1DD00D26005D109E /* AppDelegate.swift */,
-				68934B001DD00D26005D109E /* ViewController.swift */,
 				68934B021DD00D26005D109E /* Main.storyboard */,
+				68934B3F1DD01152005D109E /* TockButton.swift */,
+				68934B3E1DD01120005D109E /* Delegates */,
+				68934B3D1DD010F2005D109E /* Transitions */,
+				68934B371DD01038005D109E /* system_constants.swift */,
+				68934B311DD00FB8005D109E /* Trig.swift */,
+				68934B351DD0101B005D109E /* KTUtility.swift */,
+				68934B301DD00F81005D109E /* View Controllers */,
+				68934B2E1DD00F7C005D109E /* TockTimePicker.swift */,
 				68934B051DD00D26005D109E /* Assets.xcassets */,
 				68934B071DD00D26005D109E /* LaunchScreen.storyboard */,
 				68934B0A1DD00D26005D109E /* Info.plist */,
@@ -123,6 +152,34 @@
 				68934B201DD00D26005D109E /* Info.plist */,
 			);
 			path = TockUITests;
+			sourceTree = "<group>";
+		};
+		68934B301DD00F81005D109E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				68934B2C1DD00F4A005D109E /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		68934B3D1DD010F2005D109E /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				68934B431DD011A0005D109E /* PopTransition.swift */,
+				68934B391DD010EE005D109E /* OptionsTransition.swift */,
+				68934B451DD011AB005D109E /* UnwindPopTransition.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		68934B3E1DD01120005D109E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				68934B3A1DD010EE005D109E /* OptionsTransitionDelegate.swift */,
+				68934B411DD01174005D109E /* PopTransitionDelegate.swift */,
+				68934B331DD00FEB005D109E /* TimePickerDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +316,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68934B011DD00D26005D109E /* ViewController.swift in Sources */,
+				68934B2D1DD00F4A005D109E /* ViewController.swift in Sources */,
+				68934B3B1DD010EE005D109E /* OptionsTransition.swift in Sources */,
+				68934B401DD01152005D109E /* TockButton.swift in Sources */,
+				68934B461DD011AB005D109E /* UnwindPopTransition.swift in Sources */,
+				68934B341DD00FEB005D109E /* TimePickerDelegate.swift in Sources */,
+				68934B441DD011A0005D109E /* PopTransition.swift in Sources */,
+				68934B3C1DD010EE005D109E /* OptionsTransitionDelegate.swift in Sources */,
+				68934B2F1DD00F7C005D109E /* TockTimePicker.swift in Sources */,
+				68934B361DD0101B005D109E /* KTUtility.swift in Sources */,
+				68934B421DD01174005D109E /* PopTransitionDelegate.swift in Sources */,
+				68934B381DD01038005D109E /* system_constants.swift in Sources */,
 				68934AFF1DD00D26005D109E /* AppDelegate.swift in Sources */,
+				68934B321DD00FB8005D109E /* Trig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
