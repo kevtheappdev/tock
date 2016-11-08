@@ -13,7 +13,7 @@ class OptionsTransition: NSObject, UIViewControllerAnimatedTransitioning
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
     {
         let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as?ViewController
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? ViewController
         
         let containerView = transitionContext.containerView
         

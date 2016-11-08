@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("loaded")
         
-        self.transitioningDelegate = optionsTransitionDelegate
+        
         let screenSize = UIScreen.main.bounds
        
 //        let pocket = PocketTockWakeUp(name: "pocket")
@@ -89,15 +89,17 @@ class ViewController: UIViewController {
         
         
         
-//        
-//        if !KTUtility.onboardComplete(){
-//            self.performSegue( withIdentifier: "onboard", sender: self)
-//        } else {
+        
+        if !KTUtility.onboardComplete(){
+            print("Onboard the user")
+            self.performSegue( withIdentifier: "onboard", sender: self)
+        } else {
             animateButton()
             tockButton()
             animateTimeLabel()
         timePicker.setTime()
-       // }
+        }
+        
  
     }
     
@@ -151,7 +153,7 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        print("segue triggerred")
         if segue.identifier! == "timeset" || segue.identifier! == "alarm"{
           print("time set")
           let toVC = segue.destination
@@ -161,6 +163,7 @@ class ViewController: UIViewController {
         
              let toVC = segue.destination
              toVC.transitioningDelegate = optionsTransitionDelegate
+         
         
         }
 

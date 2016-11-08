@@ -19,6 +19,7 @@ class KTUtility: NSObject
         let defaults = UserDefaults.standard
         let onboarded = defaults.object( forKey: onboardedKey) as? Bool
         if onboarded == nil {
+            print("was false")
             return false
         }
         return onboarded!
