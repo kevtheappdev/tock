@@ -47,6 +47,8 @@ class TockLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     
+    
+    
     @objc(locationManager:didUpdateLocations:) func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         

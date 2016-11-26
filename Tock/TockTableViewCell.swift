@@ -39,7 +39,7 @@ class TockTableViewCell: UITableViewCell {
         case .wakeUpTypeTwitter:
             return UIImage(named: "twitter")!
         case .wakeUpTypeTransit:
-            return UIImage(named: "Tock")!
+            return UIImage(named: "compass")!
         case .wakeUpTypeNews:
             return UIImage(named: "newspaper")!
         }

@@ -8,8 +8,7 @@
 
 import UIKit
 
-import Fabric
-import TwitterKit
+
 import GoogleMaps
 import GooglePlaces
 

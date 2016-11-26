@@ -15,8 +15,8 @@ class nuberAdjuster: UIControl {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var numberLabel: UILabel!
     var count = 0
-    var minValue = 0
-    var maxValue = 10
+    private var minValue = 0
+    private var maxValue = 10
     
    
     

@@ -27,6 +27,16 @@ class WakeUpManager: NSObject {
     }
     
     
+    func updateWakeUps(wakeUps: [wakeUpTypes]){
+        var newWakes = [String]()
+        for wakeUp in wakeUps {
+            newWakes.append(wakeUp.rawValue)
+        }
+        
+        userDefaults.set(newWakes, forKey: wakeUpsKey)
+    }
+    
+    
     func addToRemoveQueue(_ wakeUp: wakeUpTypes){
         WakeUpManager.removeQueued = wakeUp
     }
@@ -85,6 +95,7 @@ class WakeUpManager: NSObject {
         if let types = wuTypes {
         for wakeType in types {
             let wakeUp = wakeUpTypes(rawValue: wakeType)!
+            print("wakeUp becomes : \(wakeUp)")
             switch  wakeUp {
                 case .wakeUpTypeCal:
                     let calWakeup = CalendarTockWakeUp()
@@ -96,9 +107,20 @@ class WakeUpManager: NSObject {
                     wakeUps[.wakeUpTypeWeather] = weatherWakeup
              
                     break
+            case .wakeUpTypeTransit:
+                let fromLocation = userDefaults.object(forKey: fromLocationKey) as! String
+                let toLocation = userDefaults.object(forKey: toLocationKey) as! String
+                let transitWakeup = TransitTockWakeUp(from: fromLocation, to: toLocation)
+                wakeUps[.wakeUpTypeTransit] = transitWakeup
+                break
+            case .wakeUpTypeNews:
+                let news = NewsTockWakeUp()
+                wakeUps[.wakeUpTypeNews] = news
+                break
                 default:
                    break
                 }
+            print("Test \(wakeUp.rawValue)")
             }
         }
         

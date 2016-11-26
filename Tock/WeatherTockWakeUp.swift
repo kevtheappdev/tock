@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
 {
     var apiURlString = "http://api.openweathermap.org/data/2.5/weather?appid=e5c054908fafb88214c73831ed35724b&units=imperial&"
     var apiURL: URL!
     let requester = KTRequester()
-    var temp: Int?
-    var name: String?
-    var condition: String?
+    var temp: Int!
+    var name: String!
+    var condition: String!
     var requestSuccessful = false
     
     
@@ -33,34 +34,38 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
     
     func requestCompleted(_ data: Data, type: requestType)   {
         requestSuccessful = true
-//        do {
-//             // let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String : Any]
-//            let json = [:]
-//            print("json fetched: \(json)")
-//            processJSON(json)
-//        } catch {
-//            print("error was thrown")
-//        }
+        let json = JSON(data: data)
+        processJSON(json)
+        self.delegate?.finishedDataFetch()
     }
     
     
     
     func requestFailed(_ error: NSError) {
+        print("request failed to get weather")
         print(error)
     }
     
-    func processJSON(_ json: NSDictionary) {
- 
-//         let main = json["main"] as? NSDictionary
-//        if main != nil {
-//            print("fetched main is: \(main!["temp"]!)")
-//
-//             temp = main!["temp"] as? Int
-//            print("fetched main in temp: \(temp)")
-//            name = json["name"] as? String
-//             condition = (((json["weather"] as! Array)[0]) as! Dictionary)["description"] as? String
-//            
-//        }
+    func processJSON(_ json: JSON) {
+        if let weatherArr = json["weather"].array {
+            if let weather = weatherArr[0].dictionary {
+                if let description = weather["description"]?.string {
+                    condition = description
+                }
+            }
+        }
+        
+        if let main = json["main"].dictionary {
+            if let temp = main["temp"]?.int {
+                self.temp = temp
+            }
+            
+            if let name = json["name"].string{
+                self.name = name
+            }
+        }
+        
+        
     }
     
     

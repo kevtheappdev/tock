@@ -46,7 +46,7 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
         
         let gradient = CAGradientLayer()
         gradient.frame = view.frame
-        gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
+        gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green:        0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
         
         view.layer.insertSublayer(gradient, below: self.tableView.layer)
         

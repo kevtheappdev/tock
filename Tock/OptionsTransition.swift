@@ -65,9 +65,9 @@ class OptionsTransition: NSObject, UIViewControllerAnimatedTransitioning
         let tockButton = fromVC!.dropButton
         
         let frame = fromView?.convert((tockButton?.frame)!, to: containerView)
-        
+        print("frame: \(frame) ")
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = frame!
+         maskLayer.frame = frame!
         maskLayer.cornerRadius = (frame?.size.width)!/2
         toLayer.mask = maskLayer
         

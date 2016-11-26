@@ -11,14 +11,14 @@ import UIKit
 
 
 
-class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDelegate
+class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDelegate, UIViewControllerTransitioningDelegate
 {
     
     var configType: wakeUpTypes!
     @IBOutlet weak var tableView: TockTableView!
     @IBOutlet weak var statusLabel: UILabel!
 
-   var allWakeUps = [wakeUpTypes.wakeUpTypeCal, wakeUpTypes.wakeUpTypeWeather, wakeUpTypes.wakeUpTypeTwitter, wakeUpTypes.wakeUpTypeTransit, wakeUpTypes.wakeUpTypeNews]
+   var allWakeUps = [wakeUpTypes.wakeUpTypeCal, wakeUpTypes.wakeUpTypeWeather, wakeUpTypes.wakeUpTypeTransit, wakeUpTypes.wakeUpTypeNews]
     var addedWakeUps = Array<wakeUpTypes>()
     let wuManager = WakeUpManager()
     
@@ -45,7 +45,17 @@ class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDel
                 addedNewWakeUp(wakeUpTypes(rawValue: wake)!)
             }
         }
-
+        
+        
+        
+        let longPress = UILongPressGestureRecognizer(target: self.tableView, action: #selector(TockTableView.longPressRecognized))
+        self.tableView.addGestureRecognizer(longPress)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
 
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
@@ -75,6 +85,7 @@ class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDel
             let vc = segue.destination as! TockConfigureViewController
             vc.configType = self.configType
             vc.fromVC = self
+            vc.transitioningDelegate = self
         }
     }
     
@@ -121,5 +132,13 @@ class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDel
         })
     }
     
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        return ConfigureTransition()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return UnwindConfigureTransition()
+    }
 
 }

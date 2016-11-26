@@ -16,10 +16,10 @@ class TransitTockWakeUp: TockWakeUp, KTRequesterDelegate {
     let baseURL = "https://maps.googleapis.com/maps/api/directions/json?outputFormat=json&key=AIzaSyAPZiEm5kXEsmkWYvc2WeP-q1QuwvHGEuE"
     var duration:String!
     
-   init(name: String, from: String, to: String) {
+   init(from: String, to: String) {
         self.from = from
         self.to = to
-        super.init(name: name)
+        super.init(name: "Transit")
     }
     
     
@@ -36,6 +36,7 @@ class TransitTockWakeUp: TockWakeUp, KTRequesterDelegate {
     func requestCompleted(_ data: Data, type: requestType) {
         let json = JSON(data: data)
         processJSON(json)
+        self.delegate?.finishedDataFetch()
 
     }
     
@@ -55,6 +56,6 @@ class TransitTockWakeUp: TockWakeUp, KTRequesterDelegate {
     }
     
     override func stringsToVerbalize() -> [String] {
-        return [self.duration]
+        return ["It will take \(duration!) to get to work"]
     }
 }

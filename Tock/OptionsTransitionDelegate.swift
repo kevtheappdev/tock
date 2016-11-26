@@ -19,6 +19,6 @@ class OptionsTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate
     
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return UnwindPopTransition()
+        return OptionsUnwindTransition()
     }
 }

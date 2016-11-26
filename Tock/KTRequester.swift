@@ -9,7 +9,7 @@
 import UIKit
 
 enum requestType {
-    case summarize
+    case last
     case regular
 }
 
@@ -18,6 +18,7 @@ class KTRequester: NSObject {
     fileprivate let session : URLSession
  internal var delegate :  KTRequesterDelegate?
     var type: requestType = .regular
+     var isLast = false
     
     override init() {
         
@@ -29,14 +30,16 @@ class KTRequester: NSObject {
 
     }
     
-     func makeRequest(_ url: URL)
+    func makeRequest(_ url: URL, type: requestType = .regular)
     {
+        print("requesting \(url) for \(type )")
         
+       
         session.dataTask(with: url as URL, completionHandler: {(data, response, error) in
             print("completion handler called")
             if (error == nil) {
                 print(data!)
-                self.delegate?.requestCompleted(data!, type: .regular)
+                self.delegate?.requestCompleted(data!, type: type)
                 print("request completed")
             } else {
                 print("request failed")
@@ -50,6 +53,16 @@ class KTRequester: NSObject {
             
     }
     
+    func downloadRequest(url: URL){
+        session.downloadTask(with: url, completionHandler: {(url2, response, error) in
+            if error == nil {
+                let data = try! Data(contentsOf: url2!)
+                
+                self.delegate?.requestCompleted(data, type: .regular)
+            }
+        }).resume()
+    }
+    
     func makeRequestWithHeaders(url: URL){
         print("now making request with header")
         var mutableRequest = URLRequest(url: url)
@@ -60,7 +73,7 @@ class KTRequester: NSObject {
         session.dataTask(with: mutableRequest, completionHandler: {(data, response, error) in
             
             if error == nil {
-                self.delegate?.requestCompleted(data!, type: .summarize)
+                self.delegate?.requestCompleted(data!, type: .regular)
             } else {
                 self.delegate?.requestFailed(error! as NSError)
             }

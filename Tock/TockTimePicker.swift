@@ -139,11 +139,13 @@ class TockTimePicker: UIControl {
         twelveoclock.position = position
         //twelveoclock.backgroundColor =  UIColor.red().cgColor
         twelveoclock.alignmentMode = kCAAlignmentCenter
+        twelveoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         layer.addSublayer(twelveoclock)
         
         
         threeoclock.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         threeoclock.string = "3"
+        threeoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         //threeoclock.backgroundColor = UIColor.red().cgColor
         threeoclock.alignmentMode = kCAAlignmentCenter
         
@@ -153,11 +155,13 @@ class TockTimePicker: UIControl {
         position = CGPoint(x: thX, y: thY)
         
         threeoclock.position = position
+        
         layer.addSublayer(threeoclock)
         
         
         sixoclock.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         sixoclock.string = "6"
+        sixoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         //sixoclock.backgroundColor = UIColor.red().cgColor
         sixoclock.alignmentMode = kCAAlignmentCenter
         
@@ -172,6 +176,7 @@ class TockTimePicker: UIControl {
         
         nineoclock.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         nineoclock.string = "9"
+        nineoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         //nineoclock.backgroundColor = UIColor.red().cgColor
         nineoclock.alignmentMode = kCAAlignmentCenter
         
@@ -184,11 +189,21 @@ class TockTimePicker: UIControl {
         layer.addSublayer(nineoclock)
         
         
-        timeLabel.bounds = CGRect(x: 0, y: 0, width: 150, height: 50)
+       
         timeLabel.alignmentMode = kCAAlignmentCenter
+        timeLabel.font = UIFont(name: "AvenirNext-Regular", size: 15)
+        timeLabel.bounds = CGRect(x: 0, y: 0, width: 150, height: 50)
+       
         
-        timeLabel.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        print("center: \(center) vs \(CGPoint(x: bounds.midX, y: bounds.midY))")
+         let screenWidth = UIScreen.main.bounds.width
+        print("The width is \(screenWidth)")
+        if screenWidth < 375 {
+             timeLabel.fontSize = 30
+            
+        }
+        
+          timeLabel.position = CGPoint(x: bounds.midX, y: bounds.midY)
+        
         layer.addSublayer(timeLabel)
 
     }
@@ -430,8 +445,13 @@ class TockTimePicker: UIControl {
 //            } else {
 //                rotateKnob(toAngle: 0)
 //            }
-            
-            let str = String(describing: hour) + ":" + String(describing: minutes) + " " + postFix
+            var minuteString = String(describing: minutes!)
+            if minutes == 0 {
+                minuteString += "0"
+            } else if minutes!/10 < 1 {
+                minuteString = "0" + minuteString
+            }
+            let str = String(describing: hour!) + ":" + minuteString + " " + postFix
             print("str: \(str)")
             self.timeLabel.string = str
         } else {
@@ -451,9 +471,11 @@ class TockTimePicker: UIControl {
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         print("touches ended")
-        
-        
-        KTUtility.setDate(self.hours, minutes: self.minutes)
+        var hours = self.hours
+        if isPM {
+            hours = hours + 12
+        }
+        KTUtility.setDate(hours, minutes: self.minutes)
         print("endTracking:")
         print("hours: \(self.hours) minutes: \(self.minutes)")
 

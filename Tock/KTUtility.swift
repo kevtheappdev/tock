@@ -28,10 +28,11 @@ class KTUtility: NSObject
     static func makeFetchDate(_ date: Date) -> Date {
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         
-        var currentComponents = (calendar as NSCalendar).components([.minute, .hour], from: date)
+        var currentComponents = (calendar as NSCalendar).components([.minute, .hour, .month, .day, .year], from: date)
         
         var hours = currentComponents.hour
         var minutes = currentComponents.minute
+         print("The month is \(currentComponents.month!)")
         
         if minutes == 0 {
             minutes = 55
@@ -43,8 +44,9 @@ class KTUtility: NSObject
         currentComponents.hour = hours
         currentComponents.minute = minutes
         
-        let fetchDate = calendar.date(from: currentComponents)!
         
+        let fetchDate = calendar.date(from: currentComponents)!
+        print(fetchDate)
         
         return fetchDate
     }
@@ -67,10 +69,13 @@ class KTUtility: NSObject
         let currentMonth = currentComponents!.month
         let currentYear = currentComponents!.year
         
-        
-        if currentHour! > hours && currentMinute! > minutes {
+        print("currentHour \(currentHour!) and currentMintue \(currentMinute!)")
+        print("hour \(hours) and minute is \(minutes)")
+        if currentHour! > hours {
             currentDay = currentDay! + 1
             print("added \(currentHour)")
+        } else if currentHour! == hours && currentMinute! > minutes {
+            currentDay = currentDay! + 1
         }
         
         
@@ -81,18 +86,66 @@ class KTUtility: NSObject
         components.year = currentYear
         
         
+        
+        
         let date = calendar.date(from: components)!
+        print("date that was saved : \(date) at hour \(hours) and minutes \(minutes)")
         
         let formatter = DateFormatter()
-        formatter.dateStyle =  .long
+        formatter.dateStyle =  .full
         let timeString = formatter.string(from: date)
         
-        print(timeString)
+        print("timeString is \(timeString)")
         
         let defaults = UserDefaults.standard
         defaults.set(date, forKey: wakeUpTimeKey)
 
         
+    }
+    
+    
+    static func getDate() -> Date {
+        let defaults = UserDefaults.standard
+       var date =  defaults.object(forKey: wakeUpTimeKey) as! Date
+        
+        
+        var components = DateComponents()
+        
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        
+        
+        let currentDate = Date()
+        
+        let currentComponents = (calendar as NSCalendar?)?.components([.month, .day, .year, .hour, .minute], from: currentDate)
+        let wakeComponents = (calendar as NSCalendar?)?.components([.hour, .day], from: date)
+        
+        let hours = wakeComponents!.hour
+        let minutes = wakeComponents!.minute
+        
+        let currentHour = currentComponents!.hour
+        let currentMinute = currentComponents!.minute
+        var currentDay = currentComponents!.day
+        let currentMonth = currentComponents!.month
+        let currentYear = currentComponents!.year
+        
+        print("currentHour \(currentHour!) and currentMintue \(currentMinute!)")
+        print("hour \(hours) and minute is \(minutes)")
+        if currentHour! > hours! {
+            currentDay = currentDay! + 1
+            print("added \(currentHour)")
+        } else if currentHour! == hours! && currentMinute! > minutes! {
+            currentDay = currentDay! + 1
+        }
+        
+        components.hour = hours
+        components.minute = minutes
+        components.month = currentMonth
+        components.year = currentYear
+        components.day = currentDay
+        
+        date = calendar.date(from: components)!
+
+        return date
     }
     
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TwitterKit
+
 import GoogleMaps
 import GooglePlaces
 import GooglePlacePicker
@@ -31,11 +31,11 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
      * @param error The |NSError| that was returned.
      */
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        
+        print("It did not go well: \(error)")
     }
 
     
-    let allNews: [newsTypes] = [.arsTechnica, .bbcNews, .bbcSport, .bloomBerg, .buzzfeed, .cnbc, .cnn, .engadget, .entertainmentWeekly, .espn, .googleNews, .hackerNews, .independent, .mashable, .recode, .reddit, .reuters, .techCrunch, .theGuardian, .theHuffingtonPost, .theNYT, .TNW, .theVerge, .wsj, .washingtonPost]
+    let allNews: [newsTypes] = [.arsTechnica, .bbcNews, .bbcSport, .bloomBerg, .buzzfeed, .cnbc, .cnn, .engadget, .entertainmentWeekly, .espn, .googleNews, .hackerNews, .independent, .mashable, .recode, .reddit, .reuters, .techCrunch, .theGuardian, .theHuffingtonPost, .theNYT, .TNW, .theVerge, .wsj]
     var settings: [(name: String, type: settingsTypes, image: UIImage?)]!
     var selectionDelegate: TockSettingsSelectionDelegate?
     let wuManager = WakeUpManager()
@@ -53,6 +53,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         super.init(coder: aDecoder)
         self.delegate = self
         self.dataSource = self
+        
     }
     
     fileprivate var wakeup: wakeUpTypes!
@@ -66,9 +67,14 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         
         set {
            usersNews = newValue
+            if usersNews != nil {
             for news in usersNews! {
                let index = self.allNews.index(of: news)!
                selectedIndexes.append(index)
+            }
+                if usersNews!.count > 0{
+                    self.selectionDelegate?.buttonEnabled(true)
+                }
             }
             
             print("selected indexes: \(selectedIndexes)")
@@ -102,13 +108,13 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     fileprivate func configsForType(_ type: wakeUpTypes) -> [(name: String, type: settingsTypes, image: UIImage?)]?{
         switch type {
         case .wakeUpTypeCal:
-            var calTuple:(name: String, type: settingsTypes, image: UIImage?) =  (name: "Grant access to Calendar", type: .button, image: nil)
+            var calTuple:(name: String, type: settingsTypes, image: UIImage?) =  (name: "Grant access to Calendar", type: .button, image: #imageLiteral(resourceName: "calendar.png"))
             if typeAdded{
                 calTuple.name = "Calendar Access Granted"
             }
             return [calTuple]
         case .wakeUpTypeWeather:
-            var weatherTuple:(name: String, type: settingsTypes, image: UIImage?) = (name: "Use Current Location", type: .button, image: UIImage(named:"Tock"))
+            var weatherTuple:(name: String, type: settingsTypes, image: UIImage?) = (name: "Use Current Location", type: .button, image: #imageLiteral(resourceName: "location2.png"))
             if typeAdded {
                 weatherTuple.name = self.currentLocation!
             }
@@ -118,12 +124,12 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             var options: [(name: String, type: settingsTypes, image: UIImage?)] = [(name: "Number of articles to read", type: .numberAdjust, image: nil), (name: "Number of sentences in summary", type: .numberAdjust, image: nil)]
             options += sources
             
-            return options
+            return sources
         case .wakeUpTypePocket:
             return [(name: "Login with Pocket", type: .button, image: UIImage(named:"pocket")), (name: "Number of articles to read", type: settingsTypes.numberAdjust, image: nil)]
         case .wakeUpTypeTransit:
-            var fromTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select home location", type: .button, image: UIImage(named:"Tock"))
-            var toTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select work/school location", .button, image: UIImage(named:"Tock"))
+            var fromTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select home location", type: .button, image: UIImage(named:"home3"))
+            var toTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select work/school location", .button, image: UIImage(named:"office"))
             if self.homeSelected || self.typeAdded{
                 fromTuple.name = uDefaults.value(forKey: fromLocationNameKey) as! String
             }
@@ -221,9 +227,9 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             case .wsj:
                 sources.append((name: "The Wall Street Journal", type: .checkmark, image: UIImage(named:"thewallstreetjournal-m")))
                 break
-            case .washingtonPost:
-                sources.append((name: "The Washington Post", type: .button, image: UIImage(named:"thewashingtonpost-m")))
-                break
+//            case .washingtonPost:
+//                sources.append((name: "The Washington Post", type: .button, image: UIImage(named:"thewashingtonpost-m")))
+//                break
     
             }
         }
@@ -234,11 +240,9 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 && self.wakeupType == .wakeUpTypeNews{
-             return 2
-        } else if self.wakeup == .wakeUpTypeNews{
-            return settings.count-2
-        }
+//         self.wakeup == .wakeUpTypeNews{
+//            return settings.count-2
+//        }
         
         return settings.count
      
@@ -256,7 +260,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             break
         case .wakeUpTypeTwitter:
             if (indexPath as NSIndexPath).row == 0 && !typeAdded{
-                twitterLogin()
+              
             }
             break
         case .wakeUpTypePocket:
@@ -272,7 +276,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             }
             break
         case .wakeUpTypeNews:
-            if (indexPath as NSIndexPath).section == 1 {
+            if (indexPath as NSIndexPath).section == 0 {
                 if !self.selectedIndexes.contains((indexPath as NSIndexPath).row) {
               
                 
@@ -344,7 +348,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace){
         print("Place name: ", place.name)
         print("Place address: ", place.formattedAddress ?? "Failed!")
-        print("Place attributions: ", place.attributions)
+        //print("Place attributions: ", place.attributions)
         
         
         switch locationType! {
@@ -418,20 +422,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     
     
 
-    func twitterLogin(){
-        Twitter.sharedInstance().logIn(completion: {(session, error) in
-            if session != nil {
-                print("User has been logged in")
-                self.wuManager.addToQueue(.wakeUpTypeTwitter)
-                self.postAddFlow(.wakeUpTypeTwitter)
-            } else {
-                print("There was an error \(error)")
-            }
-        })
-
-        
-   
-    }
+    
  
 
 
@@ -485,18 +476,18 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.wakeupType == .wakeUpTypeNews {
-            return 2
-        }
+//        if self.wakeupType == .wakeUpTypeNews {
+//            return 2
+//        }
         
         return 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if self.wakeupType == .wakeUpTypeNews {
-            return 25
-        }
-        
+//        if self.wakeupType == .wakeUpTypeNews {
+//            return 25
+//        }
+//        
         return 0
     }
     
@@ -505,7 +496,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         sectionLabel.textColor = UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1)
         sectionLabel.textAlignment = .center
         
-        sectionLabel.font = UIFont.systemFont(ofSize: 15)
+        sectionLabel.font = UIFont(name: "AvenirNext-Regular", size: 15)
         
         if section == 0 && self.wakeupType == .wakeUpTypeNews{
             sectionLabel.text = "Options"
@@ -564,18 +555,19 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
           
             
             
-            if self.selectedIndexes.contains((indexPath as NSIndexPath).row) && (indexPath as NSIndexPath).section == 1{
+            if self.selectedIndexes.contains((indexPath as NSIndexPath).row) && (indexPath as NSIndexPath).section == 0{
                 cell.makeAViewVisible()
             } else {
                 cell.makeAViewInvisible()
             }
             
             
-            if (indexPath as NSIndexPath).section == 1 {
-                setting = settings[(indexPath as NSIndexPath).row+2]
+            if (indexPath as NSIndexPath).section == 0 {
+                setting = settings[(indexPath as NSIndexPath).row]
             } else {
                 let optioncell = tableView.dequeueReusableCell(withIdentifier: "number") as! NumberAdjusterCell
                 optioncell.row = (indexPath as NSIndexPath).row
+                
                 optioncell.setTitle(setting.name)
                 return optioncell
             }

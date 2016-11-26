@@ -8,11 +8,16 @@
 
 import Foundation
 
+
+protocol TockWakeUpDelegate {
+    func finishedDataFetch()
+}
+
 open class TockWakeUp: NSObject
 {
     
     fileprivate var name: String!
-    
+    var delegate: TockWakeUpDelegate?
     
     
     open var alarmName: String {

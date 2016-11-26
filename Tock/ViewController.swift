@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         print("loaded")
         
         
+//        for family: String in UIFont.familyNames {
+//            print("\(family)")
+//            for name: String in UIFont.fontNames(forFamilyName: family) {
+//                print("==\(name)")
+//            }
+//        }
+//        
+        
         let screenSize = UIScreen.main.bounds
        
 //        let pocket = PocketTockWakeUp(name: "pocket")
@@ -142,6 +150,9 @@ class ViewController: UIViewController {
         
         self.performSegue( withIdentifier: "timeset", sender: self)
     }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
