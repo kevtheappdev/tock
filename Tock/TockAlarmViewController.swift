@@ -18,6 +18,7 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     var wakeUpDate: Date!
     var fetchedTotal = 0
       var player: AVAudioPlayer?
+    var dataRetreived = false
     
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +29,7 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
         super.viewDidLoad()
         infoStackView.alpha = 0.0
         UIDevice.current.isProximityMonitoringEnabled = true
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +48,9 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
        //let fetchDate = KTUtility.makeFetchDate(date)
        // print("date is \(date) and fetch date \(fetchDate)")
      
-        let fetchDate = KTUtility.makeFetchDate(date)
+        //let fetchDate = KTUtility.makeFetchDate(date)
+        //let unixFetchDate = fetchDate.timeIntervalSince1970
+        
         
         
         
@@ -55,11 +59,16 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
         let unixWakeDate = date.timeIntervalSince1970
         
         let interval = unixWakeDate - unixDate
+       
         
+        Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(TockAlarmViewController.fetchData), userInfo: nil, repeats: false)
+        
+        
+        //print("fetch interval is \(fetchInterval)")
         print("The interval to wakeup is \(interval)")
         playWakeUpNoise()
 
-       Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(TockAlarmViewController.fetchData), userInfo: nil, repeats: false)
+    
     }
     
     
@@ -69,11 +78,8 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
             
             
             for (_, wakeUp) in wakeUps {
-              
                     wakeUp.delegate = self
-                
-                
-                wakeUp.fetchData()
+                    wakeUp.fetchData()
             
             }
             
@@ -89,13 +95,17 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     }
     
     
+    
+    
     @objc func wakeUp(){
         player?.play()
         player?.delegate = self
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        self.performSegue(withIdentifier: "beep", sender: self)
+
+            self.performSegue(withIdentifier: "beep", sender: self)
+      
     }
     
     func playWakeUpNoise(){

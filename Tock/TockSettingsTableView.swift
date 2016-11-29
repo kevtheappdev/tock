@@ -93,7 +93,6 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
              self.typeAdded = evaluateAdded()
             
             
-            
             self.settings = configsForType(newValue)
             self.reloadData()
         }
@@ -186,7 +185,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
                 sources.append((name: "ESPN", type: .checkmark, image: UIImage(named:"espn-m")))
                     break
             case .googleNews:
-                sources.append((name: "Goolge News", type: .checkmark, image: UIImage(named:"googlenews-m")))
+                sources.append((name: "Google News", type: .checkmark, image: UIImage(named:"googlenews-m")))
                 break
             case .hackerNews:
                 sources.append((name: "Hacker News", type: .checkmark, image: UIImage(named:"hackernews-m")))

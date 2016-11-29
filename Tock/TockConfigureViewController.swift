@@ -30,17 +30,22 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
         
         let  userDefaults = UserDefaults.standard
         self.tableView.currentLocation = defaults.object(forKey: locationStringKey) as? String
-        tableView.wakeupType = configType
+        
         self.titleLabe.text = configType.rawValue
         self.addButton.isEnabled = false
         self.addButton.alpha = 0.5
         tableView.selectionDelegate = self
+        tableView.wakeupType = configType
         
         if wuManager.wakeUpExists(configType) {
              self.addButton.setTitle("Remove", for: [])
             self.hasAdded = true
             self.addButton.isEnabled = true
             self.addButton.alpha = 1
+        } else {
+             self.addButton.isEnabled = false
+             self.addButton.alpha = 0.5
+             self.hasAdded = false
         }
         
         
@@ -50,19 +55,20 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
         
         view.layer.insertSublayer(gradient, below: self.tableView.layer)
         
-        var myNews_types = Array<newsTypes>()
+        if self.configType == .wakeUpTypeNews {
+            var myNews_types = Array<newsTypes>()
         
-        let myNews = userDefaults.value(forKey: newsSourcesKey) as? [String]
-        if let news = myNews {
-            for n in news {
-                myNews_types.append(newsTypes(rawValue: n)!)
+            let myNews = userDefaults.value(forKey: newsSourcesKey) as? [String]
+            if let news = myNews {
+                for n in news {
+                    myNews_types.append(newsTypes(rawValue: n)!)
             }
         }
         
         print("my news types: \(myNews_types)")
         
         self.tableView.myNews = myNews_types
-       
+        }
 
     }
     
@@ -71,6 +77,7 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
         super.viewDidAppear(animated)
         self.tableView.reloadData()
     }
+    
     func buttonEnabled(_ enabled: Bool) {
         self.addButton.isEnabled = enabled
         if enabled {

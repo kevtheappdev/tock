@@ -77,6 +77,7 @@ class WakeUpManager: NSObject {
     func wakeUpExists(_ wakeUp: wakeUpTypes) -> Bool {
         let wakeUps = getWakeUpTypes()
         if wakeUps != nil {
+            print(wakeUps!.contains(wakeUp.rawValue))
             return wakeUps!.contains(wakeUp.rawValue)
         }
         

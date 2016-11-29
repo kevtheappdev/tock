@@ -73,20 +73,29 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
                         let dicArticle = article as! NSDictionary
                         let articleURL = dicArticle["url"] as! String
                         let title = dicArticle["title"] as! String
-                        let imageURLString = dicArticle["urlToImage"] as! String
-                        let imageUrl = URL(string: imageURLString)
+                        let imageURLString = dicArticle["urlToImage"] as? String
+                        var image = UIImage()
+                        
+                        if imageURLString != nil {
+                            let imageUrl = URL(string: imageURLString!)
                        
                         
-                         let imageData = try? Data(contentsOf: imageUrl!)
-                        var image = UIImage()
+                            let imageData = try? Data(contentsOf: imageUrl!)
+                        
                         if let imageD = imageData {
                             image = UIImage(data: imageD)!
                         } else {
                             image = #imageLiteral(resourceName: "newspaper.png")
+                            }
+                        } else {
+                            image = #imageLiteral(resourceName: "newspaper.png")
                         }
                         self.sentences.append(title + ", ")
-                        let description = dicArticle["description"] as! String
-                        let newsItem = NewsItem(headline: title, description: description, image: image, url: URL(string: articleURL)!, source: source)
+                        var description = dicArticle["description"] as? String
+                        if description == nil {
+                            description = ""
+                        }
+                        let newsItem = NewsItem(headline: title, description: description!, image: image, url: URL(string: articleURL)!, source: source)
                         //newsQueue.queue(item: newsItem)
                         print("The image url is \(imageURLString)")
                        
@@ -131,6 +140,6 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
     }
     
     func requestFailed(_ error: NSError) {
-        
+        print ("Failed")
     }
 }

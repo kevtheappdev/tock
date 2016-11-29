@@ -63,7 +63,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     override func viewDidAppear(_ animated: Bool) {
       
         super.viewDidAppear(animated)
-                //playWakeUpNoise()
+        
     }
     
     @IBAction func restartButtonPressed(_ sender: Any) {
@@ -89,6 +89,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
   
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+        self.paused = true
         self.performSegue(withIdentifier: "done", sender: self)
     }
     

@@ -140,6 +140,7 @@ class TockTimePicker: UIControl {
         //twelveoclock.backgroundColor =  UIColor.red().cgColor
         twelveoclock.alignmentMode = kCAAlignmentCenter
         twelveoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
+        twelveoclock.contentsScale = UIScreen.main.scale
         layer.addSublayer(twelveoclock)
         
         
@@ -147,6 +148,7 @@ class TockTimePicker: UIControl {
         threeoclock.string = "3"
         threeoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         //threeoclock.backgroundColor = UIColor.red().cgColor
+        
         threeoclock.alignmentMode = kCAAlignmentCenter
         
         let threePos = Trig.findPoint(forAngle: 0, radius: Double(radius+30))
@@ -155,6 +157,7 @@ class TockTimePicker: UIControl {
         position = CGPoint(x: thX, y: thY)
         
         threeoclock.position = position
+        threeoclock.contentsScale = UIScreen.main.scale
         
         layer.addSublayer(threeoclock)
         
@@ -164,6 +167,7 @@ class TockTimePicker: UIControl {
         sixoclock.font = UIFont(name: "AvenirNext-Regular", size: 15)
         //sixoclock.backgroundColor = UIColor.red().cgColor
         sixoclock.alignmentMode = kCAAlignmentCenter
+        sixoclock.contentsScale = UIScreen.main.scale
         
         let sixPos = Trig.findPoint(forAngle: (270*M_PI/180), radius: Double(radius+30))
         let sX = sixPos.x + bounds.midX
@@ -186,13 +190,14 @@ class TockTimePicker: UIControl {
         position = CGPoint(x: nX, y: nY)
         
         nineoclock.position = position
+        nineoclock.contentsScale = UIScreen.main.scale
         layer.addSublayer(nineoclock)
         
         
        
         timeLabel.alignmentMode = kCAAlignmentCenter
         timeLabel.font = UIFont(name: "AvenirNext-Regular", size: 15)
-        timeLabel.bounds = CGRect(x: 0, y: 0, width: 150, height: 50)
+        timeLabel.bounds = CGRect(x: 0, y: 0, width: 175, height: 50)
        
         
          let screenWidth = UIScreen.main.bounds.width
@@ -203,7 +208,7 @@ class TockTimePicker: UIControl {
         }
         
           timeLabel.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        
+        timeLabel.contentsScale = UIScreen.main.scale
         layer.addSublayer(timeLabel)
 
     }
@@ -431,6 +436,7 @@ class TockTimePicker: UIControl {
             if hour! > 12 {
                 hour = hour! - 12
                 postFix = "PM"
+                self.isPM = true
             }
             
             var angle = angleForValue(time)

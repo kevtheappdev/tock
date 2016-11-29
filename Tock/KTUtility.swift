@@ -63,21 +63,12 @@ class KTUtility: NSObject
         
         let currentComponents = (calendar as NSCalendar?)?.components([.month, .day, .year, .hour, .minute], from: currentDate)
         
-        let currentHour = currentComponents!.hour
-        let currentMinute = currentComponents!.minute
+
         var currentDay = currentComponents!.day
         let currentMonth = currentComponents!.month
         let currentYear = currentComponents!.year
         
-        print("currentHour \(currentHour!) and currentMintue \(currentMinute!)")
-        print("hour \(hours) and minute is \(minutes)")
-        if currentHour! > hours {
-            currentDay = currentDay! + 1
-            print("added \(currentHour)")
-        } else if currentHour! == hours && currentMinute! > minutes {
-            currentDay = currentDay! + 1
-        }
-        
+
         
         components.hour = hours
         components.minute = minutes
@@ -115,9 +106,9 @@ class KTUtility: NSObject
         
         
         let currentDate = Date()
-        
+
         let currentComponents = (calendar as NSCalendar?)?.components([.month, .day, .year, .hour, .minute], from: currentDate)
-        let wakeComponents = (calendar as NSCalendar?)?.components([.hour, .day], from: date)
+        let wakeComponents = (calendar as NSCalendar?)?.components([.hour, .day, .minute], from: date)
         
         let hours = wakeComponents!.hour
         let minutes = wakeComponents!.minute
@@ -130,6 +121,7 @@ class KTUtility: NSObject
         
         print("currentHour \(currentHour!) and currentMintue \(currentMinute!)")
         print("hour \(hours) and minute is \(minutes)")
+        
         if currentHour! > hours! {
             currentDay = currentDay! + 1
             print("added \(currentHour)")
