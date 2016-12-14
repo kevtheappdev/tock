@@ -19,12 +19,20 @@ class CalCell: UITableViewCell {
     }
     
     func setWakeUp(wakeUp: TockWakeUp, type: wakeUpTypes, index: Int){
-        if type == .wakeUpTypeCal {
-            let cal = wakeUp as! CalendarTockWakeUp
-            mainLabel.text = cal.events[index].title
-        } else if type == .wakeUpTypeTransit {
-            let transit = wakeUp as! TransitTockWakeUp
-            mainLabel.text = transit.duration
+        if wakeUp.fetchSuccess {
+            if type == .wakeUpTypeCal {
+                let cal = wakeUp as! CalendarTockWakeUp
+                
+                mainLabel.text = cal.events[index].title
+            } else if type == .wakeUpTypeTransit {
+                let transit = wakeUp as! TransitTockWakeUp
+                mainLabel.text = transit.duration
+            } else if type == .wakeUpTypeReminder {
+                let reminder = wakeUp as! RemindersTockWakeUp
+                mainLabel.text = reminder.reminders[index].title
+            }
+        } else {
+            mainLabel.text = wakeUp.failedString
         }
         
     }

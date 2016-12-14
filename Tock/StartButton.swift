@@ -32,6 +32,7 @@ class StartButton: UIButton {
         let text = CATextLayer()
         text.frame = gradient.frame
         text.string = "Start"
+        text.contentsScale = UIScreen.main.scale
         text.font = UIFont(name: "AvenirNext-Regular", size: 15)
         text.bounds = CGRect(x: 0, y: 0, width: bounds.width/2, height: bounds.height/2)
         text.fontSize = 20

@@ -1,36 +1,34 @@
 //
-//  NewsCell.swift
+//  DetailSettingsTableViewCell.swift
 //  Tock
 //
-//  Created by Kevin Turner on 11/23/16.
+//  Created by Kevin Turner on 12/2/16.
 //  Copyright © 2016 Kevin Turner. All rights reserved.
 //
 
 import UIKit
 
-class NewsCell: UITableViewCell {
-
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    let background = UIView()
+class DetailSettingsTableViewCell: UITableViewCell {
+    @IBOutlet weak var configLabel: UILabel!
+    @IBOutlet weak var checkMark: UIImageView!
     
+    let background = UIView()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.checkMark.isHidden = true
     }
     
-    func populateCell(news: NewsItem){
-        self.headlineLabel.text = news.headline
-        self.descriptionLabel.text = news.description
-        if let image = news.image {
-            self.newsImage.image = image
-        }
+    func check(enabled: Bool){
+        self.checkMark.isHidden = !enabled
     }
     
+    func setLabel(with contents: String){
+        self.configLabel.text = contents
+    }
     
     override func layoutSubviews() {
-        
         let contentViewFrame = self.contentView.frame
         let horInset = CGFloat(5.0)
         let verInset = CGFloat(5.0)
@@ -42,11 +40,11 @@ class NewsCell: UITableViewCell {
         background.backgroundColor = UIColor.white
         background.alpha = 0.3
         
-        self.contentView.insertSubview(background, belowSubview: self.headlineLabel)
-        super.layoutSubviews()
+        self.contentView.insertSubview(background, belowSubview: self.configLabel)
         
+        super.layoutSubviews()
     }
-    
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

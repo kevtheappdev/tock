@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.3</string>
+	<string>1.5.1</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
@@ -34,6 +34,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>AvenirLTStd-Book.otf</string>
+		<string>DS-DIGI.TTF</string>
 		<string>AvenirLTStd-Light.otf</string>
 		<string>AvenirLTStd-Roman.otf</string>
 	</array>
@@ -45,6 +46,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>We will use this access to read you your reminders</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

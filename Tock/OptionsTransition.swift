@@ -26,8 +26,8 @@ class OptionsTransition: NSObject, UIViewControllerAnimatedTransitioning
         UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, false, UIScreen.main.scale)
         
       
-        fromView?.drawHierarchy(in: (fromView?.bounds)!, afterScreenUpdates: true)
         
+        fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         let fromSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
@@ -35,8 +35,8 @@ class OptionsTransition: NSObject, UIViewControllerAnimatedTransitioning
         print("from snap:\(fromSnapshot)")
         UIGraphicsBeginImageContextWithOptions((toView?.bounds.size)!, false, UIScreen.main.scale)
         
+        toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
-        toView?.drawHierarchy(in: (toView?.bounds)!, afterScreenUpdates: true)
         
         let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

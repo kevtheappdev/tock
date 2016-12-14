@@ -18,8 +18,13 @@
 		681353EA1DE8CE580035E78B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681353E91DE8CE580035E78B /* CloudKit.framework */; };
 		681353EC1DE8CFA00035E78B /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681353EB1DE8CFA00035E78B /* UpgradeViewController.swift */; };
 		681353EE1DE8D6B00035E78B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681353ED1DE8D6B00035E78B /* StoreKit.framework */; };
+		681B1A331E00DE1A00457AF6 /* list-numbered.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B1A321E00DE1A00457AF6 /* list-numbered.png */; };
+		681B1A351E00E15400457AF6 /* RemindersTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681B1A341E00E15400457AF6 /* RemindersTockWakeUp.swift */; };
+		681E66A01DF3391C00EC9AC1 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */; };
+		681E66A31DF3695A00EC9AC1 /* siren.wav in Resources */ = {isa = PBXBuildFile; fileRef = 681E66A21DF3695A00EC9AC1 /* siren.wav */; };
+		681E66A51DF36E7900EC9AC1 /* fogHorn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 681E66A41DF36E7900EC9AC1 /* fogHorn.wav */; };
 		682FBF111DE8E2FB003D4F11 /* tockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 682FBF101DE8E2FB003D4F11 /* tockIcon.png */; };
-		683DAC341DD1010900F5BE2C /* NumberAdjusterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC331DD1010900F5BE2C /* NumberAdjusterCell.swift */; };
+		683DAC341DD1010900F5BE2C /* TempUnitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC331DD1010900F5BE2C /* TempUnitsCell.swift */; };
 		683DAC361DD1011C00F5BE2C /* TockLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC351DD1011C00F5BE2C /* TockLocationManagerDelegate.swift */; };
 		683DAC391DD1013A00F5BE2C /* TockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC371DD1013A00F5BE2C /* TockWakeUp.swift */; };
 		683DAC3A1DD1013A00F5BE2C /* TransitTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC381DD1013A00F5BE2C /* TransitTockWakeUp.swift */; };
@@ -38,6 +43,8 @@
 		683E31D91DD0D478006081CF /* TockEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683E31D81DD0D478006081CF /* TockEventsManager.swift */; };
 		683E31DB1DD0D481006081CF /* TockEventsManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683E31DA1DD0D481006081CF /* TockEventsManagerDelegate.swift */; };
 		683E31DD1DD0D4AF006081CF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683E31DC1DD0D4AF006081CF /* Location.swift */; };
+		683E8BE81DF5BD2C00205235 /* TockBedsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683E8BE71DF5BD2C00205235 /* TockBedsideViewController.swift */; };
+		683E8BEA1DF5C3A300205235 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 683E8BE91DF5C1D500205235 /* DS-DIGI.TTF */; };
 		68424E701DE4959D0061944F /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */; };
 		68424E711DE4959D0061944F /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */; };
 		68424E721DE4959D0061944F /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */; };
@@ -49,6 +56,13 @@
 		68424E7E1DE4F3D60061944F /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68424E7D1DE4F3D50061944F /* Queue.swift */; };
 		6846C59B1DE5E4C9004FBDE0 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846C59A1DE5E4C9004FBDE0 /* NewsItem.swift */; };
 		6846C59D1DE6161B004FBDE0 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846C59C1DE6161B004FBDE0 /* NewsCell.swift */; };
+		6850AB6C1DF224E90035F5E4 /* TockSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */; };
+		6850AB6E1DF2270F0035F5E4 /* circle-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB6D1DF2270F0035F5E4 /* circle-right.png */; };
+		6850AB701DF228F50035F5E4 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */; };
+		6850AB731DF22D8A0035F5E4 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB711DF22D8A0035F5E4 /* mic.png */; };
+		6850AB741DF22D8A0035F5E4 /* volume-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB721DF22D8A0035F5E4 /* volume-medium.png */; };
+		6850AB761DF22DC10035F5E4 /* sleepy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB751DF22DC10035F5E4 /* sleepy.png */; };
+		6850AB781DF22FB10035F5E4 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB771DF22FB10035F5E4 /* cogs.png */; };
 		687F5EC31DD124BE00148487 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F5EC21DD124BE00148487 /* SparkleView.swift */; };
 		687F5EC51DD1253800148487 /* Tock.png in Resources */ = {isa = PBXBuildFile; fileRef = 687F5EC41DD1253800148487 /* Tock.png */; };
 		687F5EC71DD127BA00148487 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 687F5EC61DD127BA00148487 /* checkmark.png */; };
@@ -119,9 +133,15 @@
 		68934BA31DD01D55005D109E /* TockConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA21DD01D55005D109E /* TockConfigureViewController.swift */; };
 		68934BA51DD01D6F005D109E /* nuberAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA41DD01D6F005D109E /* nuberAdjuster.swift */; };
 		68934BA71DD01DCC005D109E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA61DD01DCC005D109E /* SettingsCell.swift */; };
+		689526451E018B0E00B7888D /* FailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689526441E018B0E00B7888D /* FailedTableViewCell.swift */; };
 		68B746471DD61850007BA513 /* NewsTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B746461DD61850007BA513 /* NewsTockWakeUp.swift */; };
 		68D2EAD01DD381DC00C3732A /* TockAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */; };
 		68D2EAD21DD3A20900C3732A /* TockBeepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */; };
+		68DAB5441DEF5A2E0040D253 /* play4.png in Resources */ = {isa = PBXBuildFile; fileRef = 68DAB5431DEF5A2E0040D253 /* play4.png */; };
+		68DAB5461DEF5B260040D253 /* TockWakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */; };
+		68DEBA461DF23B6700FA2748 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */; };
+		68DEBA481DF2427000FA2748 /* SettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBA471DF2427000FA2748 /* SettingsDetailViewController.swift */; };
+		68DEBA4A1DF2460700FA2748 /* DetailSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBA491DF2460700FA2748 /* DetailSettingsTableViewCell.swift */; };
 		68E8C78D1DE7B38100D898F3 /* cancel-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C7891DE7B38100D898F3 /* cancel-circle.png */; };
 		68E8C78E1DE7B38100D898F3 /* pause2.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C78A1DE7B38100D898F3 /* pause2.png */; };
 		68E8C78F1DE7B38100D898F3 /* play3.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C78B1DE7B38100D898F3 /* play3.png */; };
@@ -173,8 +193,13 @@
 		681353E91DE8CE580035E78B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		681353EB1DE8CFA00035E78B /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		681353ED1DE8D6B00035E78B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		681B1A321E00DE1A00457AF6 /* list-numbered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-numbered.png"; sourceTree = "<group>"; };
+		681B1A341E00E15400457AF6 /* RemindersTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTockWakeUp.swift; sourceTree = "<group>"; };
+		681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		681E66A21DF3695A00EC9AC1 /* siren.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = siren.wav; sourceTree = "<group>"; };
+		681E66A41DF36E7900EC9AC1 /* fogHorn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fogHorn.wav; sourceTree = "<group>"; };
 		682FBF101DE8E2FB003D4F11 /* tockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tockIcon.png; sourceTree = "<group>"; };
-		683DAC331DD1010900F5BE2C /* NumberAdjusterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberAdjusterCell.swift; sourceTree = "<group>"; };
+		683DAC331DD1010900F5BE2C /* TempUnitsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempUnitsCell.swift; sourceTree = "<group>"; };
 		683DAC351DD1011C00F5BE2C /* TockLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockLocationManagerDelegate.swift; sourceTree = "<group>"; };
 		683DAC371DD1013A00F5BE2C /* TockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockWakeUp.swift; sourceTree = "<group>"; };
 		683DAC381DD1013A00F5BE2C /* TransitTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitTockWakeUp.swift; sourceTree = "<group>"; };
@@ -193,6 +218,8 @@
 		683E31D81DD0D478006081CF /* TockEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockEventsManager.swift; sourceTree = "<group>"; };
 		683E31DA1DD0D481006081CF /* TockEventsManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockEventsManagerDelegate.swift; sourceTree = "<group>"; };
 		683E31DC1DD0D4AF006081CF /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		683E8BE71DF5BD2C00205235 /* TockBedsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockBedsideViewController.swift; sourceTree = "<group>"; };
+		683E8BE91DF5C1D500205235 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
 		68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
@@ -204,6 +231,13 @@
 		68424E7D1DE4F3D50061944F /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		6846C59A1DE5E4C9004FBDE0 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		6846C59C1DE6161B004FBDE0 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockSettingsViewController.swift; sourceTree = "<group>"; };
+		6850AB6D1DF2270F0035F5E4 /* circle-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-right.png"; sourceTree = "<group>"; };
+		6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		6850AB711DF22D8A0035F5E4 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
+		6850AB721DF22D8A0035F5E4 /* volume-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-medium.png"; sourceTree = "<group>"; };
+		6850AB751DF22DC10035F5E4 /* sleepy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleepy.png; sourceTree = "<group>"; };
+		6850AB771DF22FB10035F5E4 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cogs.png; sourceTree = "<group>"; };
 		687F5EC21DD124BE00148487 /* SparkleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
 		687F5EC41DD1253800148487 /* Tock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tock.png; sourceTree = "<group>"; };
 		687F5EC61DD127BA00148487 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
@@ -280,9 +314,15 @@
 		68934BA21DD01D55005D109E /* TockConfigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockConfigureViewController.swift; sourceTree = "<group>"; };
 		68934BA41DD01D6F005D109E /* nuberAdjuster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nuberAdjuster.swift; sourceTree = "<group>"; };
 		68934BA61DD01DCC005D109E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		689526441E018B0E00B7888D /* FailedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedTableViewCell.swift; sourceTree = "<group>"; };
 		68B746461DD61850007BA513 /* NewsTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTockWakeUp.swift; sourceTree = "<group>"; };
 		68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockAlarmViewController.swift; sourceTree = "<group>"; };
 		68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockBeepViewController.swift; sourceTree = "<group>"; };
+		68DAB5431DEF5A2E0040D253 /* play4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play4.png; sourceTree = "<group>"; };
+		68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockWakeViewController.swift; sourceTree = "<group>"; };
+		68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
+		68DEBA471DF2427000FA2748 /* SettingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewController.swift; sourceTree = "<group>"; };
+		68DEBA491DF2460700FA2748 /* DetailSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		68E8C7891DE7B38100D898F3 /* cancel-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-circle.png"; sourceTree = "<group>"; };
 		68E8C78A1DE7B38100D898F3 /* pause2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2.png; sourceTree = "<group>"; };
 		68E8C78B1DE7B38100D898F3 /* play3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play3.png; sourceTree = "<group>"; };
@@ -338,13 +378,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		681E66A11DF368AA00EC9AC1 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				681E66A41DF36E7900EC9AC1 /* fogHorn.wav */,
+				681E66A21DF3695A00EC9AC1 /* siren.wav */,
+				68E8C7911DE7F88200D898F3 /* alarm.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		683DAC3B1DD1014300F5BE2C /* Cutom Views */ = {
 			isa = PBXGroup;
 			children = (
+				689526441E018B0E00B7888D /* FailedTableViewCell.swift */,
+				68934B2E1DD00F7C005D109E /* TockTimePicker.swift */,
 				683E31D01DD0D39C006081CF /* TockTableView.swift */,
 				68F659871DE5695C00F40FF9 /* CalCell.swift */,
 				68F138961DD039EB004DE6CD /* TockSettingsTableView.swift */,
-				683DAC331DD1010900F5BE2C /* NumberAdjusterCell.swift */,
+				683DAC331DD1010900F5BE2C /* TempUnitsCell.swift */,
 				68934B3F1DD01152005D109E /* TockButton.swift */,
 				687F5EC21DD124BE00148487 /* SparkleView.swift */,
 				683DAC3D1DD1033800F5BE2C /* TockTableViewCell.swift */,
@@ -353,6 +405,10 @@
 				68934BA41DD01D6F005D109E /* nuberAdjuster.swift */,
 				68424E7B1DE4B4D00061944F /* StartButton.swift */,
 				68F659811DE55E7300F40FF9 /* WeatherCellTableViewCell.swift */,
+				6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */,
+				68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */,
+				681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */,
+				68DEBA491DF2460700FA2748 /* DetailSettingsTableViewCell.swift */,
 			);
 			name = "Cutom Views";
 			sourceTree = "<group>";
@@ -366,7 +422,9 @@
 				68934B351DD0101B005D109E /* KTUtility.swift */,
 				68424E7D1DE4F3D50061944F /* Queue.swift */,
 				6846C59A1DE5E4C9004FBDE0 /* NewsItem.swift */,
+				683E31D81DD0D478006081CF /* TockEventsManager.swift */,
 				683E31D21DD0D3BA006081CF /* WakeUpManager.swift */,
+				683E31D61DD0D444006081CF /* TockLocationManager.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -374,6 +432,7 @@
 		684BFDEF1DD1712D00BD240F /* Wake Ups */ = {
 			isa = PBXGroup;
 			children = (
+				681B1A341E00E15400457AF6 /* RemindersTockWakeUp.swift */,
 				683DAC3F1DD103A900F5BE2C /* CalendarTockWakeUp.swift */,
 				68B746461DD61850007BA513 /* NewsTockWakeUp.swift */,
 				683DAC411DD103B900F5BE2C /* WeatherTockWakeUp.swift */,
@@ -386,8 +445,10 @@
 		68934AF21DD00D25005D109E = {
 			isa = PBXGroup;
 			children = (
+				68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */,
 				68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */,
 				68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */,
+				683E8BE91DF5C1D500205235 /* DS-DIGI.TTF */,
 				68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */,
 				68934AFD1DD00D26005D109E /* Tock */,
 				68934B121DD00D26005D109E /* TockTests */,
@@ -415,15 +476,12 @@
 				683DAC3C1DD102BB00F5BE2C /* Utilities */,
 				683DAC3B1DD1014300F5BE2C /* Cutom Views */,
 				68934B021DD00D26005D109E /* Main.storyboard */,
-				683E31D61DD0D444006081CF /* TockLocationManager.swift */,
 				684BFDEF1DD1712D00BD240F /* Wake Ups */,
-				683E31D81DD0D478006081CF /* TockEventsManager.swift */,
 				683E31DC1DD0D4AF006081CF /* Location.swift */,
 				68934B3E1DD01120005D109E /* Delegates */,
 				68934B3D1DD010F2005D109E /* Transitions */,
 				68934B301DD00F81005D109E /* View Controllers */,
-				68934B2E1DD00F7C005D109E /* TockTimePicker.swift */,
-				68E8C7911DE7F88200D898F3 /* alarm.wav */,
+				681E66A11DF368AA00EC9AC1 /* Audio */,
 				68934B4F1DD01D1B005D109E /* Images */,
 				68934B051DD00D26005D109E /* Assets.xcassets */,
 				68934B071DD00D26005D109E /* LaunchScreen.storyboard */,
@@ -453,6 +511,7 @@
 		68934B301DD00F81005D109E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				683E8BE71DF5BD2C00205235 /* TockBedsideViewController.swift */,
 				68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */,
 				68934B4B1DD01BBE005D109E /* ServicesViewController.swift */,
 				68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */,
@@ -461,6 +520,8 @@
 				68934B471DD01B18005D109E /* WelcomeViewController.swift */,
 				68934B2C1DD00F4A005D109E /* ViewController.swift */,
 				681353EB1DE8CFA00035E78B /* UpgradeViewController.swift */,
+				6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */,
+				68DEBA471DF2427000FA2748 /* SettingsDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -501,14 +562,17 @@
 		68934B4F1DD01D1B005D109E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				681B1A321E00DE1A00457AF6 /* list-numbered.png */,
 				682FBF101DE8E2FB003D4F11 /* tockIcon.png */,
 				681353DE1DE8AC7C0035E78B /* home.png */,
+				68DAB5431DEF5A2E0040D253 /* play4.png */,
 				681353DF1DE8AC7C0035E78B /* connectServices.png */,
 				681353E41DE8BB120035E78B /* HomeTutorialViewController.swift */,
 				687F5EC61DD127BA00148487 /* checkmark.png */,
 				68934B501DD01D31005D109E /* alarm.png */,
 				687F5EC41DD1253800148487 /* Tock.png */,
 				68F659831DE55FB400F40FF9 /* 10d.png */,
+				6850AB771DF22FB10035F5E4 /* cogs.png */,
 				68934B511DD01D31005D109E /* arstechnica-m.png */,
 				68934B521DD01D31005D109E /* bbcnews-m.png */,
 				68934B531DD01D31005D109E /* bbcsport-m.png */,
@@ -526,6 +590,7 @@
 				68934B5E1DD01D31005D109E /* equalizer2.png */,
 				68F146E51DE3E6AD000CF4DE /* circle-left.png */,
 				68934B5F1DD01D31005D109E /* espn-m.png */,
+				6850AB6D1DF2270F0035F5E4 /* circle-right.png */,
 				68934B601DD01D31005D109E /* facebook3.png */,
 				68934B611DD01D31005D109E /* FB-f-Logo__blue_144.png */,
 				68934B621DD01D31005D109E /* FBLogo.png */,
@@ -543,6 +608,9 @@
 				68934B6D1DD01D31005D109E /* services.png */,
 				68934B6E1DD01D31005D109E /* sun.png */,
 				68934B6F1DD01D31005D109E /* techcrunch-m.png */,
+				6850AB711DF22D8A0035F5E4 /* mic.png */,
+				6850AB751DF22DC10035F5E4 /* sleepy.png */,
+				6850AB721DF22D8A0035F5E4 /* volume-medium.png */,
 				68424E791DE4A7650061944F /* location2.png */,
 				68934B701DD01D31005D109E /* theguardianuk-m.png */,
 				68934B711DD01D31005D109E /* thehuffingtonpost-m.png */,
@@ -725,6 +793,7 @@
 			files = (
 				68934B9E1DD01D31005D109E /* thewallstreetjournal-m.png in Resources */,
 				681353E01DE8AC7C0035E78B /* home.png in Resources */,
+				68DAB5441DEF5A2E0040D253 /* play4.png in Resources */,
 				68E8C78D1DE7B38100D898F3 /* cancel-circle.png in Resources */,
 				68934B9B1DD01D31005D109E /* thenewyorktimes-m.png in Resources */,
 				68934B991DD01D31005D109E /* theguardianuk-m.png in Resources */,
@@ -734,12 +803,15 @@
 				68934B821DD01D31005D109E /* cnbc-m.png in Resources */,
 				68934B091DD00D26005D109E /* LaunchScreen.storyboard in Resources */,
 				68934B791DD01D31005D109E /* alarm.png in Resources */,
+				6850AB741DF22D8A0035F5E4 /* volume-medium.png in Resources */,
 				68F146E61DE3E6AD000CF4DE /* circle-left.png in Resources */,
 				68934B9C1DD01D31005D109E /* thenextweb-m.png in Resources */,
 				68934B951DD01D31005D109E /* reuters-m.png in Resources */,
+				6850AB731DF22D8A0035F5E4 /* mic.png in Resources */,
 				681353E11DE8AC7C0035E78B /* connectServices.png in Resources */,
 				681353E71DE8C6A50035E78B /* timePicker.png in Resources */,
 				68934B7D1DD01D31005D109E /* bell.png in Resources */,
+				683E8BEA1DF5C3A300205235 /* DS-DIGI.TTF in Resources */,
 				68934B7A1DD01D31005D109E /* arstechnica-m.png in Resources */,
 				68934B871DD01D31005D109E /* equalizer2.png in Resources */,
 				68934B9A1DD01D31005D109E /* thehuffingtonpost-m.png in Resources */,
@@ -766,15 +838,20 @@
 				68934B8B1DD01D31005D109E /* FBLogo.png in Resources */,
 				68934B901DD01D31005D109E /* newspaper.png in Resources */,
 				687F5EC51DD1253800148487 /* Tock.png in Resources */,
+				681E66A31DF3695A00EC9AC1 /* siren.wav in Resources */,
+				681B1A331E00DE1A00457AF6 /* list-numbered.png in Resources */,
 				68F659841DE55FB400F40FF9 /* 10d.png in Resources */,
 				68934B971DD01D31005D109E /* sun.png in Resources */,
 				68934B981DD01D31005D109E /* techcrunch-m.png in Resources */,
 				68934B921DD01D31005D109E /* pocket1.png in Resources */,
+				6850AB781DF22FB10035F5E4 /* cogs.png in Resources */,
 				68934B8F1DD01D31005D109E /* mashable-m.png in Resources */,
 				68934B891DD01D31005D109E /* facebook3.png in Resources */,
+				681E66A51DF36E7900EC9AC1 /* fogHorn.wav in Resources */,
 				68934B811DD01D31005D109E /* circle-down.png in Resources */,
 				68934B841DD01D31005D109E /* emit.png in Resources */,
 				68E8C7901DE7B38100D898F3 /* spinner11.png in Resources */,
+				6850AB761DF22DC10035F5E4 /* sleepy.png in Resources */,
 				68424E721DE4959D0061944F /* AvenirLTStd-Roman.otf in Resources */,
 				68934B9F1DD01D31005D109E /* thewashingtonpost-m.png in Resources */,
 				68934B911DD01D31005D109E /* pocket.png in Resources */,
@@ -785,6 +862,7 @@
 				68424E711DE4959D0061944F /* AvenirLTStd-Light.otf in Resources */,
 				68934B831DD01D31005D109E /* cnn-m.png in Resources */,
 				68934B961DD01D31005D109E /* services.png in Resources */,
+				6850AB6E1DF2270F0035F5E4 /* circle-right.png in Resources */,
 				68934B041DD00D26005D109E /* Main.storyboard in Resources */,
 				68934B941DD01D31005D109E /* redditrall-m.png in Resources */,
 				68934B801DD01D31005D109E /* calendar.png in Resources */,
@@ -961,15 +1039,21 @@
 				68F138951DD039B2004DE6CD /* TockSettingsSelectionDelegate.swift in Sources */,
 				68934B3B1DD010EE005D109E /* OptionsTransition.swift in Sources */,
 				68934BA51DD01D6F005D109E /* nuberAdjuster.swift in Sources */,
+				681B1A351E00E15400457AF6 /* RemindersTockWakeUp.swift in Sources */,
 				68934B401DD01152005D109E /* TockButton.swift in Sources */,
 				683E31D51DD0D3DC006081CF /* ModalTransitionDelegate.swift in Sources */,
+				68DAB5461DEF5B260040D253 /* TockWakeViewController.swift in Sources */,
 				681353EC1DE8CFA00035E78B /* UpgradeViewController.swift in Sources */,
+				689526451E018B0E00B7888D /* FailedTableViewCell.swift in Sources */,
 				68F146E41DE3CF48000CF4DE /* UnwindConfigureTransition.swift in Sources */,
 				68934B461DD011AB005D109E /* UnwindPopTransition.swift in Sources */,
 				68934B341DD00FEB005D109E /* TimePickerDelegate.swift in Sources */,
 				68424E7E1DE4F3D60061944F /* Queue.swift in Sources */,
 				68934B441DD011A0005D109E /* PopTransition.swift in Sources */,
 				68934B3C1DD010EE005D109E /* OptionsTransitionDelegate.swift in Sources */,
+				68DEBA481DF2427000FA2748 /* SettingsDetailViewController.swift in Sources */,
+				68DEBA461DF23B6700FA2748 /* AboutTableViewCell.swift in Sources */,
+				681E66A01DF3391C00EC9AC1 /* SwitchTableViewCell.swift in Sources */,
 				683E31D31DD0D3BA006081CF /* WakeUpManager.swift in Sources */,
 				68934B4E1DD01CFF005D109E /* ServiceSelectorViewController.swift in Sources */,
 				68934B2F1DD00F7C005D109E /* TockTimePicker.swift in Sources */,
@@ -977,6 +1061,7 @@
 				68D2EAD21DD3A20900C3732A /* TockBeepViewController.swift in Sources */,
 				68934B361DD0101B005D109E /* KTUtility.swift in Sources */,
 				683DAC461DD103E100F5BE2C /* UnwindNewModal.swift in Sources */,
+				6850AB6C1DF224E90035F5E4 /* TockSettingsViewController.swift in Sources */,
 				68934B421DD01174005D109E /* PopTransitionDelegate.swift in Sources */,
 				68934B4C1DD01BBE005D109E /* ServicesViewController.swift in Sources */,
 				68934B381DD01038005D109E /* system_constants.swift in Sources */,
@@ -995,13 +1080,16 @@
 				683E31D71DD0D444006081CF /* TockLocationManager.swift in Sources */,
 				68934BA31DD01D55005D109E /* TockConfigureViewController.swift in Sources */,
 				68F659881DE5695C00F40FF9 /* CalCell.swift in Sources */,
-				683DAC341DD1010900F5BE2C /* NumberAdjusterCell.swift in Sources */,
+				6850AB701DF228F50035F5E4 /* SettingsTableViewCell.swift in Sources */,
+				683DAC341DD1010900F5BE2C /* TempUnitsCell.swift in Sources */,
 				683E31D91DD0D478006081CF /* TockEventsManager.swift in Sources */,
 				68934B321DD00FB8005D109E /* Trig.swift in Sources */,
 				683DAC3E1DD1033800F5BE2C /* TockTableViewCell.swift in Sources */,
 				688A54FC1DD674C300BC1A31 /* OptionsUnwindTransition.swift in Sources */,
 				68B746471DD61850007BA513 /* NewsTockWakeUp.swift in Sources */,
 				683E31CF1DD0D336006081CF /* TockTableViewSelectionDelegate.swift in Sources */,
+				683E8BE81DF5BD2C00205235 /* TockBedsideViewController.swift in Sources */,
+				68DEBA4A1DF2460700FA2748 /* DetailSettingsTableViewCell.swift in Sources */,
 				68F659821DE55E7300F40FF9 /* WeatherCellTableViewCell.swift in Sources */,
 				68934B4A1DD01B3C005D109E /* RightSlideTransition.swift in Sources */,
 				68934B481DD01B18005D109E /* WelcomeViewController.swift in Sources */,

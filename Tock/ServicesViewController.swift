@@ -38,8 +38,16 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
         self.continueButton.isHidden = true
         self.continueButton.isEnabled = false
         
+        //set all default user defaults involving booleans
         defaults.setValue(true, forKey: onboardedKey)
+        defaults.setValue(true, forKey: isOnKey)
+        defaults.setValue(true, forKey: autoGreetignKey)
+        
+        
+        create3DTouchShortcuts()
+        
         view.layer.insertSublayer(gradient, below: self.selectServices.layer)
+        
         dropEffect()
         
     }
@@ -68,6 +76,19 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
         animator.addBehavior(gravity)
     }
     
+    
+    
+    func create3DTouchShortcuts(){
+        let startIcon = UIApplicationShortcutIcon(templateImageName: "play3.png")
+        let startButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.start", localizedTitle: "Start", localizedSubtitle: nil, icon: startIcon, userInfo: nil)
+        
+        let servicesIcon = UIApplicationShortcutIcon(templateImageName: "equalizer2.png")
+        let servicesButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.services", localizedTitle: "Services", localizedSubtitle: nil, icon: servicesIcon, userInfo: nil)
+        
+        UIApplication.shared.shortcutItems = [startButton, servicesButton]
+        
+    }
+    
   
     
     
@@ -86,6 +107,8 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
         
         if segue.identifier == "select" {
             destinationVC.transitioningDelegate = transitionDelegate
+            let select = destinationVC as! ServiceSelectorViewController
+            select.displaySettings = false
         } else if segue.identifier == "home" {
             let vc = destinationVC as! ViewController
             vc.modalPresentationStyle = .custom

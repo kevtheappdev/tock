@@ -24,7 +24,7 @@ class OptionsUnwindTransition: NSObject,  UIViewControllerAnimatedTransitioning{
         
         UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, false, UIScreen.main.scale)
         
-        fromView?.drawHierarchy(in: (fromView?.bounds)!, afterScreenUpdates: true)
+        fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
         let fromSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -32,8 +32,7 @@ class OptionsUnwindTransition: NSObject,  UIViewControllerAnimatedTransitioning{
         
         UIGraphicsBeginImageContextWithOptions((toView?.bounds.size)!, false, UIScreen.main.scale)
         
-        toView?.drawHierarchy(in: (toView?.bounds)!, afterScreenUpdates: true)
-        
+        toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

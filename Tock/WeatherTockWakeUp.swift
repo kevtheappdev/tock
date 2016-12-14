@@ -11,16 +11,22 @@ import SwiftyJSON
 
 class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
 {
-    var apiURlString = "http://api.openweathermap.org/data/2.5/weather?appid=e5c054908fafb88214c73831ed35724b&units=imperial&"
+    var apiURlString = "http://api.openweathermap.org/data/2.5/weather?appid=e5c054908fafb88214c73831ed35724b&"
     var apiURL: URL!
     let requester = KTRequester()
+    var conditionImage : UIImage?
     var temp: Int!
     var name: String!
     var condition: String!
-    var requestSuccessful = false
-    
-    
+      
     init(location: String) {
+        let ud = UserDefaults.standard
+        let unitsString = ud.string(forKey: unitsKey)
+        if unitsString != nil {
+            apiURlString.append("units=\(unitsString!)&")
+        } else {
+            apiURlString.append("units=imperial&")
+        }
         apiURlString.append(location)
         print("apiUrlString: \(apiURlString)")
         super.init(name: "Weather")
@@ -33,7 +39,6 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
     }
     
     func requestCompleted(_ data: Data, type: requestType)   {
-        requestSuccessful = true
         let json = JSON(data: data)
         processJSON(json)
         self.delegate?.finishedDataFetch()
@@ -43,7 +48,8 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
     
     func requestFailed(_ error: NSError) {
         print("request failed to get weather")
-        print(error)
+        print("error code \(error.code)")
+        self.delegate?.finishedDataFetch()
     }
     
     func processJSON(_ json: JSON) {
@@ -60,9 +66,11 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
                 self.temp = temp
             }
             
-            if let name = json["name"].string{
+            if let name = json["name"].string {
                 self.name = name
             }
+            
+            self.fetchSuccess = true
         }
         
         
@@ -70,7 +78,7 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
     
     
     override func stringsToVerbalize() -> [String] {
-        if requestSuccessful {
+        if fetchSuccess {
             return ["It is \(temp!) degrees in \(name!) with \(condition!)"]
         } else {
             return ["We could not retrieve weather information at this time, I'm hoping the weather is lovely"]

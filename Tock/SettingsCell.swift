@@ -116,7 +116,7 @@ class SettingsCell: UITableViewCell {
             swizzler.addTarget(self, action: #selector(SettingsCell.controlMutated), for: .valueChanged)
             
             return swizzler
-        case .numberAdjust:
+        case .segmentedControl:
             //let view = NSBundle.mainBundle().loadNibNamed("numberAdjuster", owner: self, options: nil)?[0] as? UIView
                       return nil
         case .checkmark:

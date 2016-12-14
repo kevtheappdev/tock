@@ -14,18 +14,21 @@ import UIKit
 class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDelegate, UIViewControllerTransitioningDelegate
 {
     
+    @IBOutlet weak var settingsButton: UIButton!
     var configType: wakeUpTypes!
     @IBOutlet weak var tableView: TockTableView!
     @IBOutlet weak var statusLabel: UILabel!
+    var displaySettings = true
 
-   var allWakeUps = [wakeUpTypes.wakeUpTypeCal, wakeUpTypes.wakeUpTypeWeather, wakeUpTypes.wakeUpTypeTransit, wakeUpTypes.wakeUpTypeNews]
+   var allWakeUps = [wakeUpTypes.wakeUpTypeCal, wakeUpTypes.wakeUpTypeWeather, wakeUpTypes.wakeUpTypeTransit, wakeUpTypes.wakeUpTypeNews, wakeUpTypes.wakeUpTypeReminder]
     var addedWakeUps = Array<wakeUpTypes>()
     let wuManager = WakeUpManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        self.settingsButton.isEnabled = displaySettings
+        self.settingsButton.isHidden = !displaySettings
      
         
         let gradient = CAGradientLayer()
@@ -85,6 +88,9 @@ class ServiceSelectorViewController: UIViewController, TockTableViewSelectionDel
             let vc = segue.destination as! TockConfigureViewController
             vc.configType = self.configType
             vc.fromVC = self
+            vc.transitioningDelegate = self
+        } else {
+            let vc = segue.destination
             vc.transitioningDelegate = self
         }
     }

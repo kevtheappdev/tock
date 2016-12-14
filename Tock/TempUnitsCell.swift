@@ -8,23 +8,15 @@
 
 import UIKit
 
-class NumberAdjusterCell: UITableViewCell {
+class TempUnitsCell: UITableViewCell {
 
-    @IBOutlet weak var numberAdjuster: nuberAdjuster!
+
+    @IBOutlet weak var temp: UISegmentedControl!
     @IBOutlet weak var titleLabel: UILabel!
     let background = UIView()
-    weak var tableView: TockSettingsTableView?
+
   
-    var row: Int {
-        get {
-            return numberAdjuster.tag
-        }
-        
-        set {
-            numberAdjuster.tag = newValue
-        }
-    }
-    
+
     
     func setTitle(_ title: String){
         titleLabel.text = title
@@ -42,7 +34,7 @@ class NumberAdjusterCell: UITableViewCell {
         background.backgroundColor = UIColor.white
         background.alpha = 0.3
         
-        self.contentView.insertSubview(background, belowSubview: self.numberAdjuster)
+        self.contentView.insertSubview(background, belowSubview: self.titleLabel)
         super.layoutSubviews()
 
     }
@@ -50,14 +42,27 @@ class NumberAdjusterCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        numberAdjuster.addTarget(tableView, action: #selector(TockSettingsTableView.numberChanged(_:)), for: .valueChanged)
-        
+        temp.addTarget(self, action: #selector(TempUnitsCell.tempUnitChanged), for: .valueChanged)
+    }
+    
+    func tempUnitChanged(){
+        let unitValue = self.temp.selectedSegmentIndex
+        let defaults = UserDefaults.standard
+        switch unitValue {
+        case 0:
+            defaults.setValue("imperial", forKey: unitsKey)
+            break
+        case 1:
+            defaults.setValue("metric", forKey: unitsKey)
+            break
+        default:
+            break
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-       
+        
     }
     
     

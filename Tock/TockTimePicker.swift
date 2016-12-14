@@ -15,7 +15,7 @@ class TockTimePicker: UIControl {
     var previousLocation = CGPoint()
     var rotateLayer: CALayer!
     var circRadius = 0.0
-    var lastAngle = 0.0
+    var lastAngle = -1.0
     var time = 390.0
     let dayMinutes = 60.0*24.0
     var buttonTapped = false
@@ -33,6 +33,7 @@ class TockTimePicker: UIControl {
     var hasToggled = false
     var hours: Int = 0
     var minutes: Int = 0
+
 
     
     
@@ -306,10 +307,7 @@ class TockTimePicker: UIControl {
                 hasToggled = false
             }
             
-            //
-            //            if hours == 12 && !isPM{
-            //                time = Double(minutes)
-            //            }
+     
             
             
             
@@ -319,7 +317,7 @@ class TockTimePicker: UIControl {
             }
             
             
-            rotateKnob(toAngle: angle)
+          rotateKnob(toAngle: angle)
             
             if Double(minutes).truncatingRemainder(dividingBy: 5) == 0 {
                 self.sendActions(for: .valueChanged)
@@ -327,6 +325,7 @@ class TockTimePicker: UIControl {
                 lastAngle = angle
                 self.hours = hours
                 self.minutes = minutes
+                
             }
             
             print(time)
@@ -347,7 +346,8 @@ class TockTimePicker: UIControl {
     func rotateKnob(toAngle angle: Double){
         //self.sendActions(for: .valueChanged)
         CATransaction.begin()
-        CATransaction.setDisableActions(true)
+        //CATransaction.setDisableActions(true)
+        CATransaction.setAnimationDuration(0.01)
         rotateLayer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(angle), 0, 0, 1)
         CATransaction.commit()
     }
@@ -439,9 +439,16 @@ class TockTimePicker: UIControl {
                 self.isPM = true
             }
             
+          
+            
             var angle = angleForValue(time)
+
             print("calculated angle is: \(angle)")
             angle = ((M_PI * 2) - angle) + M_PI
+            
+            if lastAngle != -1.0 {
+                angle = -lastAngle
+            }
             rotateKnob(toAngle: -angle)
             
 //            let defaults = UserDefaults.standard()
@@ -456,6 +463,10 @@ class TockTimePicker: UIControl {
                 minuteString += "0"
             } else if minutes!/10 < 1 {
                 minuteString = "0" + minuteString
+            }
+            
+            if hours == 0 {
+                hours = 12
             }
             let str = String(describing: hour!) + ":" + minuteString + " " + postFix
             print("str: \(str)")
@@ -484,9 +495,12 @@ class TockTimePicker: UIControl {
         KTUtility.setDate(hours, minutes: self.minutes)
         print("endTracking:")
         print("hours: \(self.hours) minutes: \(self.minutes)")
+        
+        KTUtility.scheduleNotification()
 
     }
     
+   
  
 
 }

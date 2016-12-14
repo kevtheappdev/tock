@@ -34,14 +34,12 @@ class TockTableViewCell: UITableViewCell {
             return UIImage(named: "calendar.png")!
         case .wakeUpTypeWeather:
             return UIImage(named: "sun.png")!
-        case .wakeUpTypePocket:
-            return UIImage(named: "pocket")!
-        case .wakeUpTypeTwitter:
-            return UIImage(named: "twitter")!
         case .wakeUpTypeTransit:
             return UIImage(named: "compass")!
         case .wakeUpTypeNews:
             return UIImage(named: "newspaper")!
+        case .wakeUpTypeReminder:
+            return UIImage(named: "list-numbered.png")!
         }
     }
     
@@ -57,10 +55,8 @@ class TockTableViewCell: UITableViewCell {
             return "News"
         case .wakeUpTypeTransit:
             return "Transit Times"
-        case .wakeUpTypeTwitter:
-            return "Twitter"
-        case .wakeUpTypePocket:
-            return "Pocket"
+        case .wakeUpTypeReminder:
+            return "Reminders"
         }
     }
     
@@ -72,14 +68,12 @@ class TockTableViewCell: UITableViewCell {
             return "A quick summary of the day's weather. Includes, temperature and condition for you current location"
         case .wakeUpTypeCal:
             return "Get a heads up on the day's events. Reads to you how many events are ahead of you and what each of those are"
-        case .wakeUpTypePocket:
-            return "Receive a summary of the top few articles that you've saved to pocket"
-        case .wakeUpTypeTwitter:
-            return "Hear what went down on twitter the night before"
         case .wakeUpTypeTransit:
             return "Hear how long it'll take to get to work or school"
         case .wakeUpTypeNews:
-            return "Get summarized news read to you from your favorite sources"
+            return "Have the latest headlines from your favorite sources read to you"
+        case .wakeUpTypeReminder:
+            return "A reading of your reminders"
         }
     }
     

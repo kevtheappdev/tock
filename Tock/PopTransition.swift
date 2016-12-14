@@ -26,7 +26,7 @@ class PopTransition: NSObject, UIViewControllerAnimatedTransitioning
                     UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, false, UIScreen.main.scale)
         
      
-        fromView?.drawHierarchy(in: (fromView?.bounds)!, afterScreenUpdates: true)
+         fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
   
             let fromSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -37,7 +37,7 @@ class PopTransition: NSObject, UIViewControllerAnimatedTransitioning
         
         
  
-        toView?.drawHierarchy(in: (toView?.bounds)!, afterScreenUpdates: true)
+        toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
         let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

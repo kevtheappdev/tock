@@ -14,7 +14,8 @@ class CalendarTockWakeUp: TockWakeUp
 {
     let teManager = TockEventsManager()
     var events: [EKEvent]!
-    var eventTitle: String!
+    var eventCount = 1
+   
     
     init(){
         super.init(name: "Calendar")
@@ -23,6 +24,9 @@ class CalendarTockWakeUp: TockWakeUp
     override func fetchData() {
          events = teManager.getEventsForToday()
          print("All fetched events \(events)")
+          self.fetchSuccess = events.count > 0
+        eventCount = events.count > 1 ? events.count : 1
+         self.failedString = "No Events"
          self.delegate?.finishedDataFetch()
     }
     
@@ -34,9 +38,7 @@ class CalendarTockWakeUp: TockWakeUp
         for event in events {
             strings.append(event.title)
         }
-        
-        
-        
+
         return strings
     }
 }

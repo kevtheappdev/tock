@@ -18,6 +18,8 @@ open class TockWakeUp: NSObject
     
     fileprivate var name: String!
     var delegate: TockWakeUpDelegate?
+    var fetchSuccess = false
+    var failedString : String
     
     
     open var alarmName: String {
@@ -27,6 +29,7 @@ open class TockWakeUp: NSObject
 
     public init(name: String){
         self.name = name
+        self.failedString = name + " unavailible "
         super.init()
      
     }

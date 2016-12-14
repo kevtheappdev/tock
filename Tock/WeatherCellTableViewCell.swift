@@ -27,9 +27,13 @@ class WeatherCellTableViewCell: UITableViewCell {
     
     func setWakeUp(wakeUp: TockWakeUp){
         let weatherWakup = wakeUp as! WeatherTockWakeUp
-        self.weatherConditionLabel.text = weatherWakup.condition
-        self.tempLabel.text = "\(weatherWakup.temp!)"
+        if weatherWakup.fetchSuccess {
+            self.weatherConditionLabel.text = weatherWakup.condition
+                self.tempLabel.text = "\(weatherWakup.temp!)"
         self.locationLabel.text = UserDefaults.standard.object(forKey: locationStringKey) as? String
+        } else {
+            self.locationLabel.text = weatherWakup.failedString
+        }
         
     }
     

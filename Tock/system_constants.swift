@@ -11,9 +11,8 @@ enum wakeUpTypes: String
     case wakeUpTypeNews = "News"
     case wakeUpTypeCal = "Calendar"
     case wakeUpTypeWeather = "Weather"
-    case wakeUpTypePocket = "Pocket"
-    case wakeUpTypeTwitter = "Twitter"
     case wakeUpTypeTransit = "Transit"
+    case wakeUpTypeReminder = "Reminders"
 }
 
 
@@ -33,7 +32,7 @@ enum  newsTypes: String {
     case independent = "independent"
     case mashable = "mashable"
     case recode = "recode"
-    case reddit = "reddit-r-all"
+    //case reddit = "reddit-r-all"
     case reuters = "reuters"
     case techCrunch = "techcrunch"
     case theGuardian = "theguardianuk"
@@ -42,6 +41,7 @@ enum  newsTypes: String {
     case TNW = "thenextweb"
     case theVerge = "the-verge"
     case wsj = "the-wall-street-journal"
+    case none = ""
     //case washingtonPost = "the-washington-post"
 }
 
@@ -50,7 +50,7 @@ enum  newsTypes: String {
 enum settingsTypes: Int {
     case button
     case toggle
-    case numberAdjust
+    case segmentedControl
     case checkmark
 }
 
@@ -70,11 +70,22 @@ let wakeUpTimeKey = "wake_up_time"
 let onboardedKey = "onboarded"
 let locationStringKey = "location_string"
 
+let alarmSoundKey = "alarm_sound"
+let speechSpeedKey = "speech_speed"
+let snoozeTimeKey = "snooze_time"
+let autoGreetignKey = "auto_greeting"
+
+let unitsKey = "unitsKey"
+let incompRemindKey = "incomp_remind"
+
+let calendarsKey = "selected_calendars"
+let launchTimesKey = "launch_times"
+
 let fromLocationKey = "from_location"
 let toLocationKey = "to_location"
 let fromLocationNameKey = "from_name"
 let toLocationNameKey = "to_name"
-
+let isOnKey = "on_key"
 let newsSourcesKey = "news_sources"
 
 let numArticlesKey = "num_articles_key"
@@ -115,8 +126,8 @@ func newsNameForType(type: newsTypes) -> String{
         return "Mashable"
     case .recode:
         return "Recode"
-    case .reddit:
-        return "Reddit r/all"
+//    case .reddit:
+//        return "Reddit r/all"
     case .reuters:
         return "Reuters"
     case .techCrunch:
@@ -135,7 +146,8 @@ func newsNameForType(type: newsTypes) -> String{
 //        return "The Washington Post"
     case .wsj:
         return "The Wall Street Journal"
-    
+    case .none:
+        return "News"
     }
 }
 

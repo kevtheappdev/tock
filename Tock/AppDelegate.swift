@@ -11,6 +11,7 @@ import UIKit
 
 import GoogleMaps
 import GooglePlaces
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +22,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
         GMSPlacesClient.provideAPIKey("AIzaSyDVjEFSIxpAgasRANziCzGkGWwHA79Z8bk")
         GMSServices.provideAPIKey("AIzaSyDVjEFSIxpAgasRANziCzGkGWwHA79Z8bk")
+        return true
+    }
+    
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+       
+        switch shortcutItem.type {
+        case "com.kevinturner.TockApp.start":
+           
+            completionHandler(showVC(withIdentifier: "alarm"))
+            break
+        case "com.kevinturner.TockApp.services":
+
+            completionHandler(showVC(withIdentifier: "services"))
+            break
+        default:
+            completionHandler(false)
+            break
+        }
+    }
+    
+    
+    func showVC(withIdentifier identifier: String) -> Bool{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let rootVC = storyboard.instantiateInitialViewController() else {return false}
+        self.window?.rootViewController = rootVC
+        
+        let toVC = storyboard.instantiateViewController(withIdentifier: identifier)
+        
+        rootVC.present(toVC, animated: false, completion: nil)
+        
+
         return true
     }
 

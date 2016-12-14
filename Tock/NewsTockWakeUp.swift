@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
     let baseApiURL = "https://newsapi.org/v1/articles?apiKey=d81a4d8b7cec49c0b1272494d5967451&source="
@@ -16,7 +17,7 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
     var sentences:[String] = []
     let newsQueue = Queue<NewsItem>()
     var newsItems = Array<Array<NewsItem>>()
-   
+    
     
     init(){
         super.init(name: "News")
@@ -83,7 +84,12 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
                             let imageData = try? Data(contentsOf: imageUrl!)
                         
                         if let imageD = imageData {
-                            image = UIImage(data: imageD)!
+                           let optIm = UIImage(data: imageD)
+                            if let im = optIm {
+                                image = im
+                            } else {
+                                image = #imageLiteral(resourceName: "newspaper.png")
+                            }
                         } else {
                             image = #imageLiteral(resourceName: "newspaper.png")
                             }
@@ -111,14 +117,24 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
                     
                     
             }
-        }
+            } else {
+                self.fetchSuccess = false
+                self.delegate?.finishedDataFetch()
+            }
         
         if type == .last
         {
+            self.fetchSuccess = true
             self.delegate?.finishedDataFetch()
         }
         
         print("request completed: \(sentences)")
+    }
+    
+
+    
+    func processJson(json: JSON){
+        
     }
     
     func jsonDic(_ data: Data) -> NSDictionary? {
@@ -136,10 +152,20 @@ class NewsTockWakeUp: TockWakeUp, KTRequesterDelegate {
     
     override func stringsToVerbalize() -> [String] {
         print(sentences)
-        return sentences
+        if fetchSuccess {
+            return sentences
+        } else {
+            return ["Could not fetch news at this time"]
+        }
     }
     
     func requestFailed(_ error: NSError) {
         print ("Failed")
+        print ("Error code \(error.code)")
+      
+        newsItems = [NewsItem.empytNews()]
+        sources = [.none]
+        self.fetchSuccess = false
+        self.delegate?.finishedDataFetch()
     }
 }

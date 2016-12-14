@@ -11,10 +11,11 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import GooglePlacePicker
+import EventKit
 
 
 
-class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSource, TockEventsMangerDelegate, TockLocationManagerDelegate, GMSAutocompleteViewControllerDelegate{
+class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSource, TockEventsMangerDelegate, TockLocationManagerDelegate, GMSAutocompleteViewControllerDelegate, SwitchCellDelegate{
     /**
      * Called when a non-retryable error occurred when retrieving autocomplete predictions or place
      * details. A non-retryable error is defined as one that is unlikely to be fixed by immediately
@@ -35,7 +36,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     }
 
     
-    let allNews: [newsTypes] = [.arsTechnica, .bbcNews, .bbcSport, .bloomBerg, .buzzfeed, .cnbc, .cnn, .engadget, .entertainmentWeekly, .espn, .googleNews, .hackerNews, .independent, .mashable, .recode, .reddit, .reuters, .techCrunch, .theGuardian, .theHuffingtonPost, .theNYT, .TNW, .theVerge, .wsj]
+    let allNews: [newsTypes] = [.arsTechnica, .bbcNews, .bbcSport, .bloomBerg, .buzzfeed, .cnbc, .cnn, .engadget, .entertainmentWeekly, .espn, .googleNews, .hackerNews, .independent, .mashable, .recode, .reuters, .techCrunch, .theGuardian, .theHuffingtonPost, .theNYT, .TNW, .theVerge, .wsj]
     var settings: [(name: String, type: settingsTypes, image: UIImage?)]!
     var selectionDelegate: TockSettingsSelectionDelegate?
     let wuManager = WakeUpManager()
@@ -47,7 +48,8 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     let uDefaults = UserDefaults.standard
     var locationType: locationSelection!
     var selectedIndexes = Array<Int>()
-    
+    let tockEventsManager = TockEventsManager()
+
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -99,33 +101,45 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    func switchChanged(tag: Int, on: Bool) {
+        
+        let ud = UserDefaults.standard
+        if self.wakeupType == .wakeUpTypeCal {
+            ud.set(on, forKey: isOnKey)
+        } else {
+            ud.set(on, forKey: incompRemindKey)
+        }
+    }
+    
     fileprivate func evaluateAdded()-> Bool
     {
         return wuManager.wakeUpExists(self.wakeupType)
     }
     
+ 
+    
     fileprivate func configsForType(_ type: wakeUpTypes) -> [(name: String, type: settingsTypes, image: UIImage?)]?{
         switch type {
         case .wakeUpTypeCal:
             var calTuple:(name: String, type: settingsTypes, image: UIImage?) =  (name: "Grant access to Calendar", type: .button, image: #imageLiteral(resourceName: "calendar.png"))
+            
             if typeAdded{
                 calTuple.name = "Calendar Access Granted"
             }
-            return [calTuple]
+            
+            let allDayTuple : (name: String, type: settingsTypes, image: UIImage?) = (name: "Include All Day Events", type: settingsTypes.toggle, image: nil)
+            return [calTuple, allDayTuple]
         case .wakeUpTypeWeather:
             var weatherTuple:(name: String, type: settingsTypes, image: UIImage?) = (name: "Use Current Location", type: .button, image: #imageLiteral(resourceName: "location2.png"))
             if typeAdded {
                 weatherTuple.name = self.currentLocation!
             }
-            return [weatherTuple]
+            let weatherUnit : (name: String, type: settingsTypes, image: UIImage?) = (name: "Weather Unit", type: settingsTypes.segmentedControl, image: #imageLiteral(resourceName: "cogs.png"))
+            return [weatherTuple, weatherUnit]
         case .wakeUpTypeNews:
             let sources = newsSources()
-            var options: [(name: String, type: settingsTypes, image: UIImage?)] = [(name: "Number of articles to read", type: .numberAdjust, image: nil), (name: "Number of sentences in summary", type: .numberAdjust, image: nil)]
-            options += sources
             
             return sources
-        case .wakeUpTypePocket:
-            return [(name: "Login with Pocket", type: .button, image: UIImage(named:"pocket")), (name: "Number of articles to read", type: settingsTypes.numberAdjust, image: nil)]
         case .wakeUpTypeTransit:
             var fromTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select home location", type: .button, image: UIImage(named:"home3"))
             var toTuple: (name: String, type: settingsTypes, image: UIImage?) = (name: "Select work/school location", .button, image: UIImage(named:"office"))
@@ -138,13 +152,18 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             }
             
             return [fromTuple, toTuple]
-        case .wakeUpTypeTwitter:
-            var twitterTuple:(name: String, type: settingsTypes, image: UIImage?) = (name: "Login with Twitter", type: .button, image: UIImage(named:"twitter"))
+        
+        case .wakeUpTypeReminder:
+            var reminder : (name: String, type: settingsTypes, image: UIImage?) = (name: "Grant access to Reminders", type: .button, image: UIImage(named: "list-numbered.png"))
+            
             if typeAdded {
-                twitterTuple.name = "Logged In"
+                reminder.name = "Reminder Access Granted"
             }
-            return [twitterTuple, (name: "Number of tweets to read", type: .numberAdjust, image: nil)]
-
+            
+            let incompleteOption : (name: String, type: settingsTypes, image: UIImage?) = (name: "Completed Reminders", type: .toggle, image: nil)
+            
+            
+            return [reminder, incompleteOption]
         }
     }
     
@@ -199,9 +218,9 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             case .recode:
                 sources.append((name: "Recode", type: .checkmark, image: UIImage(named:"recode-m")))
                 break
-            case .reddit:
-                sources.append((name: "Reddit/r/all", type: .checkmark, image: UIImage(named:"redditrall-m")))
-                break
+//            case .reddit:
+//                sources.append((name: "Reddit/r/all", type: .checkmark, image: UIImage(named:"redditrall-m")))
+//                break
             case .reuters:
                 sources.append((name: "Reuters", type: .checkmark, image: UIImage(named:"reuters-m")))
               break
@@ -229,7 +248,8 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
 //            case .washingtonPost:
 //                sources.append((name: "The Washington Post", type: .button, image: UIImage(named:"thewashingtonpost-m")))
 //                break
-    
+            default:
+                break
             }
         }
         
@@ -250,21 +270,13 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch self.wakeupType {
         case .wakeUpTypeCal:
-            requestCalendarAcces()
+            if indexPath.row == 0 {
+                requestCalendarAcces()
+            }
             break
         case .wakeUpTypeWeather:
-            if (indexPath as NSIndexPath).row == 0 && !typeAdded{
+            if (indexPath as NSIndexPath).row == 0 {
                 getCurrentLocation()
-            }
-            break
-        case .wakeUpTypeTwitter:
-            if (indexPath as NSIndexPath).row == 0 && !typeAdded{
-              
-            }
-            break
-        case .wakeUpTypePocket:
-            if (indexPath as NSIndexPath).row == 0 && !typeAdded {
-              
             }
             break
         case .wakeUpTypeTransit:
@@ -297,8 +309,18 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
                 
             }
             break
-  
+            
+        case .wakeUpTypeReminder:
+            requestReminderAccess()
+            break
+
         }
+    }
+    
+    
+    func requestReminderAccess(){
+        tockEventsManager.delegate = self
+        tockEventsManager.requestReminderAccess()
     }
     
     
@@ -433,9 +455,12 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     }
     
     func requestCalendarAcces(){
-            let tockEventsManager = TockEventsManager()
             tockEventsManager.delegate = self
             tockEventsManager.requestCalendarAccess()
+    }
+    
+    func fetchedReminders(_ reminders: [EKReminder]) {
+        //Dummy method to comply with delegate
     }
     
     
@@ -475,7 +500,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if self.wakeupType == .wakeUpTypeNews {
+//        if self.wakeupType == .wakeUpTypeWeather {
 //            return 2
 //        }
         
@@ -486,7 +511,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
 //        if self.wakeupType == .wakeUpTypeNews {
 //            return 25
 //        }
-//        
+
         return 0
     }
     
@@ -523,13 +548,21 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         
         
         if granted && !typeAdded{
-            print("access granted")
+            
             wuManager.addToQueue(.wakeUpTypeCal)
             postAddFlow(.wakeUpTypeCal)
+            
         } 
-        
-        
+    
  
+    }
+    
+    
+    func reminderAccess(_ granted: Bool) {
+        if granted &&  !typeAdded {
+            wuManager.addToQueue(.wakeUpTypeReminder)
+            postAddFlow(.wakeUpTypeReminder)
+        }
     }
     
     func postAddFlow(_ type: wakeUpTypes){
@@ -549,7 +582,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "config") as! SettingsCell
 
-        var setting = settings[(indexPath as NSIndexPath).row]
+        let setting = settings[(indexPath as NSIndexPath).row]
         if self.wakeupType == .wakeUpTypeNews {
           
             
@@ -560,20 +593,38 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
                 cell.makeAViewInvisible()
             }
             
+            print (setting.type)
             
-            if (indexPath as NSIndexPath).section == 0 {
-                setting = settings[(indexPath as NSIndexPath).row]
-            } else {
-                let optioncell = tableView.dequeueReusableCell(withIdentifier: "number") as! NumberAdjusterCell
-                optioncell.row = (indexPath as NSIndexPath).row
-                
-                optioncell.setTitle(setting.name)
-                return optioncell
-            }
+       
+        }
+    
+    if setting.type == .segmentedControl {
+      
+        let optioncell = tableView.dequeueReusableCell(withIdentifier: "number") as! TempUnitsCell
+        
+        optioncell.selectionStyle = .none
+        optioncell.setTitle(setting.name)
+        return optioncell
+    } else if setting.type == settingsTypes.toggle {
+        let switchCell = tableView.dequeueReusableCell(withIdentifier: "switch") as! SwitchTableViewCell
+        switchCell.delegate = self
+        
+        let ud = UserDefaults.standard
+        var isOn : Bool
+        if self.wakeupType == .wakeUpTypeCal {
+            isOn = ud.bool(forKey: isOnKey)
+        } else {
+            isOn = ud.bool(forKey: incompRemindKey)
         }
         
+        switchCell.setName(name: setting.name, andTag: indexPath.row, isOn: isOn)
         
+        return switchCell
         
+    }
+    
+    
+    
         cell.leftOffsetvalue = -100
         cell.setType(setting.type, withName: setting.name, andImage: setting.image)
         cell.selectionStyle = .none

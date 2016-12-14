@@ -30,7 +30,7 @@ class ConfigureTransition: NSObject, UIViewControllerAnimatedTransitioning {
             toView?.frame = CGRect(x: 0, y: 0, width: (toView?.bounds.width)!, height: (toView?.bounds.height)!)
             
         }, completion: {(done) in
-            //fromView?.removeFromSuperview()
+            fromView?.removeFromSuperview()
           transitionContext.completeTransition(done)
         })
     }

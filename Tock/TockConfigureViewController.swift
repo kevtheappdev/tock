@@ -39,9 +39,15 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
         
         if wuManager.wakeUpExists(configType) {
              self.addButton.setTitle("Remove", for: [])
+            if wuManager.getWakeUps().count > 1 {
+                self.addButton.isEnabled = true
+                self.addButton.alpha = 1
+            } else {
+                self.addButton.isEnabled = false
+                self.addButton.alpha = 0.5
+            }
             self.hasAdded = true
-            self.addButton.isEnabled = true
-            self.addButton.alpha = 1
+            
         } else {
              self.addButton.isEnabled = false
              self.addButton.alpha = 0.5
@@ -100,6 +106,10 @@ class TockConfigureViewController: UIViewController, TockSettingsSelectionDelega
     }
     
     
+
+    @IBAction func swipedRight(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {

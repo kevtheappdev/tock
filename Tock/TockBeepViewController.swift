@@ -22,7 +22,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     var i = 0
     var lastOffset : CGFloat = 0.0
     var paused = false
-    
+    var rate = 0.5
     @IBOutlet weak var controlStrip: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var MorningView: UIView!
@@ -32,6 +32,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     @IBOutlet weak var playPauseButton: UIButton!
     var queue : Queue<UIImage>!
     var greeting = "Afternoon!"
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         
@@ -49,6 +50,14 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
         view.layer.insertSublayer(gradient, below: MorningView.layer)
         
         
+        
+        let defaultRate = userDefaults.double(forKey: speechSpeedKey)
+        if defaultRate != 0 {
+            rate = defaultRate
+        } else {
+            userDefaults.setValue(rate, forKey: speechSpeedKey)
+        }
+        
        setMorningView()
       
         playGreeting()
@@ -61,9 +70,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
 
     
     override func viewDidAppear(_ animated: Bool) {
-      
         super.viewDidAppear(animated)
-        
     }
     
     @IBAction func restartButtonPressed(_ sender: Any) {
@@ -88,6 +95,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     
   
     @IBAction func cancelButtonPressed(_ sender: Any) {
+        UIDevice.current.isProximityMonitoringEnabled = true
         self.synth.stopSpeaking(at: AVSpeechBoundary.immediate)
         self.paused = true
         self.performSegue(withIdentifier: "done", sender: self)
@@ -118,7 +126,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     func playGreeting(){
         myUtterance = AVSpeechUtterance(string: "Good \(greeting)")
         
-        myUtterance.rate = 0.5
+        myUtterance.rate = Float(rate)
         synth.delegate = self
         synth.speak(myUtterance)
 
@@ -156,9 +164,11 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section <= indexes.count - 1{
             if indexes[section] == .wakeUpTypeCal {
-                return (wakeUps![indexes[section]] as! CalendarTockWakeUp).events.count
+                return (wakeUps![indexes[section]] as! CalendarTockWakeUp).eventCount
             } else if indexes[section] == .wakeUpTypeNews {
                 return newsArticles[section]!.count
+            } else if indexes[section] == .wakeUpTypeReminder {
+                return  (wakeUps![indexes[section]] as! RemindersTockWakeUp).reminders.count
             }
         }
         return 1
@@ -167,29 +177,40 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let type = indexes[indexPath.section]
         let wakeUp = self.wakeUps![type]
+        
+    if (wakeUp?.fetchSuccess)! {
         switch type {
-        case .wakeUpTypeWeather:
-            let weatherCell = tableView.dequeueReusableCell(withIdentifier: "weather") as! WeatherCellTableViewCell
-            weatherCell.setWakeUp(wakeUp: wakeUp!)
-            return weatherCell
-        case .wakeUpTypeCal:
-            let calCel = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
-            calCel.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeCal, index: indexPath.row)
-          return calCel
-        case .wakeUpTypeTransit:
-            let transitCell = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
+            case .wakeUpTypeWeather:
+                let weatherCell = tableView.dequeueReusableCell(withIdentifier: "weather") as! WeatherCellTableViewCell
+                weatherCell.setWakeUp(wakeUp: wakeUp!)
+                return weatherCell
+                case .wakeUpTypeCal:
+                let calCel = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
+                calCel.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeCal, index: indexPath.row)
+                return calCel
+            case .wakeUpTypeTransit:
+                let transitCell = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
             
-            transitCell.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeTransit, index: indexPath.row)
-            return transitCell
-        case .wakeUpTypeNews:
-            let news = tableView.dequeueReusableCell(withIdentifier: "news") as! NewsCell
-            let newsArt = newsArticles[indexPath.section]
-            news.populateCell(news: newsArt![indexPath.row])
-          
-            return news
-          
-        default:
-            return UITableViewCell()
+                transitCell.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeTransit, index: indexPath.row)
+                return transitCell
+            case .wakeUpTypeNews:
+                let news = tableView.dequeueReusableCell(withIdentifier: "news") as! NewsCell
+                news.selectionStyle = .none
+                let newsArt = newsArticles[indexPath.section]
+                news.populateCell(news: newsArt![indexPath.row])
+            
+                return news
+            case .wakeUpTypeReminder:
+                let reminder = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
+                reminder.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeReminder, index: indexPath.row)
+            
+                return reminder
+
+            }
+        } else {
+            let failedCell = tableView.dequeueReusableCell(withIdentifier: "failed") as! FailedTableViewCell
+            failedCell.setWakeUp(wakeUp!)
+            return failedCell
         }
         
     }
@@ -217,7 +238,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 25))
         headerView.backgroundColor = UIColor.clear
-        headerView.addSubview(sectionLabel)
+        headerView.addSubview(sectionLabel) 
         headerView.layer.cornerRadius = 10
         headerView.backgroundColor = UIColor.white
         
@@ -235,8 +256,11 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
         if type == .wakeUpTypeNews{
             let newsA = newsArticles[indexPath.section]
             let news = newsA![indexPath.row]
-            let safari = SFSafariViewController(url: news.url)
-            present(safari, animated: true, completion: nil)
+            let url = news.url
+            if url != nil {
+                let safari = SFSafariViewController(url: url!)
+                present(safari, animated: true, completion: nil)
+            }
          
         }
     }
@@ -264,7 +288,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                 case .wakeUpTypeNews:
                     let newsWake = wakeUps![.wakeUpTypeNews] as! NewsTockWakeUp
                   
-                        print("The news wake is \(newsWake.newsItems)")
+                        print("The news wake is \(newsWake.newsItems.count)")
                     for newsArr in newsWake.newsItems {
                         
                         headers.append(newsNameForType(type: newsTypes(rawValue: newsArr[0].source)!))
@@ -274,10 +298,12 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                     }
                     
                     break
-              
-                    
-                default:
+                case .wakeUpTypeReminder:
+                        headers.append("Reminders")
+                        indexes.append(wake)
                     break
+                    
+
                 }
             }
             for (wakeUpType, wakeUp) in wakeUps! {
@@ -300,7 +326,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
             if verbal != nil && verbal! != "" {
                 myUtterance = AVSpeechUtterance(string: verbal!)
                 print("the thing to utter is \(verbal)")
-                myUtterance.rate = 0.5
+                myUtterance.rate = Float(rate)
                 synth.delegate = self
                 synth.speak(myUtterance)
                 

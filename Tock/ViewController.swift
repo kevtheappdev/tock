@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("loaded")
         
-        
+    
 //        for family: String in UIFont.familyNames {
 //            print("\(family)")
 //            for name: String in UIFont.fontNames(forFamilyName: family) {
@@ -83,12 +83,14 @@ class ViewController: UIViewController {
         
         timePicker.alpha = 0.0
         
+      
         
     }
     
     
     @objc func buttonTapped(){
         self.performSegue( withIdentifier: "settings", sender: self)
+        
     }
     
     
@@ -105,7 +107,7 @@ class ViewController: UIViewController {
             animateButton()
             tockButton()
             animateTimeLabel()
-        timePicker.setTime()
+            timePicker.setTime()
         }
         
  

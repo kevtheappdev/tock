@@ -7,8 +7,9 @@
 //
 
 import Foundation
-
+import EventKit
 
 protocol TockEventsMangerDelegate {
     func calendarAccess(_ granted: Bool)
+    func reminderAccess(_ granted: Bool)
 }

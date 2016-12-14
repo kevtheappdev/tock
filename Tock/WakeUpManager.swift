@@ -118,8 +118,10 @@ class WakeUpManager: NSObject {
                 let news = NewsTockWakeUp()
                 wakeUps[.wakeUpTypeNews] = news
                 break
-                default:
-                   break
+            case .wakeUpTypeReminder:
+                let reminder = RemindersTockWakeUp()
+                 wakeUps[.wakeUpTypeReminder] = reminder
+ 
                 }
             print("Test \(wakeUp.rawValue)")
             }
