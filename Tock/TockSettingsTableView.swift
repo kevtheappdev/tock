@@ -581,7 +581,7 @@ class TockSettingsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "config") as! SettingsCell
-
+        cell.selectionStyle = .none
         let setting = settings[(indexPath as NSIndexPath).row]
         if self.wakeupType == .wakeUpTypeNews {
           

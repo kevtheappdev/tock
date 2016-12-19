@@ -22,30 +22,35 @@ class OptionsUnwindTransition: NSObject,  UIViewControllerAnimatedTransitioning{
         
         
         
-        UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, true, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()
         
+        context!.saveGState()
+    
+        
+        //toView?.layer.render(in: context!)
+        toView?.drawHierarchy(in: toView!.bounds, afterScreenUpdates: true)
+        let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
+       
+        context!.saveGState()
+
+        //fromView?.drawHierarchy(in: fromView!.bounds, afterScreenUpdates: true)
         fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
         let fromSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
-        UIGraphicsBeginImageContextWithOptions((toView?.bounds.size)!, false, UIScreen.main.scale)
-        
-        toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-       
-        
         let fromLayer = CALayer()
         fromLayer.frame = CGRect(x: 0, y: 0, width: fromSnapshot!.size.width, height: fromSnapshot!.size.height)
         fromLayer.contents = fromSnapshot!.cgImage
         
+        fromLayer.contentsScale = UIScreen.main.scale
         
         
         let toLayer = CALayer()
         toLayer.frame = CGRect(x: 0, y: 0, width: toSnapshot!.size.width, height: toSnapshot!.size.height)
+        toLayer.contentsScale = UIScreen.main.scale
         toLayer.contents = toSnapshot!.cgImage
         
         containerView.layer.addSublayer(toLayer)
@@ -65,7 +70,7 @@ class OptionsUnwindTransition: NSObject,  UIViewControllerAnimatedTransitioning{
         
         let startShape = UIBezierPath(roundedRect: CGRect(x: -950, y: -950, width: 2000, height: 2000), cornerRadius: 1000).cgPath
         
-         let endShape = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 80, height: 80), cornerRadius: 50).cgPath
+         let endShape = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 120, height: 120), cornerRadius: 50).cgPath
         
         maskLayer.path = startShape
         
@@ -81,9 +86,11 @@ class OptionsUnwindTransition: NSObject,  UIViewControllerAnimatedTransitioning{
         
         
         CATransaction.setCompletionBlock({()in
-            containerView.addSubview(toView!)
-            toLayer.removeFromSuperlayer()
+            toView?.drawHierarchy(in: toView!.bounds, afterScreenUpdates: false)
+           fromView?.removeFromSuperview()
             fromLayer.removeFromSuperlayer()
+             toLayer.removeFromSuperlayer()
+            containerView.addSubview(toView!)
             transitionContext.completeTransition(true)
         })
         

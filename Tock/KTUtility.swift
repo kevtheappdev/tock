@@ -65,7 +65,7 @@ class KTUtility: NSObject
         let currentComponents = (calendar as NSCalendar?)?.components([.month, .day, .year, .hour, .minute], from: currentDate)
         
 
-        var currentDay = currentComponents!.day
+        let currentDay = currentComponents!.day
         let currentMonth = currentComponents!.month
         let currentYear = currentComponents!.year
         
@@ -91,10 +91,15 @@ class KTUtility: NSObject
         
         let defaults = UserDefaults.standard
         defaults.set(date, forKey: wakeUpTimeKey)
+        
+        let sharedDefaults = UserDefaults(suiteName: "group.com.kevinturner.TockTodayView")!
+        sharedDefaults.set(date, forKey: wakeUpTimeKey)
 
         
     }
     
+    
+   
     
     static func getCurrentDate() -> String
     {

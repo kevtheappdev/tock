@@ -11,6 +11,8 @@ import UIKit
 class TockWakeViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var playGrettingButton: UIButton!
+    var shouldDisplayPlay = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +21,15 @@ class TockWakeViewController: UIViewController {
         gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
         self.view.layer.insertSublayer(gradient, below: self.timeLabel.layer)
         
-        
+        setDataFetched(fetched: shouldDisplayPlay)
         self.timeLabel.text = KTUtility.getCurrentDate()
+    }
+    
+    func setDataFetched(fetched: Bool){
+        DispatchQueue.main.async(execute: {() in
+            self.playGrettingButton.isEnabled = fetched
+            self.playGrettingButton.isHidden = !fetched
+        })
     }
 
     override func didReceiveMemoryWarning() {

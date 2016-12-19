@@ -28,18 +28,10 @@ class StartButton: UIButton {
         self.layer.shadowColor = backgroundColor?.cgColor
         self.layer.masksToBounds = true
         
-        
-        let text = CATextLayer()
-        text.frame = gradient.frame
-        text.string = "Start"
-        text.contentsScale = UIScreen.main.scale
-        text.font = UIFont(name: "AvenirNext-Regular", size: 15)
-        text.bounds = CGRect(x: 0, y: 0, width: bounds.width/2, height: bounds.height/2)
-        text.fontSize = 20
+        self.titleLabel?.text = "Start"
+        self.bringSubview(toFront: titleLabel!)
      
-        text.alignmentMode = kCAAlignmentCenter
-        text.position = CGPoint(x: bounds.midX, y: bounds.midY-3)
-        layer.addSublayer(text)
+  
     }
 
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 
 
@@ -31,6 +31,7 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var settingsTypeLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    var player: AVAudioPlayer?
     
     let uDefaults = UserDefaults.standard
     
@@ -38,6 +39,7 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     let sounds = [soundType(soundName: "Buzzer", fileName: "alarm"), soundType(soundName: "Siren", fileName: "siren"), soundType(soundName: "Fog Horn",fileName: "fogHorn")]
     let soundHeaders = ["Alarm Sounds"]
+    let sampleNames = ["alarmTest", "sirenSample", "fogHornSample"]
     
     let voiceSpeeds = [voiceType(speedName: "Slow", speedValue: 0.3), voiceType(speedName: "Medium", speedValue: 0.5), voiceType(speedName: "Fast", speedValue: 0.8)]
     let greetingOptions = ["Play Greeting Automatically"]
@@ -199,6 +201,7 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
         let cell = tableView.dequeueReusableCell(withIdentifier: "config") as! DetailSettingsTableViewCell
+            cell.selectionStyle = .none
         if indexPath.row == self.selectedIndex {
             cell.check(enabled: true)
         } else {
@@ -245,6 +248,7 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
             switch self.type! {
             case .sound:
                 uDefaults.set(sounds[indexPath.row].fileName, forKey: alarmSoundKey)
+                playSound(withName: sampleNames[indexPath.row])
                 break
             case .voice:
                 uDefaults.set(voiceSpeeds[indexPath.row].speedValue, forKey: speechSpeedKey)
@@ -267,6 +271,24 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
             break
         default:
             break
+        }
+    }
+    
+    func playSound(withName name: String){
+        let audioPath = Bundle.main.path(forResource: name, ofType: "wav")
+        
+        if audioPath != nil {
+            let audiofileURl = URL(fileURLWithPath: audioPath!)
+            
+            do {
+                player = try AVAudioPlayer(contentsOf: audiofileURl)
+                guard let player = player else { return }
+                
+                player.prepareToPlay()
+                player.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
     

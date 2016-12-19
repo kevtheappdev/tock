@@ -32,6 +32,12 @@ class ViewController: UIViewController {
         print("loaded")
         
     
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        
 //        for family: String in UIFont.familyNames {
 //            print("\(family)")
 //            for name: String in UIFont.fontNames(forFamilyName: family) {
@@ -42,50 +48,55 @@ class ViewController: UIViewController {
         
         let screenSize = UIScreen.main.bounds
        
-//        let pocket = PocketTockWakeUp(name: "pocket")
-//        pocket.fetchData()
-//        print(pocket.stringsToVerbalize())
-        
-//        
-//        Twitter.sharedInstance().logIn(completion: {(session, error) in
-//            if session != nil {
-//                print("User has been logged in")
-//            } else {
-//                print("There was an error \(error)")
-//            }
-//        })
-        
-//        let twitter = TwitterTockWakeUp(name: "Twitter")
-//        twitter.fetchData()
-//        
-//        
-//        let news = NewsTockWakeUp(name: "news")
-//        news.fetchData()
-        
-//        
-//        let transit = TransitTockWakeUp(name: "transit", from: "ChIJf1PYVtbRQIYRcXIqeb6Be70", to: "ChIJjXhO2t3PQIYRju8QMiDsQNQ")
-//        transit.fetchData()
-//        print("strings; \(transit.stringsToVerbalize())")
-//
-       dropButton = TockButton(frame: CGRect(x: (screenSize.size.width-80)/2, y: (screenSize.size.height-80)/2, width: 0, height: 0))
+
+        var buttonSize = CGFloat(120)
+        print(UIScreen.main.bounds.height)
+        if UIScreen.main.bounds.height == 480 {
+            buttonSize = 75
+        }
+       dropButton = TockButton(frame: CGRect(x: (screenSize.size.width-buttonSize)/2, y: (screenSize.size.height-buttonSize)/2, width: buttonSize, height: buttonSize))
         dropButton.layer.cornerRadius = 40
-        dropButton.backgroundColor = UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1)
+        dropButton.backgroundColor = UIColor.clear
+        dropButton.setBackgroundImage(UIImage(named: "tockImage"), for: .normal)
         dropButton.addTarget(self, action: #selector(buttonTapped), for: UIControlEvents.touchDown)
         view.addSubview(dropButton)
         
         startButton.alpha = 0.0
         
-        startButton.backgroundColor = UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1)        
-        startButton.layer.shadowOpacity = 1
-        startButton.layer.shadowRadius = 10
-        startButton.layer.cornerRadius = 15
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(x: 0, y: 0, width: startButton.bounds.width, height: startButton.bounds.height)
+        gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
+        startButton.layer.addSublayer(gradient)
+    
+        startButton.layer.cornerRadius = 20
+        
+        startButton.layer.masksToBounds = true
+        startButton.contentVerticalAlignment = .center
+        startButton.titleLabel?.font = UIFont(name: "AvenirNext-Regular", size: 15)
+        startButton.setTitleColor(UIColor.white, for: .normal)
+        startButton.setTitle("Start", for: .normal)
+        
         
         
         timePicker.alpha = 0.0
         
+        create3DTouchShortcuts()
       
         
     }
+    
+    
+    func create3DTouchShortcuts(){
+        let startIcon = UIApplicationShortcutIcon(type: .play)
+        let startButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.start", localizedTitle: "Start", localizedSubtitle: nil, icon: startIcon, userInfo: nil)
+        
+        let servicesIcon = UIApplicationShortcutIcon(type: .alarm)
+        let servicesButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.services", localizedTitle: "Services", localizedSubtitle: nil, icon: servicesIcon, userInfo: nil)
+        
+        UIApplication.shared.shortcutItems = [startButton, servicesButton]
+        
+    }
+    
     
     
     @objc func buttonTapped(){
@@ -104,8 +115,8 @@ class ViewController: UIViewController {
             print("Onboard the user")
             self.performSegue( withIdentifier: "onboard", sender: self)
         } else {
+             tockButton()
             animateButton()
-            tockButton()
             animateTimeLabel()
             timePicker.setTime()
         }
@@ -116,7 +127,7 @@ class ViewController: UIViewController {
 
     
     func animateButton(){
-        UIView.animate( withDuration: 2.0, animations: {() in
+        UIView.animate( withDuration: 3.0, animations: {() in
            self.startButton.alpha = 1.0
         })
     }
@@ -125,7 +136,7 @@ class ViewController: UIViewController {
     
     func animateTimeLabel(){
         
-        UIView.animate(withDuration: 2.0, animations: {() in
+        UIView.animate(withDuration: 3.0, animations: {() in
             self.timePicker.alpha = 1.0
         })
         
@@ -145,7 +156,7 @@ class ViewController: UIViewController {
         animator.addBehavior(floor)
         animator.addBehavior(gravity)
         
-        dropButton.displayImage()
+
     }
 
     @IBAction func doubleTapped(_ sender: AnyObject) {

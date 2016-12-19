@@ -13,6 +13,7 @@ import GoogleMaps
 import GooglePlaces
 import UserNotifications
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,11 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
-            if !accepted {
-                print("Notification access denied.")
-            }
-        }
+       
+        
+        
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        let gai = GAI.sharedInstance()!
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.verbose
+
         GMSPlacesClient.provideAPIKey("AIzaSyDVjEFSIxpAgasRANziCzGkGWwHA79Z8bk")
         GMSServices.provideAPIKey("AIzaSyDVjEFSIxpAgasRANziCzGkGWwHA79Z8bk")
         return true
@@ -43,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             break
         case "com.kevinturner.TockApp.services":
 
-            completionHandler(showVC(withIdentifier: "services"))
+            completionHandler(showVC(withIdentifier: "settings"))
             break
         default:
             completionHandler(false)
@@ -57,9 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let rootVC = storyboard.instantiateInitialViewController() else {return false}
         self.window?.rootViewController = rootVC
         
-        let toVC = storyboard.instantiateViewController(withIdentifier: identifier)
-        
-        rootVC.present(toVC, animated: false, completion: nil)
+        rootVC.performSegue(withIdentifier: identifier, sender: self)
         
 
         return true

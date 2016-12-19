@@ -14,10 +14,11 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
     var apiURlString = "http://api.openweathermap.org/data/2.5/weather?appid=e5c054908fafb88214c73831ed35724b&"
     var apiURL: URL!
     let requester = KTRequester()
-    var conditionImage : UIImage?
     var temp: Int!
     var name: String!
     var condition: String!
+    var code: Int!
+    
       
     init(location: String) {
         let ud = UserDefaults.standard
@@ -57,6 +58,10 @@ class WeatherTockWakeUp: TockWakeUp, KTRequesterDelegate
             if let weather = weatherArr[0].dictionary {
                 if let description = weather["description"]?.string {
                     condition = description
+                }
+                
+                if let code = weather["id"]?.int {
+                    self.code = code
                 }
             }
         }

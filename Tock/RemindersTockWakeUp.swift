@@ -12,6 +12,7 @@ import EventKit
 class RemindersTockWakeUp: TockWakeUp, TockEventsFetcherDelegate {
     let teManager = TockEventsManager()
     var reminders : [EKReminder]!
+    var reminderCount = 1
     
     init(){
         super.init(name: "Reminders")
@@ -23,8 +24,11 @@ class RemindersTockWakeUp: TockWakeUp, TockEventsFetcherDelegate {
     }
     
     func remindersFetched(_ reminders: [EKReminder]) {
-        self.fetchSuccess = true
+        self.fetchSuccess = reminders.count > 0
         self.reminders = reminders
+        reminderCount = reminders.count > 1 ? reminders.count : 1
+        self.failedString = "No Reminders"
+        self.delegate?.finishedDataFetch()
     }
     
     override func stringsToVerbalize() -> [String] {

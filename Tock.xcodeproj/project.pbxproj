@@ -10,19 +10,26 @@
 		0DD8C066993F894BEE1D2511 /* Pods_Tock_TockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46588369E144AD61E2955D9B /* Pods_Tock_TockTests.framework */; };
 		5F50B990593FD1D2104ABDA0 /* Pods_Tock_TockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5318B6DF013820520D3EB14 /* Pods_Tock_TockUITests.framework */; };
 		6800CCF21DE3C9AA00B26031 /* ConfigureTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6800CCF11DE3C9AA00B26031 /* ConfigureTransition.swift */; };
+		6805D1691E030929004ABB8A /* KTUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B351DD0101B005D109E /* KTUtility.swift */; };
+		6805D16A1E030A4E004ABB8A /* system_constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B371DD01038005D109E /* system_constants.swift */; };
+		6805D16D1E03558B004ABB8A /* alarmTest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6805D16C1E03558B004ABB8A /* alarmTest.wav */; };
+		6805D1701E03583A004ABB8A /* fogHornSample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6805D16E1E03583A004ABB8A /* fogHornSample.wav */; };
+		6805D1711E03583A004ABB8A /* sirenSample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6805D16F1E03583A004ABB8A /* sirenSample.wav */; };
+		6805D1731E036350004ABB8A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6805D1721E036350004ABB8A /* StoreKit.framework */; };
+		6805D1751E036359004ABB8A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6805D1741E036359004ABB8A /* GameKit.framework */; };
 		681353E01DE8AC7C0035E78B /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 681353DE1DE8AC7C0035E78B /* home.png */; };
 		681353E11DE8AC7C0035E78B /* connectServices.png in Resources */ = {isa = PBXBuildFile; fileRef = 681353DF1DE8AC7C0035E78B /* connectServices.png */; };
-		681353E31DE8B5C10035E78B /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 681353E21DE8B5C10035E78B /* settingsButton.png */; };
 		681353E51DE8BB120035E78B /* HomeTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681353E41DE8BB120035E78B /* HomeTutorialViewController.swift */; };
 		681353E71DE8C6A50035E78B /* timePicker.png in Resources */ = {isa = PBXBuildFile; fileRef = 681353E61DE8C6A50035E78B /* timePicker.png */; };
-		681353EA1DE8CE580035E78B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681353E91DE8CE580035E78B /* CloudKit.framework */; };
 		681353EC1DE8CFA00035E78B /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681353EB1DE8CFA00035E78B /* UpgradeViewController.swift */; };
-		681353EE1DE8D6B00035E78B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681353ED1DE8D6B00035E78B /* StoreKit.framework */; };
-		681B1A331E00DE1A00457AF6 /* list-numbered.png in Resources */ = {isa = PBXBuildFile; fileRef = 681B1A321E00DE1A00457AF6 /* list-numbered.png */; };
 		681B1A351E00E15400457AF6 /* RemindersTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681B1A341E00E15400457AF6 /* RemindersTockWakeUp.swift */; };
 		681E66A01DF3391C00EC9AC1 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */; };
 		681E66A31DF3695A00EC9AC1 /* siren.wav in Resources */ = {isa = PBXBuildFile; fileRef = 681E66A21DF3695A00EC9AC1 /* siren.wav */; };
 		681E66A51DF36E7900EC9AC1 /* fogHorn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 681E66A41DF36E7900EC9AC1 /* fogHorn.wav */; };
+		682AFBF31E05996400862A1A /* Tock.png in Resources */ = {isa = PBXBuildFile; fileRef = 682AFBF21E05996400862A1A /* Tock.png */; };
+		682BE0E91E072B63002A490F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 682BE0E81E072B63002A490F /* GoogleService-Info.plist */; };
+		682BE0EB1E072C16002A490F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 682BE0E81E072B63002A490F /* GoogleService-Info.plist */; };
+		682BE0EE1E072DE9002A490F /* Tock-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 682BE0ED1E072D82002A490F /* Tock-Bridging-Header.h */; };
 		682FBF111DE8E2FB003D4F11 /* tockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 682FBF101DE8E2FB003D4F11 /* tockIcon.png */; };
 		683DAC341DD1010900F5BE2C /* TempUnitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC331DD1010900F5BE2C /* TempUnitsCell.swift */; };
 		683DAC361DD1011C00F5BE2C /* TockLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683DAC351DD1011C00F5BE2C /* TockLocationManagerDelegate.swift */; };
@@ -48,24 +55,16 @@
 		68424E701DE4959D0061944F /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */; };
 		68424E711DE4959D0061944F /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */; };
 		68424E721DE4959D0061944F /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */; };
-		68424E761DE4A64F0061944F /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 68424E731DE4A64F0061944F /* compass.png */; };
 		68424E771DE4A64F0061944F /* home3.png in Resources */ = {isa = PBXBuildFile; fileRef = 68424E741DE4A64F0061944F /* home3.png */; };
-		68424E781DE4A64F0061944F /* office.png in Resources */ = {isa = PBXBuildFile; fileRef = 68424E751DE4A64F0061944F /* office.png */; };
 		68424E7A1DE4A7650061944F /* location2.png in Resources */ = {isa = PBXBuildFile; fileRef = 68424E791DE4A7650061944F /* location2.png */; };
 		68424E7C1DE4B4D00061944F /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68424E7B1DE4B4D00061944F /* StartButton.swift */; };
 		68424E7E1DE4F3D60061944F /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68424E7D1DE4F3D50061944F /* Queue.swift */; };
 		6846C59B1DE5E4C9004FBDE0 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846C59A1DE5E4C9004FBDE0 /* NewsItem.swift */; };
 		6846C59D1DE6161B004FBDE0 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846C59C1DE6161B004FBDE0 /* NewsCell.swift */; };
 		6850AB6C1DF224E90035F5E4 /* TockSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */; };
-		6850AB6E1DF2270F0035F5E4 /* circle-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB6D1DF2270F0035F5E4 /* circle-right.png */; };
 		6850AB701DF228F50035F5E4 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */; };
-		6850AB731DF22D8A0035F5E4 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB711DF22D8A0035F5E4 /* mic.png */; };
 		6850AB741DF22D8A0035F5E4 /* volume-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB721DF22D8A0035F5E4 /* volume-medium.png */; };
-		6850AB761DF22DC10035F5E4 /* sleepy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB751DF22DC10035F5E4 /* sleepy.png */; };
-		6850AB781DF22FB10035F5E4 /* cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB771DF22FB10035F5E4 /* cogs.png */; };
 		687F5EC31DD124BE00148487 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F5EC21DD124BE00148487 /* SparkleView.swift */; };
-		687F5EC51DD1253800148487 /* Tock.png in Resources */ = {isa = PBXBuildFile; fileRef = 687F5EC41DD1253800148487 /* Tock.png */; };
-		687F5EC71DD127BA00148487 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 687F5EC61DD127BA00148487 /* checkmark.png */; };
 		688A54FC1DD674C300BC1A31 /* OptionsUnwindTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A54FB1DD674C300BC1A31 /* OptionsUnwindTransition.swift */; };
 		68934AFF1DD00D26005D109E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934AFE1DD00D26005D109E /* AppDelegate.swift */; };
 		68934B041DD00D26005D109E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68934B021DD00D26005D109E /* Main.storyboard */; };
@@ -89,37 +88,24 @@
 		68934B4A1DD01B3C005D109E /* RightSlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B491DD01B3C005D109E /* RightSlideTransition.swift */; };
 		68934B4C1DD01BBE005D109E /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B4B1DD01BBE005D109E /* ServicesViewController.swift */; };
 		68934B4E1DD01CFF005D109E /* ServiceSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B4D1DD01CFF005D109E /* ServiceSelectorViewController.swift */; };
-		68934B791DD01D31005D109E /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B501DD01D31005D109E /* alarm.png */; };
 		68934B7A1DD01D31005D109E /* arstechnica-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B511DD01D31005D109E /* arstechnica-m.png */; };
 		68934B7B1DD01D31005D109E /* bbcnews-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B521DD01D31005D109E /* bbcnews-m.png */; };
 		68934B7C1DD01D31005D109E /* bbcsport-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B531DD01D31005D109E /* bbcsport-m.png */; };
-		68934B7D1DD01D31005D109E /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B541DD01D31005D109E /* bell.png */; };
 		68934B7E1DD01D31005D109E /* bloomberg-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B551DD01D31005D109E /* bloomberg-m.png */; };
 		68934B7F1DD01D31005D109E /* buzzfeed-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B561DD01D31005D109E /* buzzfeed-m.png */; };
-		68934B801DD01D31005D109E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B571DD01D31005D109E /* calendar.png */; };
-		68934B811DD01D31005D109E /* circle-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B581DD01D31005D109E /* circle-down.png */; };
 		68934B821DD01D31005D109E /* cnbc-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B591DD01D31005D109E /* cnbc-m.png */; };
 		68934B831DD01D31005D109E /* cnn-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5A1DD01D31005D109E /* cnn-m.png */; };
 		68934B841DD01D31005D109E /* emit.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5B1DD01D31005D109E /* emit.png */; };
 		68934B851DD01D31005D109E /* engadget-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5C1DD01D31005D109E /* engadget-m.png */; };
 		68934B861DD01D31005D109E /* entertainmentweekly-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5D1DD01D31005D109E /* entertainmentweekly-m.png */; };
-		68934B871DD01D31005D109E /* equalizer2.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5E1DD01D31005D109E /* equalizer2.png */; };
 		68934B881DD01D31005D109E /* espn-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B5F1DD01D31005D109E /* espn-m.png */; };
-		68934B891DD01D31005D109E /* facebook3.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B601DD01D31005D109E /* facebook3.png */; };
-		68934B8A1DD01D31005D109E /* FB-f-Logo__blue_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B611DD01D31005D109E /* FB-f-Logo__blue_144.png */; };
-		68934B8B1DD01D31005D109E /* FBLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B621DD01D31005D109E /* FBLogo.png */; };
 		68934B8C1DD01D31005D109E /* googlenews-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B631DD01D31005D109E /* googlenews-m.png */; };
 		68934B8D1DD01D31005D109E /* hackernews-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B641DD01D31005D109E /* hackernews-m.png */; };
 		68934B8E1DD01D31005D109E /* independent-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B651DD01D31005D109E /* independent-m.png */; };
 		68934B8F1DD01D31005D109E /* mashable-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B661DD01D31005D109E /* mashable-m.png */; };
-		68934B901DD01D31005D109E /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B671DD01D31005D109E /* newspaper.png */; };
-		68934B911DD01D31005D109E /* pocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B681DD01D31005D109E /* pocket.png */; };
-		68934B921DD01D31005D109E /* pocket1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B691DD01D31005D109E /* pocket1.png */; };
 		68934B931DD01D31005D109E /* recode-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6A1DD01D31005D109E /* recode-m.png */; };
 		68934B941DD01D31005D109E /* redditrall-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6B1DD01D31005D109E /* redditrall-m.png */; };
 		68934B951DD01D31005D109E /* reuters-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6C1DD01D31005D109E /* reuters-m.png */; };
-		68934B961DD01D31005D109E /* services.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6D1DD01D31005D109E /* services.png */; };
-		68934B971DD01D31005D109E /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6E1DD01D31005D109E /* sun.png */; };
 		68934B981DD01D31005D109E /* techcrunch-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B6F1DD01D31005D109E /* techcrunch-m.png */; };
 		68934B991DD01D31005D109E /* theguardianuk-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B701DD01D31005D109E /* theguardianuk-m.png */; };
 		68934B9A1DD01D31005D109E /* thehuffingtonpost-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B711DD01D31005D109E /* thehuffingtonpost-m.png */; };
@@ -128,8 +114,6 @@
 		68934B9D1DD01D31005D109E /* theverge-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B741DD01D31005D109E /* theverge-m.png */; };
 		68934B9E1DD01D31005D109E /* thewallstreetjournal-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B751DD01D31005D109E /* thewallstreetjournal-m.png */; };
 		68934B9F1DD01D31005D109E /* thewashingtonpost-m.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B761DD01D31005D109E /* thewashingtonpost-m.png */; };
-		68934BA01DD01D31005D109E /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B771DD01D31005D109E /* tick.png */; };
-		68934BA11DD01D31005D109E /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 68934B781DD01D31005D109E /* twitter.png */; };
 		68934BA31DD01D55005D109E /* TockConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA21DD01D55005D109E /* TockConfigureViewController.swift */; };
 		68934BA51DD01D6F005D109E /* nuberAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA41DD01D6F005D109E /* nuberAdjuster.swift */; };
 		68934BA71DD01DCC005D109E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA61DD01DCC005D109E /* SettingsCell.swift */; };
@@ -137,6 +121,10 @@
 		68B746471DD61850007BA513 /* NewsTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B746461DD61850007BA513 /* NewsTockWakeUp.swift */; };
 		68D2EAD01DD381DC00C3732A /* TockAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */; };
 		68D2EAD21DD3A20900C3732A /* TockBeepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */; };
+		68D639B51E02FBE0007862D4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D639B41E02FBE0007862D4 /* NotificationCenter.framework */; };
+		68D639B81E02FBE0007862D4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D639B71E02FBE0007862D4 /* TodayViewController.swift */; };
+		68D639BB1E02FBE0007862D4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D639B91E02FBE0007862D4 /* MainInterface.storyboard */; };
+		68D639BF1E02FBE0007862D4 /* Tock Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 68D639B31E02FBE0007862D4 /* Tock Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		68DAB5441DEF5A2E0040D253 /* play4.png in Resources */ = {isa = PBXBuildFile; fileRef = 68DAB5431DEF5A2E0040D253 /* play4.png */; };
 		68DAB5461DEF5B260040D253 /* TockWakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */; };
 		68DEBA461DF23B6700FA2748 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */; };
@@ -147,13 +135,14 @@
 		68E8C78F1DE7B38100D898F3 /* play3.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C78B1DE7B38100D898F3 /* play3.png */; };
 		68E8C7901DE7B38100D898F3 /* spinner11.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C78C1DE7B38100D898F3 /* spinner11.png */; };
 		68E8C7921DE7F88200D898F3 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 68E8C7911DE7F88200D898F3 /* alarm.wav */; };
+		68EA9EE51E01A64E00F06223 /* weather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68EA9EE41E01A63900F06223 /* weather.ttf */; };
 		68F138951DD039B2004DE6CD /* TockSettingsSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F138941DD039B2004DE6CD /* TockSettingsSelectionDelegate.swift */; };
 		68F138971DD039EB004DE6CD /* TockSettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F138961DD039EB004DE6CD /* TockSettingsTableView.swift */; };
 		68F146E41DE3CF48000CF4DE /* UnwindConfigureTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F146E31DE3CF48000CF4DE /* UnwindConfigureTransition.swift */; };
-		68F146E61DE3E6AD000CF4DE /* circle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F146E51DE3E6AD000CF4DE /* circle-left.png */; };
 		68F659821DE55E7300F40FF9 /* WeatherCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F659811DE55E7300F40FF9 /* WeatherCellTableViewCell.swift */; };
-		68F659841DE55FB400F40FF9 /* 10d.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F659831DE55FB400F40FF9 /* 10d.png */; };
 		68F659881DE5695C00F40FF9 /* CalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F659871DE5695C00F40FF9 /* CalCell.swift */; };
+		68F919D31E07122C00C220A0 /* editbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F919D21E07122C00C220A0 /* editbutton.png */; };
+		68F919D51E07133F00C220A0 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F919D41E07133F00C220A0 /* startButton.png */; };
 		9DFFB3E098C1BDAF44EDEC60 /* Pods_TockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C11CAD9B8734672ACEC346 /* Pods_TockTests.framework */; };
 		A64F5F4B8803AF5516571AEB /* Pods_Tock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */; };
 		B7ED08C49BC4FDF4FDFF0709 /* Pods_TockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */; };
@@ -174,7 +163,28 @@
 			remoteGlobalIDString = 68934AFA1DD00D26005D109E;
 			remoteInfo = Tock;
 		};
+		68D639BD1E02FBE0007862D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68934AF31DD00D25005D109E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68D639B21E02FBE0007862D4;
+			remoteInfo = "Tock Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		68D639C31E02FBE0007862D4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				68D639BF1E02FBE0007862D4 /* Tock Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		292E6356D30A1F82A88919A4 /* Pods-TockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TockUITests/Pods-TockUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,20 +194,25 @@
 		6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631BBBD1F7E8954280AB8A43 /* Pods-Tock-TockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests.release.xcconfig"; sourceTree = "<group>"; };
 		6800CCF11DE3C9AA00B26031 /* ConfigureTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureTransition.swift; sourceTree = "<group>"; };
+		6805D16B1E0311C0004ABB8A /* Tock Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tock Widget.entitlements"; sourceTree = "<group>"; };
+		6805D16C1E03558B004ABB8A /* alarmTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmTest.wav; sourceTree = "<group>"; };
+		6805D16E1E03583A004ABB8A /* fogHornSample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fogHornSample.wav; sourceTree = "<group>"; };
+		6805D16F1E03583A004ABB8A /* sirenSample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sirenSample.wav; sourceTree = "<group>"; };
+		6805D1721E036350004ABB8A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6805D1741E036359004ABB8A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		681353DE1DE8AC7C0035E78B /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		681353DF1DE8AC7C0035E78B /* connectServices.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectServices.png; sourceTree = "<group>"; };
-		681353E21DE8B5C10035E78B /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButton.png; sourceTree = "<group>"; };
 		681353E41DE8BB120035E78B /* HomeTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTutorialViewController.swift; sourceTree = "<group>"; };
 		681353E61DE8C6A50035E78B /* timePicker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timePicker.png; sourceTree = "<group>"; };
 		681353E81DE8CE560035E78B /* Tock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tock.entitlements; sourceTree = "<group>"; };
-		681353E91DE8CE580035E78B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		681353EB1DE8CFA00035E78B /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
-		681353ED1DE8D6B00035E78B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		681B1A321E00DE1A00457AF6 /* list-numbered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-numbered.png"; sourceTree = "<group>"; };
 		681B1A341E00E15400457AF6 /* RemindersTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTockWakeUp.swift; sourceTree = "<group>"; };
 		681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		681E66A21DF3695A00EC9AC1 /* siren.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = siren.wav; sourceTree = "<group>"; };
 		681E66A41DF36E7900EC9AC1 /* fogHorn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fogHorn.wav; sourceTree = "<group>"; };
+		682AFBF21E05996400862A1A /* Tock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tock.png; sourceTree = "<group>"; };
+		682BE0E81E072B63002A490F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		682BE0ED1E072D82002A490F /* Tock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tock-Bridging-Header.h"; sourceTree = "<group>"; };
 		682FBF101DE8E2FB003D4F11 /* tockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tockIcon.png; sourceTree = "<group>"; };
 		683DAC331DD1010900F5BE2C /* TempUnitsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempUnitsCell.swift; sourceTree = "<group>"; };
 		683DAC351DD1011C00F5BE2C /* TockLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockLocationManagerDelegate.swift; sourceTree = "<group>"; };
@@ -223,24 +238,19 @@
 		68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
-		68424E731DE4A64F0061944F /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		68424E741DE4A64F0061944F /* home3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home3.png; sourceTree = "<group>"; };
-		68424E751DE4A64F0061944F /* office.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = office.png; sourceTree = "<group>"; };
 		68424E791DE4A7650061944F /* location2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location2.png; sourceTree = "<group>"; };
 		68424E7B1DE4B4D00061944F /* StartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		68424E7D1DE4F3D50061944F /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		6846C59A1DE5E4C9004FBDE0 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		6846C59C1DE6161B004FBDE0 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		6848D9711E072431006A1392 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Downloads/FacebookSDKs-iOS-4.18.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		6848D9731E0724D8006A1392 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.18.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		6848D9771E072550006A1392 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../FacebookSDKs-iOS-4.18.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockSettingsViewController.swift; sourceTree = "<group>"; };
-		6850AB6D1DF2270F0035F5E4 /* circle-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-right.png"; sourceTree = "<group>"; };
 		6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		6850AB711DF22D8A0035F5E4 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		6850AB721DF22D8A0035F5E4 /* volume-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-medium.png"; sourceTree = "<group>"; };
-		6850AB751DF22DC10035F5E4 /* sleepy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleepy.png; sourceTree = "<group>"; };
-		6850AB771DF22FB10035F5E4 /* cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cogs.png; sourceTree = "<group>"; };
 		687F5EC21DD124BE00148487 /* SparkleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
-		687F5EC41DD1253800148487 /* Tock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tock.png; sourceTree = "<group>"; };
-		687F5EC61DD127BA00148487 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		688A54FB1DD674C300BC1A31 /* OptionsUnwindTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsUnwindTransition.swift; sourceTree = "<group>"; };
 		68934AFB1DD00D26005D109E /* Tock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68934AFE1DD00D26005D109E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -270,37 +280,24 @@
 		68934B491DD01B3C005D109E /* RightSlideTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSlideTransition.swift; sourceTree = "<group>"; };
 		68934B4B1DD01BBE005D109E /* ServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		68934B4D1DD01CFF005D109E /* ServiceSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSelectorViewController.swift; sourceTree = "<group>"; };
-		68934B501DD01D31005D109E /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
 		68934B511DD01D31005D109E /* arstechnica-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arstechnica-m.png"; sourceTree = "<group>"; };
 		68934B521DD01D31005D109E /* bbcnews-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbcnews-m.png"; sourceTree = "<group>"; };
 		68934B531DD01D31005D109E /* bbcsport-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbcsport-m.png"; sourceTree = "<group>"; };
-		68934B541DD01D31005D109E /* bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell.png; sourceTree = "<group>"; };
 		68934B551DD01D31005D109E /* bloomberg-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bloomberg-m.png"; sourceTree = "<group>"; };
 		68934B561DD01D31005D109E /* buzzfeed-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buzzfeed-m.png"; sourceTree = "<group>"; };
-		68934B571DD01D31005D109E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
-		68934B581DD01D31005D109E /* circle-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-down.png"; sourceTree = "<group>"; };
 		68934B591DD01D31005D109E /* cnbc-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cnbc-m.png"; sourceTree = "<group>"; };
 		68934B5A1DD01D31005D109E /* cnn-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cnn-m.png"; sourceTree = "<group>"; };
 		68934B5B1DD01D31005D109E /* emit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emit.png; sourceTree = "<group>"; };
 		68934B5C1DD01D31005D109E /* engadget-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "engadget-m.png"; sourceTree = "<group>"; };
 		68934B5D1DD01D31005D109E /* entertainmentweekly-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entertainmentweekly-m.png"; sourceTree = "<group>"; };
-		68934B5E1DD01D31005D109E /* equalizer2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equalizer2.png; sourceTree = "<group>"; };
 		68934B5F1DD01D31005D109E /* espn-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "espn-m.png"; sourceTree = "<group>"; };
-		68934B601DD01D31005D109E /* facebook3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook3.png; sourceTree = "<group>"; };
-		68934B611DD01D31005D109E /* FB-f-Logo__blue_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FB-f-Logo__blue_144.png"; sourceTree = "<group>"; };
-		68934B621DD01D31005D109E /* FBLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLogo.png; sourceTree = "<group>"; };
 		68934B631DD01D31005D109E /* googlenews-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "googlenews-m.png"; sourceTree = "<group>"; };
 		68934B641DD01D31005D109E /* hackernews-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hackernews-m.png"; sourceTree = "<group>"; };
 		68934B651DD01D31005D109E /* independent-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "independent-m.png"; sourceTree = "<group>"; };
 		68934B661DD01D31005D109E /* mashable-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mashable-m.png"; sourceTree = "<group>"; };
-		68934B671DD01D31005D109E /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
-		68934B681DD01D31005D109E /* pocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pocket.png; sourceTree = "<group>"; };
-		68934B691DD01D31005D109E /* pocket1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pocket1.png; sourceTree = "<group>"; };
 		68934B6A1DD01D31005D109E /* recode-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recode-m.png"; sourceTree = "<group>"; };
 		68934B6B1DD01D31005D109E /* redditrall-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redditrall-m.png"; sourceTree = "<group>"; };
 		68934B6C1DD01D31005D109E /* reuters-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reuters-m.png"; sourceTree = "<group>"; };
-		68934B6D1DD01D31005D109E /* services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = services.png; sourceTree = "<group>"; };
-		68934B6E1DD01D31005D109E /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		68934B6F1DD01D31005D109E /* techcrunch-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "techcrunch-m.png"; sourceTree = "<group>"; };
 		68934B701DD01D31005D109E /* theguardianuk-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theguardianuk-m.png"; sourceTree = "<group>"; };
 		68934B711DD01D31005D109E /* thehuffingtonpost-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thehuffingtonpost-m.png"; sourceTree = "<group>"; };
@@ -309,8 +306,6 @@
 		68934B741DD01D31005D109E /* theverge-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theverge-m.png"; sourceTree = "<group>"; };
 		68934B751DD01D31005D109E /* thewallstreetjournal-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thewallstreetjournal-m.png"; sourceTree = "<group>"; };
 		68934B761DD01D31005D109E /* thewashingtonpost-m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thewashingtonpost-m.png"; sourceTree = "<group>"; };
-		68934B771DD01D31005D109E /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
-		68934B781DD01D31005D109E /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		68934BA21DD01D55005D109E /* TockConfigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockConfigureViewController.swift; sourceTree = "<group>"; };
 		68934BA41DD01D6F005D109E /* nuberAdjuster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nuberAdjuster.swift; sourceTree = "<group>"; };
 		68934BA61DD01DCC005D109E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -318,6 +313,11 @@
 		68B746461DD61850007BA513 /* NewsTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTockWakeUp.swift; sourceTree = "<group>"; };
 		68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockAlarmViewController.swift; sourceTree = "<group>"; };
 		68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockBeepViewController.swift; sourceTree = "<group>"; };
+		68D639B31E02FBE0007862D4 /* Tock Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tock Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D639B41E02FBE0007862D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		68D639B71E02FBE0007862D4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		68D639BA1E02FBE0007862D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		68D639BC1E02FBE0007862D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DAB5431DEF5A2E0040D253 /* play4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play4.png; sourceTree = "<group>"; };
 		68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockWakeViewController.swift; sourceTree = "<group>"; };
 		68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,13 +328,14 @@
 		68E8C78B1DE7B38100D898F3 /* play3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play3.png; sourceTree = "<group>"; };
 		68E8C78C1DE7B38100D898F3 /* spinner11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner11.png; sourceTree = "<group>"; };
 		68E8C7911DE7F88200D898F3 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm.wav; sourceTree = "<group>"; };
+		68EA9EE41E01A63900F06223 /* weather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather.ttf; sourceTree = "<group>"; };
 		68F138941DD039B2004DE6CD /* TockSettingsSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockSettingsSelectionDelegate.swift; sourceTree = "<group>"; };
 		68F138961DD039EB004DE6CD /* TockSettingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockSettingsTableView.swift; sourceTree = "<group>"; };
 		68F146E31DE3CF48000CF4DE /* UnwindConfigureTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindConfigureTransition.swift; sourceTree = "<group>"; };
-		68F146E51DE3E6AD000CF4DE /* circle-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-left.png"; sourceTree = "<group>"; };
 		68F659811DE55E7300F40FF9 /* WeatherCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCellTableViewCell.swift; sourceTree = "<group>"; };
-		68F659831DE55FB400F40FF9 /* 10d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10d.png; sourceTree = "<group>"; };
 		68F659871DE5695C00F40FF9 /* CalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalCell.swift; sourceTree = "<group>"; };
+		68F919D21E07122C00C220A0 /* editbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton.png; sourceTree = "<group>"; };
+		68F919D41E07133F00C220A0 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
 		71535D277063976815991733 /* Pods-Tock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock/Pods-Tock.debug.xcconfig"; sourceTree = "<group>"; };
 		79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DB0D2AAD9491B5576B9184 /* Pods-Tock-TockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -351,9 +352,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				681353EE1DE8D6B00035E78B /* StoreKit.framework in Frameworks */,
+				6805D1751E036359004ABB8A /* GameKit.framework in Frameworks */,
 				A64F5F4B8803AF5516571AEB /* Pods_Tock.framework in Frameworks */,
-				681353EA1DE8CE580035E78B /* CloudKit.framework in Frameworks */,
+				6805D1731E036350004ABB8A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +376,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68D639B01E02FBE0007862D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D639B51E02FBE0007862D4 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -382,6 +391,9 @@
 			isa = PBXGroup;
 			children = (
 				681E66A41DF36E7900EC9AC1 /* fogHorn.wav */,
+				6805D16E1E03583A004ABB8A /* fogHornSample.wav */,
+				6805D16F1E03583A004ABB8A /* sirenSample.wav */,
+				6805D16C1E03558B004ABB8A /* alarmTest.wav */,
 				681E66A21DF3695A00EC9AC1 /* siren.wav */,
 				68E8C7911DE7F88200D898F3 /* alarm.wav */,
 			);
@@ -425,6 +437,7 @@
 				683E31D81DD0D478006081CF /* TockEventsManager.swift */,
 				683E31D21DD0D3BA006081CF /* WakeUpManager.swift */,
 				683E31D61DD0D444006081CF /* TockLocationManager.swift */,
+				683E31DC1DD0D4AF006081CF /* Location.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -446,13 +459,16 @@
 			isa = PBXGroup;
 			children = (
 				68DAB5451DEF5B260040D253 /* TockWakeViewController.swift */,
+				682BE0ED1E072D82002A490F /* Tock-Bridging-Header.h */,
 				68424E6D1DE4959D0061944F /* AvenirLTStd-Book.otf */,
 				68424E6E1DE4959D0061944F /* AvenirLTStd-Light.otf */,
 				683E8BE91DF5C1D500205235 /* DS-DIGI.TTF */,
 				68424E6F1DE4959D0061944F /* AvenirLTStd-Roman.otf */,
+				68EA9EE41E01A63900F06223 /* weather.ttf */,
 				68934AFD1DD00D26005D109E /* Tock */,
 				68934B121DD00D26005D109E /* TockTests */,
 				68934B1D1DD00D26005D109E /* TockUITests */,
+				68D639B61E02FBE0007862D4 /* Tock Widget */,
 				68934AFC1DD00D26005D109E /* Products */,
 				C105AEFEE6E15769F60279B5 /* Pods */,
 				A1573745673E756837CF55CE /* Frameworks */,
@@ -465,6 +481,7 @@
 				68934AFB1DD00D26005D109E /* Tock.app */,
 				68934B0F1DD00D26005D109E /* TockTests.xctest */,
 				68934B1A1DD00D26005D109E /* TockUITests.xctest */,
+				68D639B31E02FBE0007862D4 /* Tock Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -472,12 +489,13 @@
 		68934AFD1DD00D26005D109E /* Tock */ = {
 			isa = PBXGroup;
 			children = (
+				682BE0E81E072B63002A490F /* GoogleService-Info.plist */,
+				6848D9731E0724D8006A1392 /* FBSDKCoreKit.framework */,
 				681353E81DE8CE560035E78B /* Tock.entitlements */,
 				683DAC3C1DD102BB00F5BE2C /* Utilities */,
 				683DAC3B1DD1014300F5BE2C /* Cutom Views */,
 				68934B021DD00D26005D109E /* Main.storyboard */,
 				684BFDEF1DD1712D00BD240F /* Wake Ups */,
-				683E31DC1DD0D4AF006081CF /* Location.swift */,
 				68934B3E1DD01120005D109E /* Delegates */,
 				68934B3D1DD010F2005D109E /* Transitions */,
 				68934B301DD00F81005D109E /* View Controllers */,
@@ -562,86 +580,76 @@
 		68934B4F1DD01D1B005D109E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				681B1A321E00DE1A00457AF6 /* list-numbered.png */,
 				682FBF101DE8E2FB003D4F11 /* tockIcon.png */,
 				681353DE1DE8AC7C0035E78B /* home.png */,
 				68DAB5431DEF5A2E0040D253 /* play4.png */,
+				68F919D41E07133F00C220A0 /* startButton.png */,
 				681353DF1DE8AC7C0035E78B /* connectServices.png */,
 				681353E41DE8BB120035E78B /* HomeTutorialViewController.swift */,
-				687F5EC61DD127BA00148487 /* checkmark.png */,
-				68934B501DD01D31005D109E /* alarm.png */,
-				687F5EC41DD1253800148487 /* Tock.png */,
-				68F659831DE55FB400F40FF9 /* 10d.png */,
-				6850AB771DF22FB10035F5E4 /* cogs.png */,
 				68934B511DD01D31005D109E /* arstechnica-m.png */,
 				68934B521DD01D31005D109E /* bbcnews-m.png */,
 				68934B531DD01D31005D109E /* bbcsport-m.png */,
-				68934B541DD01D31005D109E /* bell.png */,
+				68F919D21E07122C00C220A0 /* editbutton.png */,
 				68934B551DD01D31005D109E /* bloomberg-m.png */,
 				68934B561DD01D31005D109E /* buzzfeed-m.png */,
-				68934B571DD01D31005D109E /* calendar.png */,
-				68934B581DD01D31005D109E /* circle-down.png */,
 				68934B591DD01D31005D109E /* cnbc-m.png */,
 				68934B5A1DD01D31005D109E /* cnn-m.png */,
 				68934B5B1DD01D31005D109E /* emit.png */,
 				681353E61DE8C6A50035E78B /* timePicker.png */,
 				68934B5C1DD01D31005D109E /* engadget-m.png */,
 				68934B5D1DD01D31005D109E /* entertainmentweekly-m.png */,
-				68934B5E1DD01D31005D109E /* equalizer2.png */,
-				68F146E51DE3E6AD000CF4DE /* circle-left.png */,
 				68934B5F1DD01D31005D109E /* espn-m.png */,
-				6850AB6D1DF2270F0035F5E4 /* circle-right.png */,
-				68934B601DD01D31005D109E /* facebook3.png */,
-				68934B611DD01D31005D109E /* FB-f-Logo__blue_144.png */,
-				68934B621DD01D31005D109E /* FBLogo.png */,
 				68934B631DD01D31005D109E /* googlenews-m.png */,
 				68934B641DD01D31005D109E /* hackernews-m.png */,
 				68934B651DD01D31005D109E /* independent-m.png */,
 				68934B661DD01D31005D109E /* mashable-m.png */,
-				68934B671DD01D31005D109E /* newspaper.png */,
-				68934B681DD01D31005D109E /* pocket.png */,
-				681353E21DE8B5C10035E78B /* settingsButton.png */,
-				68934B691DD01D31005D109E /* pocket1.png */,
 				68934B6A1DD01D31005D109E /* recode-m.png */,
 				68934B6B1DD01D31005D109E /* redditrall-m.png */,
 				68934B6C1DD01D31005D109E /* reuters-m.png */,
-				68934B6D1DD01D31005D109E /* services.png */,
-				68934B6E1DD01D31005D109E /* sun.png */,
 				68934B6F1DD01D31005D109E /* techcrunch-m.png */,
-				6850AB711DF22D8A0035F5E4 /* mic.png */,
-				6850AB751DF22DC10035F5E4 /* sleepy.png */,
 				6850AB721DF22D8A0035F5E4 /* volume-medium.png */,
 				68424E791DE4A7650061944F /* location2.png */,
 				68934B701DD01D31005D109E /* theguardianuk-m.png */,
 				68934B711DD01D31005D109E /* thehuffingtonpost-m.png */,
 				68934B721DD01D31005D109E /* thenewyorktimes-m.png */,
 				68934B731DD01D31005D109E /* thenextweb-m.png */,
-				68424E731DE4A64F0061944F /* compass.png */,
 				68424E741DE4A64F0061944F /* home3.png */,
-				68424E751DE4A64F0061944F /* office.png */,
 				68934B741DD01D31005D109E /* theverge-m.png */,
 				68934B751DD01D31005D109E /* thewallstreetjournal-m.png */,
 				68E8C7891DE7B38100D898F3 /* cancel-circle.png */,
 				68E8C78A1DE7B38100D898F3 /* pause2.png */,
+				682AFBF21E05996400862A1A /* Tock.png */,
 				68E8C78B1DE7B38100D898F3 /* play3.png */,
 				68E8C78C1DE7B38100D898F3 /* spinner11.png */,
 				68934B761DD01D31005D109E /* thewashingtonpost-m.png */,
-				68934B771DD01D31005D109E /* tick.png */,
-				68934B781DD01D31005D109E /* twitter.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		68D639B61E02FBE0007862D4 /* Tock Widget */ = {
+			isa = PBXGroup;
+			children = (
+				6805D16B1E0311C0004ABB8A /* Tock Widget.entitlements */,
+				68D639B71E02FBE0007862D4 /* TodayViewController.swift */,
+				68D639B91E02FBE0007862D4 /* MainInterface.storyboard */,
+				68D639BC1E02FBE0007862D4 /* Info.plist */,
+			);
+			path = "Tock Widget";
 			sourceTree = "<group>";
 		};
 		A1573745673E756837CF55CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				681353ED1DE8D6B00035E78B /* StoreKit.framework */,
-				681353E91DE8CE580035E78B /* CloudKit.framework */,
+				6848D9771E072550006A1392 /* FBSDKCoreKit.framework */,
+				6848D9711E072431006A1392 /* FBSDKCoreKit.framework */,
+				6805D1741E036359004ABB8A /* GameKit.framework */,
+				6805D1721E036350004ABB8A /* StoreKit.framework */,
 				79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */,
 				E3C11CAD9B8734672ACEC346 /* Pods_TockTests.framework */,
 				6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */,
 				46588369E144AD61E2955D9B /* Pods_Tock_TockTests.framework */,
 				B5318B6DF013820520D3EB14 /* Pods_Tock_TockUITests.framework */,
+				68D639B41E02FBE0007862D4 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -676,10 +684,12 @@
 				68934AF91DD00D26005D109E /* Resources */,
 				BA63590EC431B27AA6B14457 /* [CP] Embed Pods Frameworks */,
 				6CC3E9678889C3B9BBD2585A /* [CP] Copy Pods Resources */,
+				68D639C31E02FBE0007862D4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				68D639BE1E02FBE0007862D4 /* PBXTargetDependency */,
 			);
 			name = Tock;
 			productName = Tock;
@@ -728,6 +738,23 @@
 			productReference = 68934B1A1DD00D26005D109E /* TockUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		68D639B21E02FBE0007862D4 /* Tock Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68D639C21E02FBE0007862D4 /* Build configuration list for PBXNativeTarget "Tock Widget" */;
+			buildPhases = (
+				68D639AF1E02FBE0007862D4 /* Sources */,
+				68D639B01E02FBE0007862D4 /* Frameworks */,
+				68D639B11E02FBE0007862D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tock Widget";
+			productName = "Tock Widget";
+			productReference = 68D639B31E02FBE0007862D4 /* Tock Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -743,14 +770,23 @@
 						DevelopmentTeam = TL5T75PGX2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;
 							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -763,6 +799,16 @@
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 68934AFA1DD00D26005D109E;
+					};
+					68D639B21E02FBE0007862D4 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TL5T75PGX2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -782,6 +828,7 @@
 				68934AFA1DD00D26005D109E /* Tock */,
 				68934B0E1DD00D26005D109E /* TockTests */,
 				68934B191DD00D26005D109E /* TockUITests */,
+				68D639B21E02FBE0007862D4 /* Tock Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -802,70 +849,51 @@
 				68934B8D1DD01D31005D109E /* hackernews-m.png in Resources */,
 				68934B821DD01D31005D109E /* cnbc-m.png in Resources */,
 				68934B091DD00D26005D109E /* LaunchScreen.storyboard in Resources */,
-				68934B791DD01D31005D109E /* alarm.png in Resources */,
+				682BE0E91E072B63002A490F /* GoogleService-Info.plist in Resources */,
 				6850AB741DF22D8A0035F5E4 /* volume-medium.png in Resources */,
-				68F146E61DE3E6AD000CF4DE /* circle-left.png in Resources */,
 				68934B9C1DD01D31005D109E /* thenextweb-m.png in Resources */,
 				68934B951DD01D31005D109E /* reuters-m.png in Resources */,
-				6850AB731DF22D8A0035F5E4 /* mic.png in Resources */,
 				681353E11DE8AC7C0035E78B /* connectServices.png in Resources */,
 				681353E71DE8C6A50035E78B /* timePicker.png in Resources */,
-				68934B7D1DD01D31005D109E /* bell.png in Resources */,
 				683E8BEA1DF5C3A300205235 /* DS-DIGI.TTF in Resources */,
 				68934B7A1DD01D31005D109E /* arstechnica-m.png in Resources */,
-				68934B871DD01D31005D109E /* equalizer2.png in Resources */,
 				68934B9A1DD01D31005D109E /* thehuffingtonpost-m.png in Resources */,
-				687F5EC71DD127BA00148487 /* checkmark.png in Resources */,
 				68934B8C1DD01D31005D109E /* googlenews-m.png in Resources */,
 				68934B9D1DD01D31005D109E /* theverge-m.png in Resources */,
 				68934B7F1DD01D31005D109E /* buzzfeed-m.png in Resources */,
 				68424E7A1DE4A7650061944F /* location2.png in Resources */,
 				68934B881DD01D31005D109E /* espn-m.png in Resources */,
 				68E8C7921DE7F88200D898F3 /* alarm.wav in Resources */,
-				68934BA11DD01D31005D109E /* twitter.png in Resources */,
 				68934B061DD00D26005D109E /* Assets.xcassets in Resources */,
-				681353E31DE8B5C10035E78B /* settingsButton.png in Resources */,
-				68934B8A1DD01D31005D109E /* FB-f-Logo__blue_144.png in Resources */,
 				68934B7B1DD01D31005D109E /* bbcnews-m.png in Resources */,
+				682AFBF31E05996400862A1A /* Tock.png in Resources */,
 				68E8C78E1DE7B38100D898F3 /* pause2.png in Resources */,
+				6805D1701E03583A004ABB8A /* fogHornSample.wav in Resources */,
+				6805D16D1E03558B004ABB8A /* alarmTest.wav in Resources */,
 				68934B7E1DD01D31005D109E /* bloomberg-m.png in Resources */,
 				68934B7C1DD01D31005D109E /* bbcsport-m.png in Resources */,
 				68E8C78F1DE7B38100D898F3 /* play3.png in Resources */,
 				68934B851DD01D31005D109E /* engadget-m.png in Resources */,
-				68424E781DE4A64F0061944F /* office.png in Resources */,
 				68934B8E1DD01D31005D109E /* independent-m.png in Resources */,
 				68424E771DE4A64F0061944F /* home3.png in Resources */,
-				68934B8B1DD01D31005D109E /* FBLogo.png in Resources */,
-				68934B901DD01D31005D109E /* newspaper.png in Resources */,
-				687F5EC51DD1253800148487 /* Tock.png in Resources */,
 				681E66A31DF3695A00EC9AC1 /* siren.wav in Resources */,
-				681B1A331E00DE1A00457AF6 /* list-numbered.png in Resources */,
-				68F659841DE55FB400F40FF9 /* 10d.png in Resources */,
-				68934B971DD01D31005D109E /* sun.png in Resources */,
+				68EA9EE51E01A64E00F06223 /* weather.ttf in Resources */,
 				68934B981DD01D31005D109E /* techcrunch-m.png in Resources */,
-				68934B921DD01D31005D109E /* pocket1.png in Resources */,
-				6850AB781DF22FB10035F5E4 /* cogs.png in Resources */,
 				68934B8F1DD01D31005D109E /* mashable-m.png in Resources */,
-				68934B891DD01D31005D109E /* facebook3.png in Resources */,
 				681E66A51DF36E7900EC9AC1 /* fogHorn.wav in Resources */,
-				68934B811DD01D31005D109E /* circle-down.png in Resources */,
+				6805D1711E03583A004ABB8A /* sirenSample.wav in Resources */,
 				68934B841DD01D31005D109E /* emit.png in Resources */,
 				68E8C7901DE7B38100D898F3 /* spinner11.png in Resources */,
-				6850AB761DF22DC10035F5E4 /* sleepy.png in Resources */,
 				68424E721DE4959D0061944F /* AvenirLTStd-Roman.otf in Resources */,
 				68934B9F1DD01D31005D109E /* thewashingtonpost-m.png in Resources */,
-				68934B911DD01D31005D109E /* pocket.png in Resources */,
-				68934BA01DD01D31005D109E /* tick.png in Resources */,
 				68934B931DD01D31005D109E /* recode-m.png in Resources */,
-				68424E761DE4A64F0061944F /* compass.png in Resources */,
 				68934B861DD01D31005D109E /* entertainmentweekly-m.png in Resources */,
+				68F919D51E07133F00C220A0 /* startButton.png in Resources */,
 				68424E711DE4959D0061944F /* AvenirLTStd-Light.otf in Resources */,
 				68934B831DD01D31005D109E /* cnn-m.png in Resources */,
-				68934B961DD01D31005D109E /* services.png in Resources */,
-				6850AB6E1DF2270F0035F5E4 /* circle-right.png in Resources */,
 				68934B041DD00D26005D109E /* Main.storyboard in Resources */,
 				68934B941DD01D31005D109E /* redditrall-m.png in Resources */,
-				68934B801DD01D31005D109E /* calendar.png in Resources */,
+				68F919D31E07122C00C220A0 /* editbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +908,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68D639B11E02FBE0007862D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D639BB1E02FBE0007862D4 /* MainInterface.storyboard in Resources */,
+				682BE0EB1E072C16002A490F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BE0EE1E072DE9002A490F /* Tock-Bridging-Header.h in Sources */,
 				683DAC441DD103D500F5BE2C /* NewModal.swift in Sources */,
 				681353E51DE8BB120035E78B /* HomeTutorialViewController.swift in Sources */,
 				683DAC391DD1013A00F5BE2C /* TockWakeUp.swift in Sources */,
@@ -1113,6 +1151,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		68D639AF1E02FBE0007862D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D639B81E02FBE0007862D4 /* TodayViewController.swift in Sources */,
+				6805D1691E030929004ABB8A /* KTUtility.swift in Sources */,
+				6805D16A1E030A4E004ABB8A /* system_constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1125,6 +1173,11 @@
 			isa = PBXTargetDependency;
 			target = 68934AFA1DD00D26005D109E /* Tock */;
 			targetProxy = 68934B1B1DD00D26005D109E /* PBXContainerItemProxy */;
+		};
+		68D639BE1E02FBE0007862D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68D639B21E02FBE0007862D4 /* Tock Widget */;
+			targetProxy = 68D639BD1E02FBE0007862D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1143,6 +1196,14 @@
 				68934B081DD00D26005D109E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		68D639B91E02FBE0007862D4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68D639BA1E02FBE0007862D4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1245,14 +1306,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71535D277063976815991733 /* Pods-Tock.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Tock/Tock.entitlements;
 				DEVELOPMENT_TEAM = TL5T75PGX2;
 				INFOPLIST_FILE = Tock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinturner.TockApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Tock-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1260,14 +1325,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F37346ABEBB80117D539CADC /* Pods-Tock.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Tock/Tock.entitlements;
 				DEVELOPMENT_TEAM = TL5T75PGX2;
 				INFOPLIST_FILE = Tock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinturner.TockApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Tock-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1329,6 +1398,34 @@
 			};
 			name = Release;
 		};
+		68D639C01E02FBE0007862D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Tock Widget/Tock Widget.entitlements";
+				DEVELOPMENT_TEAM = TL5T75PGX2;
+				INFOPLIST_FILE = "Tock Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kevinturner.TockApp.Tock-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		68D639C11E02FBE0007862D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Tock Widget/Tock Widget.entitlements";
+				DEVELOPMENT_TEAM = TL5T75PGX2;
+				INFOPLIST_FILE = "Tock Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kevinturner.TockApp.Tock-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1364,6 +1461,15 @@
 			buildConfigurations = (
 				68934B2A1DD00D26005D109E /* Debug */,
 				68934B2B1DD00D26005D109E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68D639C21E02FBE0007862D4 /* Build configuration list for PBXNativeTarget "Tock Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D639C01E02FBE0007862D4 /* Debug */,
+				68D639C11E02FBE0007862D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

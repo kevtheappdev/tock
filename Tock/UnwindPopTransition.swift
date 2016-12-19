@@ -30,8 +30,8 @@ class UnwindPopTransition: NSObject, UIViewControllerAnimatedTransitioning
         
         UIGraphicsBeginImageContextWithOptions((fromView?.bounds.size)!, false, UIScreen.main.scale)
         
-        
-        fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
+        fromView?.drawHierarchy(in: fromView!.bounds, afterScreenUpdates: true)
+        //fromView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
         let fromSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -41,8 +41,8 @@ class UnwindPopTransition: NSObject, UIViewControllerAnimatedTransitioning
         UIGraphicsBeginImageContextWithOptions((toView?.bounds.size)!, false, UIScreen.main.scale)
         
         
- 
-        toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
+        toView?.drawHierarchy(in: toView!.bounds, afterScreenUpdates: true)
+        //toView?.layer.render(in: UIGraphicsGetCurrentContext()!)
         
         let toSnapshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -91,6 +91,7 @@ class UnwindPopTransition: NSObject, UIViewControllerAnimatedTransitioning
         
         
         CATransaction.setCompletionBlock({()in
+            toView?.drawHierarchy(in: fromView!.bounds, afterScreenUpdates: false)
             containerView.addSubview(toView!)
             toLayer.removeFromSuperlayer()
             fromLayer.removeFromSuperlayer()

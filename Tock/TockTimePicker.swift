@@ -62,7 +62,9 @@ class TockTimePicker: UIControl {
         gradient.frame = bounds
         gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
         
+        gradient.contentsScale = UIScreen.main.scale
         
+        selectKnob.contentsScale = UIScreen.main.scale
         
         hourCircle.bounds = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.width)
         
@@ -418,6 +420,8 @@ class TockTimePicker: UIControl {
         
         let userDefaults = UserDefaults.standard
         let wakeUpDate = userDefaults.object( forKey: "wake_up_time") as? Date
+    
+                
         
         
         if let wakeup = wakeUpDate {
@@ -439,7 +443,7 @@ class TockTimePicker: UIControl {
                 self.isPM = true
             }
             
-          
+            //var angle = UserDefaults.standard.double(forKey: "angle")
             
             var angle = angleForValue(time)
 
@@ -465,10 +469,11 @@ class TockTimePicker: UIControl {
                 minuteString = "0" + minuteString
             }
             
-            if hours == 0 {
-                hours = 12
+            var hourString = String(describing: hour!)
+            if hourString == "0" {
+                hourString = "12"
             }
-            let str = String(describing: hour!) + ":" + minuteString + " " + postFix
+            let str = hourString + ":" + minuteString + " " + postFix
             print("str: \(str)")
             self.timeLabel.string = str
         } else {
@@ -489,12 +494,30 @@ class TockTimePicker: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         print("touches ended")
         var hours = self.hours
+        print("hours \(hours)")
         if isPM {
             hours = hours + 12
         }
         KTUtility.setDate(hours, minutes: self.minutes)
         print("endTracking:")
         print("hours: \(self.hours) minutes: \(self.minutes)")
+        
+        let location = touch!.location(in: self)
+        print("tracking continues: \(location)")
+        
+        
+        
+        
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        
+        let x = Double(location.x)-Double(center.x)
+        let y = Double(location.y)-Double(center.y)
+        
+        var angle = Trig.findAngle(x, y: y)
+        
+        let def = UserDefaults.standard
+        def.set(angle, forKey: "angle")
         
         KTUtility.scheduleNotification()
 

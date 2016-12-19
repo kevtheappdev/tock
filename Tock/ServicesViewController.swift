@@ -39,20 +39,20 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
         self.continueButton.isEnabled = false
         
         //set all default user defaults involving booleans
-        defaults.setValue(true, forKey: onboardedKey)
+      
         defaults.setValue(true, forKey: isOnKey)
         defaults.setValue(true, forKey: autoGreetignKey)
         
-        
-        create3DTouchShortcuts()
+
         
         view.layer.insertSublayer(gradient, below: self.selectServices.layer)
         
-        dropEffect()
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        dropEffect()
         let wumanager = WakeUpManager()
         let types =  wumanager.getWakeUpTypes()
         if let t = types {
@@ -77,24 +77,13 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
     }
     
     
-    
-    func create3DTouchShortcuts(){
-        let startIcon = UIApplicationShortcutIcon(templateImageName: "play3.png")
-        let startButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.start", localizedTitle: "Start", localizedSubtitle: nil, icon: startIcon, userInfo: nil)
-        
-        let servicesIcon = UIApplicationShortcutIcon(templateImageName: "equalizer2.png")
-        let servicesButton = UIApplicationShortcutItem(type: "com.kevinturner.TockApp.services", localizedTitle: "Services", localizedSubtitle: nil, icon: servicesIcon, userInfo: nil)
-        
-        UIApplication.shared.shortcutItems = [startButton, servicesButton]
-        
-    }
-    
+  
   
     
     
     @IBAction func optOutButton(_ sender: AnyObject) {
         
-        self.performSegue(withIdentifier: "home", sender: self)
+        self.performSegue(withIdentifier: "info", sender: self)
     }
     
     @IBAction func selectServices(_ sender: AnyObject) {
@@ -109,16 +98,13 @@ class ServicesViewController: UIViewController, UIViewControllerTransitioningDel
             destinationVC.transitioningDelegate = transitionDelegate
             let select = destinationVC as! ServiceSelectorViewController
             select.displaySettings = false
-        } else if segue.identifier == "home" {
-            let vc = destinationVC as! ViewController
-            vc.modalPresentationStyle = .custom
-            vc.transitioningDelegate = self
-            print("Segue to home")
+        } else if segue.identifier == "info" {
+            destinationVC.transitioningDelegate = self
         }
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return UnwindPopTransition()
+        return RightSlideTransition()
     }
     
    

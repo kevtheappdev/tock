@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlayerDelegate {
+class TockAlarmViewController: GAITrackedViewController, TockWakeUpDelegate, AVAudioPlayerDelegate {
     
     @IBOutlet weak var infoStackView: UIStackView!
     let wuManager = WakeUpManager()
@@ -20,7 +20,11 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
       var player: AVAudioPlayer?
     var dataRetreived = false
     var timer: Timer!
+    let pop = PopTransitionDelegate()
+    weak var wakeVC : TockWakeViewController?
   
+    @IBOutlet weak var bedsideModeButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
 
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,21 +32,41 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.screenName = "alarm"
         infoStackView.alpha = 0.0
         UIDevice.current.isProximityMonitoringEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
         
+             setupGradients() 
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+ 
         fadeInInstructions()
         self.wakeUps = wuManager.getWakeUps()
         KTUtility.recordStartTime()
         KTUtility.scheduleNotification()
         setAlarm()
+    }
+    
+    func setupGradients(){
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(x: 0, y: 0, width: doneButton.bounds.width, height: bedsideModeButton.bounds.height)
+        gradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
+        let newGradient = CAGradientLayer()
+        newGradient.frame = CGRect(x: 0, y: 0, width: doneButton.bounds.width, height: bedsideModeButton.bounds.height)
+        newGradient.colors = [UIColor(red: 1, green: 0.4393680155, blue: 0.001996452746, alpha: 1).cgColor, UIColor(red: 1, green: 0.7662689211, blue: 0.3382564307, alpha: 1).cgColor]
+        bedsideModeButton.layer.addSublayer(gradient)
+        bedsideModeButton.layer.masksToBounds = true
+        doneButton.layer.addSublayer(newGradient)
+        doneButton.layer.masksToBounds = true
     }
     
     
@@ -90,7 +114,6 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
             for (_, wakeUp) in wakeUps {
                     wakeUp.delegate = self
                     wakeUp.fetchData()
-            
             }
             
         }
@@ -101,6 +124,7 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
         fetchedTotal += 1
         if fetchedTotal == self.wakeUps?.count {
             self.dataRetreived = true
+            self.wakeVC?.setDataFetched(fetched: true)
         }
     }
     
@@ -120,7 +144,9 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     
     func presentChildVC(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let childVC = storyboard.instantiateViewController(withIdentifier: "WakeUpVC")
+        let childVC = storyboard.instantiateViewController(withIdentifier: "WakeUpVC") as! TockWakeViewController
+        self.wakeVC = childVC
+        childVC.shouldDisplayPlay = self.dataRetreived
         self.addChildViewController(childVC)
         childVC.didMove(toParentViewController: self)
         childVC.view.frame = self.view.frame
@@ -133,7 +159,7 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         let shouldPlayAuto = userDefaults.bool(forKey: autoGreetignKey)
-        if self.dataRetreived && shouldPlayAuto{
+        if self.dataRetreived && shouldPlayAuto {
             self.performSegue(withIdentifier: "beep", sender: self)
         } else {
             player.play()
@@ -154,12 +180,13 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     
     func startReading(){
         print("start reading")
-        self.player!.pause()
-        self.performSegue(withIdentifier: "beep", sender: self)
+        self.player!.stop()
+        self.performSegue(withIdentifier: "beep",  sender: self)
     }
     
     func snoozeNow(){
         self.player?.stop()
+        self.player?.currentTime = 0
         let snoozeInterval = userDefaults.integer(forKey: snoozeTimeKey)
         var interval = 5.0 * 60
         if snoozeInterval != 0 {
@@ -214,6 +241,7 @@ class TockAlarmViewController: UIViewController, TockWakeUpDelegate, AVAudioPlay
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("before segue there are: \(wakeUps?.count)")
         let destinationVC = segue.destination as! TockBeepViewController
+        destinationVC.transitioningDelegate = self.pop
         destinationVC.wakeUps = self.wakeUps
     }
 }

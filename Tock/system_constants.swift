@@ -103,7 +103,7 @@ func newsNameForType(type: newsTypes) -> String{
     case .bbcSport:
         return "BBC Sports"
     case .bloomBerg:
-        return "Bllomberg"
+        return "Bloomberg"
     case .buzzfeed:
         return "BuzzFeed"
     case .cnbc:

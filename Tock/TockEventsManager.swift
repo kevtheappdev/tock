@@ -74,10 +74,11 @@ class TockEventsManager: NSObject
                 
                 if event.isAllDay {
                     todaysEvents.remove(at: index)
+                } else {
+                    index += 1
                 }
                 
-                index += 1
-            }
+                         }
         }
 
         

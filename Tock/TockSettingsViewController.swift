@@ -23,9 +23,9 @@ enum settingsType {
 class TockSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = [settingsObject(title: "Sound", icon: #imageLiteral(resourceName: "volume-medium.png")), settingsObject(title: "Speech", icon: #imageLiteral(resourceName: "mic.png")), settingsObject(title: "Snooze", icon: #imageLiteral(resourceName: "sleepy.png"))]
+    let settings = [settingsObject(title: "Sound", icon: #imageLiteral(resourceName: "volume-medium.png")), settingsObject(title: "Speech", icon: #imageLiteral(resourceName: "mic")), settingsObject(title: "Snooze", icon: #imageLiteral(resourceName: "sleepy"))]
     let help = ["Contact"]
-    let about = ["Designed and developed by Kevin Turner", "@kevinturner62"]
+    let about = ["Designed and developed by Kevin Turner", "@kevinturner62", "Icon Design by Daniel Davis", "@ionicgeneration"]
     let types : [settingsType] = [.sound, .voice, .snooze]
     var selectedType : settingsType?
     var selectedIndex : Int?
@@ -138,9 +138,14 @@ class TockSettingsViewController: UIViewController, UITableViewDelegate, UITable
             }
         } else if indexPath.section == 2 && indexPath.row == 1 {
             let twitterURl = URL(string: "twitter://user?screen_name=kevinturner62")!
-            if UIApplication.shared.canOpenURL(twitterURl){
+    
                 UIApplication.shared.open(twitterURl, options: [:], completionHandler: nil)
-            }
+         
+        } else if indexPath.section == 2 &&  indexPath.row == 3 {
+            let twitterURl = URL(string: "twitter://user?screen_name=IonicGeneration")!
+            
+            UIApplication.shared.open(twitterURl, options: [:], completionHandler: nil)
+            
         }
         
         

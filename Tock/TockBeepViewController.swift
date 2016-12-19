@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import AVFoundation
 
-class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate {
+class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate, UIViewControllerTransitioningDelegate {
     var wakeUps: [wakeUpTypes:TockWakeUp]?
     var verbals: [wakeUpTypes:[String]] = [:]
     var indexes: [wakeUpTypes] = []
@@ -28,6 +28,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     @IBOutlet weak var MorningView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var greetingLabel: UILabel!
+    let pop = PopTransitionDelegate()
     
     @IBOutlet weak var playPauseButton: UIButton!
     var queue : Queue<UIImage>!
@@ -40,7 +41,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
         tableView.delegate = self
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        UIDevice.current.isProximityMonitoringEnabled = false
         
         super.viewDidLoad()
         let gradient = CAGradientLayer()
@@ -168,7 +169,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
             } else if indexes[section] == .wakeUpTypeNews {
                 return newsArticles[section]!.count
             } else if indexes[section] == .wakeUpTypeReminder {
-                return  (wakeUps![indexes[section]] as! RemindersTockWakeUp).reminders.count
+                return  (wakeUps![indexes[section]] as! RemindersTockWakeUp).reminderCount
             }
         }
         return 1
@@ -186,11 +187,12 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                 return weatherCell
                 case .wakeUpTypeCal:
                 let calCel = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
+                calCel.selectionStyle = .none
                 calCel.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeCal, index: indexPath.row)
                 return calCel
             case .wakeUpTypeTransit:
                 let transitCell = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
-            
+                 transitCell.selectionStyle = .none
                 transitCell.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeTransit, index: indexPath.row)
                 return transitCell
             case .wakeUpTypeNews:
@@ -198,12 +200,12 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                 news.selectionStyle = .none
                 let newsArt = newsArticles[indexPath.section]
                 news.populateCell(news: newsArt![indexPath.row])
-            
+                news.selectionStyle = .none
                 return news
             case .wakeUpTypeReminder:
                 let reminder = tableView.dequeueReusableCell(withIdentifier: "calendar") as! CalCell
                 reminder.setWakeUp(wakeUp: wakeUp!, type: .wakeUpTypeReminder, index: indexPath.row)
-            
+                reminder.selectionStyle = .none
                 return reminder
 
             }
@@ -262,6 +264,11 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                 present(safari, animated: true, completion: nil)
             }
          
+        } else if type == .wakeUpTypeCal {
+            let today = Date()
+            let interval = today.timeIntervalSinceReferenceDate
+            let url = URL(string: "calshow:\(interval)")
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         }
     }
     
@@ -342,6 +349,13 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "done" {
+            let destVC = segue.destination
+            destVC.transitioningDelegate = self
+        }
+    }
+    
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         if index < verbals.count && !paused{
             wake()
@@ -349,7 +363,9 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     }
     
     
-    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return UnwindPopTransition()
+    }
     
     
 }
