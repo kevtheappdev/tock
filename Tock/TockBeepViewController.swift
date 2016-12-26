@@ -14,6 +14,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     var wakeUps: [wakeUpTypes:TockWakeUp]?
     var verbals: [wakeUpTypes:[String]] = [:]
     var indexes: [wakeUpTypes] = []
+    var tableIndexes: [wakeUpTypes] = []
     var newsArticles: [Int : [NewsItem]] = [Int : [NewsItem]]()
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
@@ -23,6 +24,7 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     var lastOffset : CGFloat = 0.0
     var paused = false
     var rate = 0.5
+    var completedNews = false
     @IBOutlet weak var controlStrip: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var MorningView: UIView!
@@ -31,7 +33,6 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     let pop = PopTransitionDelegate()
     
     @IBOutlet weak var playPauseButton: UIButton!
-    var queue : Queue<UIImage>!
     var greeting = "Afternoon!"
     let userDefaults = UserDefaults.standard
     
@@ -135,17 +136,19 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
 
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let wakeCount = wakeUps?.count {
-            if indexes.contains(.wakeUpTypeNews) {
-                let newsWakeup = wakeUps?[indexes[indexes.index(of: .wakeUpTypeNews)!]] as? NewsTockWakeUp
-                if let news = newsWakeup {
-                    return wakeCount + news.sources.count - 1
-                }
-            }
-            return wakeCount
-        } else {
-            return 0
-        }
+//        if let wakeCount = wakeUps?.count {
+//            if indexes.contains(.wakeUpTypeNews) {
+//                let newsWakeup = wakeUps?[indexes[indexes.index(of: .wakeUpTypeNews)!]] as? NewsTockWakeUp
+//                if let news = newsWakeup {
+//                    return wakeCount + news.sources.count - 1
+//                }
+//            }
+//            return wakeCount
+//        } else {
+//            return 0
+//        }
+        
+        return headers.count
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -163,20 +166,20 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section <= indexes.count - 1{
-            if indexes[section] == .wakeUpTypeCal {
-                return (wakeUps![indexes[section]] as! CalendarTockWakeUp).eventCount
-            } else if indexes[section] == .wakeUpTypeNews {
+        if section <= tableIndexes.count - 1{
+            if tableIndexes[section] == .wakeUpTypeCal {
+                return (wakeUps![tableIndexes[section]] as! CalendarTockWakeUp).eventCount
+            } else if tableIndexes[section] == .wakeUpTypeNews {
                 return newsArticles[section]!.count
-            } else if indexes[section] == .wakeUpTypeReminder {
-                return  (wakeUps![indexes[section]] as! RemindersTockWakeUp).reminderCount
+            } else if tableIndexes[section] == .wakeUpTypeReminder {
+                return  (wakeUps![tableIndexes[section]] as! RemindersTockWakeUp).reminderCount
             }
         }
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = indexes[indexPath.section]
+        let type = tableIndexes[indexPath.section]
         let wakeUp = self.wakeUps![type]
         
     if (wakeUp?.fetchSuccess)! {
@@ -253,9 +256,9 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let type = indexes[indexPath.section]
+        let type = tableIndexes[indexPath.section]
       
-        if type == .wakeUpTypeNews{
+        if type == .wakeUpTypeNews {  
             let newsA = newsArticles[indexPath.section]
             let news = newsA![indexPath.row]
             let url = news.url
@@ -278,36 +281,35 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
             let types = WakeUpManager().getWakeUpTypes()
             for type in types! {
                 let wake = wakeUpTypes(rawValue: type)!
-               
+                
+                indexes.append(wake)
                 switch wake {
                 case .wakeUpTypeCal:
                     headers.append("Events Today")
-                     indexes.append(wake)
+                     tableIndexes.append(wake)
                     break
                 case .wakeUpTypeTransit:
                     headers.append("Transit Time")
-                     indexes.append(wake)
+                         tableIndexes.append(wake)
                     break
                 case .wakeUpTypeWeather:
                     headers.append("Weather")
-                     indexes.append(wake)
+                        tableIndexes.append(wake)
                 break
                 case .wakeUpTypeNews:
                     let newsWake = wakeUps![.wakeUpTypeNews] as! NewsTockWakeUp
                   
                         print("The news wake is \(newsWake.newsItems.count)")
                     for newsArr in newsWake.newsItems {
-                        
+                        tableIndexes.append(wake)
                         headers.append(newsNameForType(type: newsTypes(rawValue: newsArr[0].source)!))
-                        indexes.append(wake)
-                        newsArticles[indexes.count-1] = newsArr
-                       
+                        newsArticles[tableIndexes.count-1] = newsArr
+                        
                     }
                     
                     break
                 case .wakeUpTypeReminder:
                         headers.append("Reminders")
-                        indexes.append(wake)
                     break
                     
 
@@ -328,6 +330,9 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     func wake(){
         let verbals = self.verbals[indexes[index]]
         print("type is \(indexes[index].rawValue)")
+       
+      
+        
         let verbal = verbals?[i]
         print("verbal \(verbal)")
             if verbal != nil && verbal! != "" {
@@ -339,8 +344,14 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
                 
             }
         
+    
+    
          i += 1
+        print("i is \(i) verbals count is \(verbals?.count)")
         if i == verbals?.count {
+            if indexes[index] == .wakeUpTypeNews {
+                self.completedNews = true
+            }
             i = 0
             index += 1
         }
@@ -357,8 +368,12 @@ class TockBeepViewController: UIViewController, AVSpeechSynthesizerDelegate, UIT
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+
         if index < verbals.count && !paused{
-            wake()
+        
+            
+                wake()
+            
         }
     }
     

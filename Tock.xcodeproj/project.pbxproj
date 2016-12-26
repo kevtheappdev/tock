@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DD8C066993F894BEE1D2511 /* Pods_Tock_TockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46588369E144AD61E2955D9B /* Pods_Tock_TockTests.framework */; };
-		5F50B990593FD1D2104ABDA0 /* Pods_Tock_TockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5318B6DF013820520D3EB14 /* Pods_Tock_TockUITests.framework */; };
+		2D5DA3B50FD7B6DAD1F8E3A1 /* Pods_Tock_TockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C75DC9376638AD8BC2C2E3 /* Pods_Tock_TockUITests.framework */; };
 		6800CCF21DE3C9AA00B26031 /* ConfigureTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6800CCF11DE3C9AA00B26031 /* ConfigureTransition.swift */; };
 		6805D1691E030929004ABB8A /* KTUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B351DD0101B005D109E /* KTUtility.swift */; };
 		6805D16A1E030A4E004ABB8A /* system_constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934B371DD01038005D109E /* system_constants.swift */; };
@@ -64,6 +63,7 @@
 		6850AB6C1DF224E90035F5E4 /* TockSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */; };
 		6850AB701DF228F50035F5E4 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */; };
 		6850AB741DF22D8A0035F5E4 /* volume-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6850AB721DF22D8A0035F5E4 /* volume-medium.png */; };
+		685501491E10849900B4E5DA /* TockMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685501481E10849900B4E5DA /* TockMusicViewController.swift */; };
 		687F5EC31DD124BE00148487 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F5EC21DD124BE00148487 /* SparkleView.swift */; };
 		688A54FC1DD674C300BC1A31 /* OptionsUnwindTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A54FB1DD674C300BC1A31 /* OptionsUnwindTransition.swift */; };
 		68934AFF1DD00D26005D109E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934AFE1DD00D26005D109E /* AppDelegate.swift */; };
@@ -119,6 +119,7 @@
 		68934BA71DD01DCC005D109E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68934BA61DD01DCC005D109E /* SettingsCell.swift */; };
 		689526451E018B0E00B7888D /* FailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689526441E018B0E00B7888D /* FailedTableViewCell.swift */; };
 		68B746471DD61850007BA513 /* NewsTockWakeUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B746461DD61850007BA513 /* NewsTockWakeUp.swift */; };
+		68D245D41E11CEF000B1DFEE /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D245D31E11CEF000B1DFEE /* MusicTableViewCell.swift */; };
 		68D2EAD01DD381DC00C3732A /* TockAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */; };
 		68D2EAD21DD3A20900C3732A /* TockBeepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */; };
 		68D639B51E02FBE0007862D4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D639B41E02FBE0007862D4 /* NotificationCenter.framework */; };
@@ -143,9 +144,8 @@
 		68F659881DE5695C00F40FF9 /* CalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F659871DE5695C00F40FF9 /* CalCell.swift */; };
 		68F919D31E07122C00C220A0 /* editbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F919D21E07122C00C220A0 /* editbutton.png */; };
 		68F919D51E07133F00C220A0 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 68F919D41E07133F00C220A0 /* startButton.png */; };
-		9DFFB3E098C1BDAF44EDEC60 /* Pods_TockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C11CAD9B8734672ACEC346 /* Pods_TockTests.framework */; };
-		A64F5F4B8803AF5516571AEB /* Pods_Tock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */; };
-		B7ED08C49BC4FDF4FDFF0709 /* Pods_TockUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */; };
+		866B1B4B50F110BE1E75E770 /* Pods_Tock_TockTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EDB4C4BEA428E22CC48BCD /* Pods_Tock_TockTests.framework */; };
+		A0AC9C6B00C142C0496AE7D1 /* Pods_Tock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74EFC112875E08A918B2CBC6 /* Pods_Tock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,12 +187,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		292E6356D30A1F82A88919A4 /* Pods-TockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TockUITests/Pods-TockUITests.release.xcconfig"; sourceTree = "<group>"; };
-		46588369E144AD61E2955D9B /* Pods_Tock_TockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock_TockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		533964843279DEBE2725A49A /* Pods-TockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TockTests/Pods-TockTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5AB0137EFFD9E599E3A8310C /* Pods-Tock-TockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		631BBBD1F7E8954280AB8A43 /* Pods-Tock-TockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests.release.xcconfig"; sourceTree = "<group>"; };
+		20318BEAD392D11357767CFD /* Pods-Tock-TockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests.release.xcconfig"; sourceTree = "<group>"; };
+		3927B6BA92C600BD87C5B9BB /* Pods-Tock-TockUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6800CCF11DE3C9AA00B26031 /* ConfigureTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureTransition.swift; sourceTree = "<group>"; };
 		6805D16B1E0311C0004ABB8A /* Tock Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tock Widget.entitlements"; sourceTree = "<group>"; };
 		6805D16C1E03558B004ABB8A /* alarmTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarmTest.wav; sourceTree = "<group>"; };
@@ -250,6 +246,7 @@
 		6850AB6B1DF224E90035F5E4 /* TockSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockSettingsViewController.swift; sourceTree = "<group>"; };
 		6850AB6F1DF228F50035F5E4 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		6850AB721DF22D8A0035F5E4 /* volume-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-medium.png"; sourceTree = "<group>"; };
+		685501481E10849900B4E5DA /* TockMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockMusicViewController.swift; sourceTree = "<group>"; };
 		687F5EC21DD124BE00148487 /* SparkleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
 		688A54FB1DD674C300BC1A31 /* OptionsUnwindTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsUnwindTransition.swift; sourceTree = "<group>"; };
 		68934AFB1DD00D26005D109E /* Tock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +308,7 @@
 		68934BA61DD01DCC005D109E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		689526441E018B0E00B7888D /* FailedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedTableViewCell.swift; sourceTree = "<group>"; };
 		68B746461DD61850007BA513 /* NewsTockWakeUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTockWakeUp.swift; sourceTree = "<group>"; };
+		68D245D31E11CEF000B1DFEE /* MusicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockAlarmViewController.swift; sourceTree = "<group>"; };
 		68D2EAD11DD3A20900C3732A /* TockBeepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TockBeepViewController.swift; sourceTree = "<group>"; };
 		68D639B31E02FBE0007862D4 /* Tock Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tock Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,15 +334,13 @@
 		68F659871DE5695C00F40FF9 /* CalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalCell.swift; sourceTree = "<group>"; };
 		68F919D21E07122C00C220A0 /* editbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton.png; sourceTree = "<group>"; };
 		68F919D41E07133F00C220A0 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
-		71535D277063976815991733 /* Pods-Tock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock/Pods-Tock.debug.xcconfig"; sourceTree = "<group>"; };
-		79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88DB0D2AAD9491B5576B9184 /* Pods-Tock-TockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A89036AE74AEEF037F57B93C /* Pods-TockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TockTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TockTests/Pods-TockTests.release.xcconfig"; sourceTree = "<group>"; };
-		B3DECFCE8BEC6DBB3A4F9C9C /* Pods-TockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TockUITests/Pods-TockUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B5318B6DF013820520D3EB14 /* Pods_Tock_TockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock_TockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D30BABD49B304FA89A01FFBF /* Pods-Tock-TockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E3C11CAD9B8734672ACEC346 /* Pods_TockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F37346ABEBB80117D539CADC /* Pods-Tock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock/Pods-Tock.release.xcconfig"; sourceTree = "<group>"; };
+		74EFC112875E08A918B2CBC6 /* Pods_Tock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82261BBFB74EE6C393F0076E /* Pods-Tock-TockUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2EDB4C4BEA428E22CC48BCD /* Pods_Tock_TockTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock_TockTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C75DC9376638AD8BC2C2E3 /* Pods_Tock_TockUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tock_TockUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1AACC556A88943A0E3F5FB7 /* Pods-Tock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock/Pods-Tock.debug.xcconfig"; sourceTree = "<group>"; };
+		D1A93D096BD2DDE8B4EFD804 /* Pods-Tock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tock/Pods-Tock.release.xcconfig"; sourceTree = "<group>"; };
+		E6F6C9D5847DE8BAE8585439 /* Pods-Tock-TockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tock-TockTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,8 +349,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6805D1751E036359004ABB8A /* GameKit.framework in Frameworks */,
-				A64F5F4B8803AF5516571AEB /* Pods_Tock.framework in Frameworks */,
 				6805D1731E036350004ABB8A /* StoreKit.framework in Frameworks */,
+				A0AC9C6B00C142C0496AE7D1 /* Pods_Tock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +358,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DFFB3E098C1BDAF44EDEC60 /* Pods_TockTests.framework in Frameworks */,
-				0DD8C066993F894BEE1D2511 /* Pods_Tock_TockTests.framework in Frameworks */,
+				866B1B4B50F110BE1E75E770 /* Pods_Tock_TockTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7ED08C49BC4FDF4FDFF0709 /* Pods_TockUITests.framework in Frameworks */,
-				5F50B990593FD1D2104ABDA0 /* Pods_Tock_TockUITests.framework in Frameworks */,
+				2D5DA3B50FD7B6DAD1F8E3A1 /* Pods_Tock_TockUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +381,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2439580C679F24A368022E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1AACC556A88943A0E3F5FB7 /* Pods-Tock.debug.xcconfig */,
+				D1A93D096BD2DDE8B4EFD804 /* Pods-Tock.release.xcconfig */,
+				E6F6C9D5847DE8BAE8585439 /* Pods-Tock-TockTests.debug.xcconfig */,
+				20318BEAD392D11357767CFD /* Pods-Tock-TockTests.release.xcconfig */,
+				82261BBFB74EE6C393F0076E /* Pods-Tock-TockUITests.debug.xcconfig */,
+				3927B6BA92C600BD87C5B9BB /* Pods-Tock-TockUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		681E66A11DF368AA00EC9AC1 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +428,7 @@
 				68DEBA451DF23B6700FA2748 /* AboutTableViewCell.swift */,
 				681E669F1DF3391C00EC9AC1 /* SwitchTableViewCell.swift */,
 				68DEBA491DF2460700FA2748 /* DetailSettingsTableViewCell.swift */,
+				68D245D31E11CEF000B1DFEE /* MusicTableViewCell.swift */,
 			);
 			name = "Cutom Views";
 			sourceTree = "<group>";
@@ -470,8 +478,8 @@
 				68934B1D1DD00D26005D109E /* TockUITests */,
 				68D639B61E02FBE0007862D4 /* Tock Widget */,
 				68934AFC1DD00D26005D109E /* Products */,
-				C105AEFEE6E15769F60279B5 /* Pods */,
 				A1573745673E756837CF55CE /* Frameworks */,
+				2C2439580C679F24A368022E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -529,6 +537,7 @@
 		68934B301DD00F81005D109E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				685501481E10849900B4E5DA /* TockMusicViewController.swift */,
 				683E8BE71DF5BD2C00205235 /* TockBedsideViewController.swift */,
 				68D2EACF1DD381DC00C3732A /* TockAlarmViewController.swift */,
 				68934B4B1DD01BBE005D109E /* ServicesViewController.swift */,
@@ -644,31 +653,12 @@
 				6848D9711E072431006A1392 /* FBSDKCoreKit.framework */,
 				6805D1741E036359004ABB8A /* GameKit.framework */,
 				6805D1721E036350004ABB8A /* StoreKit.framework */,
-				79892BFA7976FC6A134A3B4B /* Pods_Tock.framework */,
-				E3C11CAD9B8734672ACEC346 /* Pods_TockTests.framework */,
-				6265341BCCE57D446B5D233F /* Pods_TockUITests.framework */,
-				46588369E144AD61E2955D9B /* Pods_Tock_TockTests.framework */,
-				B5318B6DF013820520D3EB14 /* Pods_Tock_TockUITests.framework */,
 				68D639B41E02FBE0007862D4 /* NotificationCenter.framework */,
+				74EFC112875E08A918B2CBC6 /* Pods_Tock.framework */,
+				A2EDB4C4BEA428E22CC48BCD /* Pods_Tock_TockTests.framework */,
+				A7C75DC9376638AD8BC2C2E3 /* Pods_Tock_TockUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C105AEFEE6E15769F60279B5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71535D277063976815991733 /* Pods-Tock.debug.xcconfig */,
-				F37346ABEBB80117D539CADC /* Pods-Tock.release.xcconfig */,
-				533964843279DEBE2725A49A /* Pods-TockTests.debug.xcconfig */,
-				A89036AE74AEEF037F57B93C /* Pods-TockTests.release.xcconfig */,
-				B3DECFCE8BEC6DBB3A4F9C9C /* Pods-TockUITests.debug.xcconfig */,
-				292E6356D30A1F82A88919A4 /* Pods-TockUITests.release.xcconfig */,
-				D30BABD49B304FA89A01FFBF /* Pods-Tock-TockTests.debug.xcconfig */,
-				631BBBD1F7E8954280AB8A43 /* Pods-Tock-TockTests.release.xcconfig */,
-				88DB0D2AAD9491B5576B9184 /* Pods-Tock-TockUITests.debug.xcconfig */,
-				5AB0137EFFD9E599E3A8310C /* Pods-Tock-TockUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,13 +668,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68934B231DD00D26005D109E /* Build configuration list for PBXNativeTarget "Tock" */;
 			buildPhases = (
-				0DEE7C38CF8CC2DF8722D36F /* [CP] Check Pods Manifest.lock */,
+				F70808F9EFA14C4F7B781C99 /* [CP] Check Pods Manifest.lock */,
 				68934AF71DD00D26005D109E /* Sources */,
 				68934AF81DD00D26005D109E /* Frameworks */,
 				68934AF91DD00D26005D109E /* Resources */,
-				BA63590EC431B27AA6B14457 /* [CP] Embed Pods Frameworks */,
-				6CC3E9678889C3B9BBD2585A /* [CP] Copy Pods Resources */,
 				68D639C31E02FBE0007862D4 /* Embed App Extensions */,
+				32D8BDF4E66261CFED2E8559 /* [CP] Embed Pods Frameworks */,
+				8F8C58ABB94C2283C041F7EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -700,12 +690,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68934B261DD00D26005D109E /* Build configuration list for PBXNativeTarget "TockTests" */;
 			buildPhases = (
-				DE1045E716470BF0474572E2 /* [CP] Check Pods Manifest.lock */,
+				7A75365DE0271C2D38E16E93 /* [CP] Check Pods Manifest.lock */,
 				68934B0B1DD00D26005D109E /* Sources */,
 				68934B0C1DD00D26005D109E /* Frameworks */,
 				68934B0D1DD00D26005D109E /* Resources */,
-				95A5B7D71259E8DF731CC73A /* [CP] Embed Pods Frameworks */,
-				F906D507E40485AFCFEEC7D2 /* [CP] Copy Pods Resources */,
+				183A91F3160E1058C686C097 /* [CP] Embed Pods Frameworks */,
+				B9853F77839FD1444D8D6112 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -721,12 +711,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68934B291DD00D26005D109E /* Build configuration list for PBXNativeTarget "TockUITests" */;
 			buildPhases = (
-				9365FA2FCA9D20F73A0BB3D1 /* [CP] Check Pods Manifest.lock */,
+				85C0FCAE74207DBF7877F6B4 /* [CP] Check Pods Manifest.lock */,
 				68934B161DD00D26005D109E /* Sources */,
 				68934B171DD00D26005D109E /* Frameworks */,
 				68934B181DD00D26005D109E /* Resources */,
-				117267F55C535846F90D8209 /* [CP] Embed Pods Frameworks */,
-				B871BA13234B3BFB9DBCAF5C /* [CP] Copy Pods Resources */,
+				D895B7618B009D4DFBAE1D94 /* [CP] Embed Pods Frameworks */,
+				818128E9C2AA26D91B8707D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -923,67 +913,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DEE7C38CF8CC2DF8722D36F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		117267F55C535846F90D8209 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6CC3E9678889C3B9BBD2585A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock/Pods-Tock-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9365FA2FCA9D20F73A0BB3D1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		95A5B7D71259E8DF731CC73A /* [CP] Embed Pods Frameworks */ = {
+		183A91F3160E1058C686C097 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -998,22 +928,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B871BA13234B3BFB9DBCAF5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA63590EC431B27AA6B14457 /* [CP] Embed Pods Frameworks */ = {
+		32D8BDF4E66261CFED2E8559 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1028,7 +943,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock/Pods-Tock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE1045E716470BF0474572E2 /* [CP] Check Pods Manifest.lock */ = {
+		7A75365DE0271C2D38E16E93 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1043,7 +958,52 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F906D507E40485AFCFEEC7D2 /* [CP] Copy Pods Resources */ = {
+		818128E9C2AA26D91B8707D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85C0FCAE74207DBF7877F6B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F8C58ABB94C2283C041F7EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock/Pods-Tock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9853F77839FD1444D8D6112 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1058,6 +1018,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockTests/Pods-Tock-TockTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D895B7618B009D4DFBAE1D94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tock-TockUITests/Pods-Tock-TockUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F70808F9EFA14C4F7B781C99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1070,6 +1060,7 @@
 				681353E51DE8BB120035E78B /* HomeTutorialViewController.swift in Sources */,
 				683DAC391DD1013A00F5BE2C /* TockWakeUp.swift in Sources */,
 				683DAC4A1DD1040B00F5BE2C /* KTRequester.swift in Sources */,
+				685501491E10849900B4E5DA /* TockMusicViewController.swift in Sources */,
 				683DAC421DD103B900F5BE2C /* WeatherTockWakeUp.swift in Sources */,
 				683DAC3A1DD1013A00F5BE2C /* TransitTockWakeUp.swift in Sources */,
 				68934B2D1DD00F4A005D109E /* ViewController.swift in Sources */,
@@ -1087,6 +1078,7 @@
 				68934B461DD011AB005D109E /* UnwindPopTransition.swift in Sources */,
 				68934B341DD00FEB005D109E /* TimePickerDelegate.swift in Sources */,
 				68424E7E1DE4F3D60061944F /* Queue.swift in Sources */,
+				68D245D41E11CEF000B1DFEE /* MusicTableViewCell.swift in Sources */,
 				68934B441DD011A0005D109E /* PopTransition.swift in Sources */,
 				68934B3C1DD010EE005D109E /* OptionsTransitionDelegate.swift in Sources */,
 				68DEBA481DF2427000FA2748 /* SettingsDetailViewController.swift in Sources */,
@@ -1304,11 +1296,13 @@
 		};
 		68934B241DD00D26005D109E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71535D277063976815991733 /* Pods-Tock.debug.xcconfig */;
+			baseConfigurationReference = C1AACC556A88943A0E3F5FB7 /* Pods-Tock.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Tock/Tock.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TL5T75PGX2;
 				INFOPLIST_FILE = Tock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1323,11 +1317,13 @@
 		};
 		68934B251DD00D26005D109E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F37346ABEBB80117D539CADC /* Pods-Tock.release.xcconfig */;
+			baseConfigurationReference = D1A93D096BD2DDE8B4EFD804 /* Pods-Tock.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Tock/Tock.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TL5T75PGX2;
 				INFOPLIST_FILE = Tock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1342,7 +1338,7 @@
 		};
 		68934B271DD00D26005D109E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D30BABD49B304FA89A01FFBF /* Pods-Tock-TockTests.debug.xcconfig */;
+			baseConfigurationReference = E6F6C9D5847DE8BAE8585439 /* Pods-Tock-TockTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1357,7 +1353,7 @@
 		};
 		68934B281DD00D26005D109E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 631BBBD1F7E8954280AB8A43 /* Pods-Tock-TockTests.release.xcconfig */;
+			baseConfigurationReference = 20318BEAD392D11357767CFD /* Pods-Tock-TockTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1372,7 +1368,7 @@
 		};
 		68934B2A1DD00D26005D109E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88DB0D2AAD9491B5576B9184 /* Pods-Tock-TockUITests.debug.xcconfig */;
+			baseConfigurationReference = 82261BBFB74EE6C393F0076E /* Pods-Tock-TockUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TockUITests/Info.plist;
@@ -1386,7 +1382,7 @@
 		};
 		68934B2B1DD00D26005D109E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AB0137EFFD9E599E3A8310C /* Pods-Tock-TockUITests.release.xcconfig */;
+			baseConfigurationReference = 3927B6BA92C600BD87C5B9BB /* Pods-Tock-TockUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TockUITests/Info.plist;

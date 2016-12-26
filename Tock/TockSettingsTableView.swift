@@ -8,7 +8,7 @@
 
 import UIKit
 
-import GoogleMaps
+
 import GooglePlaces
 import GooglePlacePicker
 import EventKit

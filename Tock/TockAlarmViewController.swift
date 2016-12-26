@@ -39,6 +39,7 @@ class TockAlarmViewController: GAITrackedViewController, TockWakeUpDelegate, AVA
         UIDevice.current.isProximityMonitoringEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+       
         
              setupGradients() 
         
@@ -48,13 +49,17 @@ class TockAlarmViewController: GAITrackedViewController, TockWakeUpDelegate, AVA
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
- 
+        
         fadeInInstructions()
         self.wakeUps = wuManager.getWakeUps()
         KTUtility.recordStartTime()
         KTUtility.scheduleNotification()
         setAlarm()
+     
     }
+    
+    
+
     
     func setupGradients(){
         let gradient = CAGradientLayer()
@@ -103,7 +108,7 @@ class TockAlarmViewController: GAITrackedViewController, TockWakeUpDelegate, AVA
         
         //print("fetch interval is \(fetchInterval)")
         print("The interval to wakeup is \(interval)")
-        playWakeUpNoise()
+       
 
     
     }
@@ -134,6 +139,7 @@ class TockAlarmViewController: GAITrackedViewController, TockWakeUpDelegate, AVA
     
     @objc func wakeUp(){
         presentChildVC()
+        playWakeUpNoise()
         if let player = self.player {
             if !player.isPlaying {
                 player.play()
